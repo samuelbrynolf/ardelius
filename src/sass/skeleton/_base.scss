@@ -64,28 +64,28 @@ body{
 }
 
 p{
-  margin-top: rem($body_leading);
-  margin-bottom: rem($body_leading);
-
-  @media all and (min-width: $beta_query) {
-    margin-top: rem($body_leading_beta);
-    margin-bottom: rem($body_leading_beta);
-  }
-
-  @media all and (min-width: $charlie_query) {
-    margin-top: rem($body_leading_charlie);
-    margin-bottom: rem($body_leading_charlie);
-  }
-
-  @media all and (min-width: $delta_query) {
-    margin-top: rem($body_leading_delta);
-    margin-bottom: rem($body_leading_delta);
-  }
-
-  @media all and (min-width: $echo_query) {
-    margin-top: rem($body_leading_echo);
-    margin-bottom: rem($body_leading_echo);
-  }
+  //margin-top: rem($body_leading);
+  //margin-bottom: rem($body_leading);
+  //
+  //@media all and (min-width: $beta_query) {
+  //  margin-top: rem($body_leading_beta);
+  //  margin-bottom: rem($body_leading_beta);
+  //}
+  //
+  //@media all and (min-width: $charlie_query) {
+  //  margin-top: rem($body_leading_charlie);
+  //  margin-bottom: rem($body_leading_charlie);
+  //}
+  //
+  //@media all and (min-width: $delta_query) {
+  //  margin-top: rem($body_leading_delta);
+  //  margin-bottom: rem($body_leading_delta);
+  //}
+  //
+  //@media all and (min-width: $echo_query) {
+  //  margin-top: rem($body_leading_echo);
+  //  margin-bottom: rem($body_leading_echo);
+  //}
 }
 
 img,
