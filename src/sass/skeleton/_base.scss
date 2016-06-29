@@ -1,0 +1,128 @@
+html{
+  font-size: $fontsize+0px;
+  box-sizing: border-box;
+}
+
+@media all and (min-width: $beta_query) {
+
+  html{
+    font-size: $fontsize_beta+0px;
+  }
+}
+
+@media all and (min-width: $charlie_query) {
+
+  html{
+    font-size: $fontsize_charlie+0px;
+  }
+}
+
+@media all and (min-width: $delta_query) {
+
+  html{
+    font-size: $fontsize_delta+0px;
+  }
+}
+
+@media all and (min-width: $echo_query) {
+  html{
+    font-size: $fontsize_echo+0px;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body{
+  font-family: $bodyfont;
+  font-size: 1rem;
+  line-height: $body_leading/$fontsize;
+  color: $body-textcolor;
+  background-color: $body-bgcolor;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color : rgba($action-color,0.2);
+
+  @media all and (min-width: $beta_query) {
+    line-height: $body_leading_beta/$fontsize_beta;
+  }
+
+  @media all and (min-width: $charlie_query) {
+    line-height: $body_leading_charlie/$fontsize_charlie;
+  }
+
+  @media all and (min-width: $delta_query) {
+    line-height: $body_leading_delta/$fontsize_delta;
+  }
+
+  @media all and (min-width: $echo_query) {
+    line-height: $body_leading_echo/$fontsize_echo;
+  }
+}
+
+p{
+  margin-top: rem($body_leading);
+  margin-bottom: rem($body_leading);
+
+  @media all and (min-width: $beta_query) {
+    margin-top: rem($body_leading_beta);
+    margin-bottom: rem($body_leading_beta);
+  }
+
+  @media all and (min-width: $charlie_query) {
+    margin-top: rem($body_leading_charlie);
+    margin-bottom: rem($body_leading_charlie);
+  }
+
+  @media all and (min-width: $delta_query) {
+    margin-top: rem($body_leading_delta);
+    margin-bottom: rem($body_leading_delta);
+  }
+
+  @media all and (min-width: $echo_query) {
+    margin-top: rem($body_leading_echo);
+    margin-bottom: rem($body_leading_echo);
+  }
+}
+
+img,
+object,
+embed {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+strong{
+  font-weight: bold;
+}
+
+em,
+blockquote{
+  font-style: italic;
+}
+
+a{
+  color: $action-color;
+  text-decoration: none;
+}
+
+
+
+// STATES -----------------------------------------------------------------------
+
+@media all and (min-width: $charlie_query) {
+  p a:hover{
+    color: $body-textcolor;
+  }
+}
+
+::selection {
+  background: $highlight-bgcolor; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: $highlight-bgcolor; /* Gecko Browsers */
+}

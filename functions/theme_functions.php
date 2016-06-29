@@ -1,0 +1,159 @@
+<?php
+
+// THEME FUNCTIONS = After initial setup in functions.php (action, after_setup_theme), run theme functions.
+// Please group your other functions in other files and setup a new require for each file from functions.php.
+// Example of groups that could be used:
+// - custom-template-tags.php
+// - ajax-triggered-functions.php
+// - advanced-custom-fields.php
+// - think-you-get-it.php
+
+// REGISTER MENU -------------------------------------------------------------------
+
+if ( !function_exists( 'register_my_menu' )) {
+    function register_my_menu()
+    {
+        register_nav_menu('navigation', __('Huvudnavigation'));
+    }
+
+    add_action('init', 'register_my_menu');
+}
+
+
+// ADD CUSTOM BODY CLASSES -------------------------------------------------------------------
+
+if ( !function_exists('body_classes')) {
+    function body_classes($classes){
+        if (is_singular() && !has_post_thumbnail()){
+            $classes[] = 'no-thumb';
+        }
+
+        if (is_single() && has_post_format('video')){
+            $classes[] = 'has-video';
+        }
+
+        if (is_front_page() && is_home() && !is_paged()) {
+            $classes[] = 'startpage';
+        }
+
+        return $classes;
+    }
+
+    add_filter('body_class', 'body_classes');
+}
+
+
+
+// BUILD HEAD-TITLES -------------------------------------------------------------------
+// Note: This will be the fallback for using a seo plugin to rebuild your titles. For example use Yoast SEO: https://wordpress.org/plugins/wordpress-seo/
+
+if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
+    /**
+     * Filters wp_title to print a neat <title> tag based on what is being viewed.
+     *
+     * @param string $title Default title text for current view.
+     * @param string $sep Optional separator.
+     * @return string The filtered title.
+     */
+
+    if ( !function_exists( 'bento_wp_title' )) {
+        function bento_wp_title($title, $sep)
+        {
+            if (is_feed()) {
+                return $title;
+            }
+
+            global $page, $paged;
+
+            // Add the blog name
+            $title .= get_bloginfo('name', 'display');
+
+            // Add the blog description for the home/front page.
+            $site_description = get_bloginfo('description', 'display');
+            if ($site_description && (is_home() || is_front_page())) {
+                $title .= " $sep $site_description";
+            }
+
+            // Add a page number if necessary:
+            if (($paged >= 2 || $page >= 2) && !is_404()) {
+                $title .= " $sep " . sprintf(__('Page %s', 'bento'), max($paged, $page));
+            }
+
+            return $title;
+        }
+
+        add_filter('wp_title', 'bento_wp_title', 10, 2);
+    }
+endif;
+
+
+
+// FILTER ARCHIVE TITLES/LABELS -------------------------------------------------------------------
+
+add_filter('get_the_archive_title', function ($title) {
+    $title = single_cat_title('', false);
+    return $title;
+});
+
+
+
+// FILTER ARCHIVE DESCRIPTIONS (REMOVE <P>) -------------------------------------------------------------------
+
+if ( !function_exists( 'strip_archive_descriptions_p' )) {
+    function strip_archive_descriptions_p($description)
+    {
+        $remove = array('<p>', '</p>');
+        $description = str_replace($remove, "", $description);
+        return $description;
+    }
+
+    add_filter('get_the_archive_description', 'strip_archive_descriptions_p');
+}
+
+
+
+// MARK PRIVATE-POST-TITLES, FOR LOGGED IN USERS -------------------------------------------------------------------
+
+if ( !function_exists( 'trim_private_titles' )) {
+    function trim_private_titles($string){
+        $string = str_replace("Privat: ", "&#126; ", $string);
+        return $string;
+    }
+    add_filter('the_title', 'trim_private_titles');
+}
+
+
+
+// ADD CUSTOM FIELDS TO FEED -------------------------------------------------------------------
+// Update var $my_customfield Uncomment "add_filter('the_content', 'add_cf_to_feed');" below, if you have any custom fields. This code template adds a preamble set by a custom field, to rss-feeds
+
+if ( !function_exists('add_cf_to_feed')) {
+    function add_cf_to_feed($content) {
+        if (is_feed() && is_main_query()) {
+            $my_customfield = get_post_meta(get_the_ID(), 'post_preamble', true);
+
+            if ($my_customfield) {
+                $preambleBuild = '<p>' . $my_customfield . '</p>';
+                $content = $preambleBuild . $content;
+            }
+        }
+        return $content;
+    }
+
+    // add_filter('the_content', 'add_cf_to_feed');
+}
+
+
+// MOVE YOAST SEO-MODULE TO POSTS BOTTOM -------------------------------------------------------------------
+// Using Yoast Seo plugin? You should: https://wordpress.org/plugins/wordpress-seo/
+// Dated 2016-06-02
+
+
+if ( !function_exists( 'yoasttobottom' )) {
+    function yoasttobottom()
+    {
+        return 'low';
+    }
+
+    add_filter('wpseo_metabox_prio', 'yoasttobottom');
+}

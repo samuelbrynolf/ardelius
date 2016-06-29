@@ -1,0 +1,85 @@
+
+// HEADER-CLASSES -----------------------------------------------------------------------
+
+.a-title-XL,
+.a-title-L,
+.a-title-M,
+.a-title-S,
+strong{
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  a,
+  span,
+  strong{
+    font-weight: inherit;
+  }
+}
+
+.a-title-XL{
+  font-size: rem(60);
+  line-height: (72/60);
+}
+
+.a-title-L{
+  font-size: rem(48);
+  line-height: (60/48);
+}
+
+.a-title-M{
+  font-size: rem(36);
+  line-height: (48/36);
+}
+
+.a-title-S{
+  font-size: rem(24);
+  line-height: (36/24);
+  font-weight: bold;
+}
+
+.a-preamble{
+  font-size: rem(21);
+  line-height: (30/21);
+}
+
+.a-fineprint{
+  font-size: rem(14);
+  line-height: (21/14);
+  color: $subtle-textcolor;
+}
+
+//a[href^="http://"],
+//a[href^="https://"]{
+//  word-wrap: break-word;
+//}
+//
+//a[href^="http://www.aventyret.com"],
+//a[href^="http://aventyret.com"],
+//a[href^="https://www.aventyret.com"],
+//a[href^="https://aventyret.com"]{
+//  word-wrap: normal;
+//}
+
+
+
+// LISTS -----------------------------------------------------------------------
+
+.a-ol,
+.a-ul {
+  margin-top: rem($body_leading);
+  margin-bottom: rem($body_leading);
+
+  li + li {
+    margin-top: rem($body_leading/2);
+  }
+}
+
+.a-ol {
+  margin-left: 1.875em;
+  list-style: decimal;
+}
+
+.a-ul {
+  margin-left: 1.875em;
+  list-style: disc;
+}

@@ -1,0 +1,64 @@
+
+// ATOMS ---------------------------------------------------------------
+
+.a-inputText,
+.a-textarea{
+  width: 100%;
+  height: rem($inputheight);
+  font-size: rem($inputfontsize);
+  line-height: rem($inputheight);
+  font-family: $bodyfont;
+  background-color: $input-bgcolor;
+
+  &::-webkit-input-placeholder {
+    color: $subtle-textcolor;
+  }
+
+  &:-moz-placeholder {
+    color: $subtle-textcolor;
+    opacity: 1;
+  }
+
+  &::-moz-placeholder {
+    color: $subtle-textcolor;
+    opacity: 1;
+  }
+
+  &:-ms-input-placeholder {
+    color: $subtle-textcolor;
+  }
+
+  &.inline{
+    display: inline-block;
+    width: auto;
+  }
+}
+
+.a-btn{
+  display: block;
+  width: auto;
+  height: rem($inputheight);
+  padding-right: rem($alpha_gutter/$btnfontsize);
+  padding-left:  rem($alpha_gutter/$btnfontsize);
+  font-family: $bodyfont;
+  font-size: rem($btnfontsize);
+  line-height: rem($inputheight);
+  text-align: center;
+  text-decoration: none;
+  color: $action-color;
+  border: 1px solid $action-color;
+  background-color: $body-bgcolor;
+}
+
+
+
+// STATES ---------------------------------------------------------------
+
+@media all and (min-width: $charlie_query) {
+
+  .a-btn:hover{
+    color: $body-textcolor;
+    border-color: $body-textcolor;
+    cursor: pointer;
+  }
+}
