@@ -4,25 +4,54 @@ get_header();
 
 	if (is_front_page() && is_home()) {
 
-		echo '<section id="" class="">';
+		echo '<section id="" class="o-section">';
 			get_template_part('partials/start/start-hero');
 		echo '</section>'; ?>
 
-		<section>
+		<section class="o-section">
 			<h2 class="l-gutter a-title-M">Reportage</h2>
 			<ul class="l-container">
-				<li class="l-span-C4">[BILD] Repo-1</li>
-				<li class="l-span-C4">[BILD] Repo-2</li>
-				<li class="l-span-C4">[BILD] Repo-3</li>
+				<li class="l-span-C6">
+					<?php makeitSrcset(5574, null, null, null, null, null, 'm-prf ratio-16-9'); ?>
+					<h3 class="a-title-s"><a href="#">Reportage titel</a></h3>
+					<p class="a-fineprint">Meta information</p>
+				</li>
+				<li class="l-span-C6">
+					<?php makeitSrcset(5573, null, null, null, null, null, 'm-prf ratio-16-9'); ?>
+					<h3 class="a-title-s"><a href="#">Reportage titel</a></h3>
+					<p class="a-fineprint">Meta information</p>
+				</li>
 			</ul>
 		</section>
 
-		<section>
-			<h2 class="l-gutter a-title-M">Porträtt</h2>
-			<ul class="l-container">
-				<li class="l-span-C4">[BILD] Port-1</li>
-				<li class="l-span-C4">[BILD] Port-2</li>
-				<li class="l-span-C4">[BILD] Port-3</li>
+		<section class="l-gutter o-section">
+			<h2 class="a-title-M">Porträtt</h2>
+			<ul class="js-salvattore" data-columns>
+				<li>
+					<?php makeitSrcset(5572, null, null, null, null, null, 'm-prf ratio-16-9'); ?>
+					<h3 class="a-title-s"><a href="#">Reportage titel</a></h3>
+					<p class="a-fineprint">Meta information</p>
+				</li>
+				<li>
+					<?php makeitSrcset(5571, null, null, null, null, null, 'm-prf ratio-16-9'); ?>
+					<h3 class="a-title-s"><a href="#">Reportage titel</a></h3>
+					<p class="a-fineprint">Meta information</p>
+				</li>
+				<li>
+					<?php makeitSrcset(5570, null, null, null, null, null, 'm-prf ratio-16-9'); ?>
+					<h3 class="a-title-s"><a href="#">Reportage titel</a></h3>
+					<p class="a-fineprint">Meta information</p>
+				</li>
+				<li>
+					<?php makeitSrcset(5569, null, null, null, null, null, 'm-prf ratio-16-9'); ?>
+					<h3 class="a-title-s"><a href="#">Reportage titel</a></h3>
+					<p class="a-fineprint">Meta information</p>
+				</li>
+				<li>
+					<?php makeitSrcset(5568, null, null, null, null, null, 'm-prf ratio-16-9'); ?>
+					<h3 class="a-title-s"><a href="#">Reportage titel</a></h3>
+					<p class="a-fineprint">Meta information</p>
+				</li>
 			</ul>
 		</section>
 
@@ -32,13 +61,34 @@ get_header();
 			<p>Ingress + länk</p>
 		</section>
 
-		<section>
-			<h2 class="l-gutter a-title-M">Singlar</h2>
-			<ul class="l-container">
-				<li class="l-span-C3">[BILD] Singel-1</li>
-				<li class="l-span-C3">[BILD] Singel-2</li>
-				<li class="l-span-C3">[BILD] Singel-3</li>
-				<li class="l-span-C3">[BILD] Singel-4</li>
+		<section class="l-gutter o-section">
+			<h2 class="a-title-M">Singlar</h2>
+			<ul class="js-salvattore-test" data-columns>
+				<li>
+					<?php makeitSrcset(5572, null, null, null, null, null, 'm-prf ratio-16-9', null, 'true'); ?>
+					<h3 class="a-title-s"><a href="#">Reportage titel</a></h3>
+					<p class="a-fineprint">Meta information</p>
+				</li>
+				<li>
+					<?php makeitSrcset(5571, null, null, null, null, null, 'm-prf ratio-16-9'); ?>
+					<h3 class="a-title-s"><a href="#">Reportage titel</a></h3>
+					<p class="a-fineprint">Meta information</p>
+				</li>
+				<li>
+					<?php makeitSrcset(5570, null, null, null, null, null, 'm-prf ratio-16-9'); ?>
+					<h3 class="a-title-s"><a href="#">Reportage titel</a></h3>
+					<p class="a-fineprint">Meta information</p>
+				</li>
+				<li>
+					<?php makeitSrcset(5569, null, null, null, null, null, 'm-prf ratio-16-9'); ?>
+					<h3 class="a-title-s"><a href="#">Reportage titel</a></h3>
+					<p class="a-fineprint">Meta information</p>
+				</li>
+				<li>
+					<?php makeitSrcset(5568, null, null, null, null, null, 'm-prf ratio-16-9'); ?>
+					<h3 class="a-title-s"><a href="#">Reportage titel</a></h3>
+					<p class="a-fineprint">Meta information</p>
+				</li>
 			</ul>
 		</section>
 
