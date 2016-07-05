@@ -4,7 +4,7 @@
 <?php get_template_part('partials/globals/global-head'); ?>
 
 <body <?php body_class(); ?>>
-	<?php get_template_part('partials/globals/global-header'); ?>
+	<?php //get_template_part('partials/globals/global-header'); ?>
 
 
 
