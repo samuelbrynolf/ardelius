@@ -122,27 +122,15 @@ if ( !function_exists( 'trim_private_titles' )) {
     add_filter('the_title', 'trim_private_titles');
 }
 
+// REMOVE EDITOR FOR PAGES -------------------------------------------------------------------
 
-
-// ADD CUSTOM FIELDS TO FEED -------------------------------------------------------------------
-// Update var $my_customfield Uncomment "add_filter('the_content', 'add_cf_to_feed');" below, if you have any custom fields. This code template adds a preamble set by a custom field, to rss-feeds
-
-if ( !function_exists('add_cf_to_feed')) {
-    function add_cf_to_feed($content) {
-        if (is_feed() && is_main_query()) {
-            $my_customfield = get_post_meta(get_the_ID(), 'post_preamble', true);
-
-            if ($my_customfield) {
-                $preambleBuild = '<p>' . $my_customfield . '</p>';
-                $content = $preambleBuild . $content;
-            }
-        }
-        return $content;
+if ( !function_exists('remove_page_editor')) {
+    function remove_page_editor() {
+        remove_post_type_support( 'page', 'editor' );
     }
 
-    // add_filter('the_content', 'add_cf_to_feed');
+    add_action( 'init', 'remove_page_editor' );
 }
-
 
 // MOVE YOAST SEO-MODULE TO POSTS BOTTOM -------------------------------------------------------------------
 // Using Yoast Seo plugin? You should: https://wordpress.org/plugins/wordpress-seo/
