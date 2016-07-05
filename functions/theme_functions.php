@@ -1,26 +1,4 @@
-<?php
-
-// THEME FUNCTIONS = After initial setup in functions.php (action, after_setup_theme), run theme functions.
-// Please group your other functions in other files and setup a new require for each file from functions.php.
-// Example of groups that could be used:
-// - custom-template-tags.php
-// - ajax-triggered-functions.php
-// - advanced-custom-fields.php
-// - think-you-get-it.php
-
-// REGISTER MENU -------------------------------------------------------------------
-
-if ( !function_exists( 'register_my_menu' )) {
-    function register_my_menu()
-    {
-        register_nav_menu('navigation', __('Huvudnavigation'));
-    }
-
-    add_action('init', 'register_my_menu');
-}
-
-
-// ADD CUSTOM BODY CLASSES -------------------------------------------------------------------
+<?php // ADD CUSTOM BODY CLASSES -------------------------------------------------------------------
 
 if ( !function_exists('body_classes')) {
     function body_classes($classes){
