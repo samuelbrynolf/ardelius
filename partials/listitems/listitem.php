@@ -1,14 +1,11 @@
-<?php // Remember to style the containing link to "display: block;" -- if you go with this markup ?>
+<?php // Remember to style the containing link to "display: block;" -- if you go with this markup
 
-<a class="" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-    <?php the_title( '<h3 class="a-medium a-listitem-title">', '</h3>' ); ?>
-    <p class="<?php echo (has_post_thumbnail() ? ' has-thumb' : ''); ?>">
-
-        <?php the_time('Y-m-d');
-        if (has_tag()) {
-            echo strip_tags(get_the_tag_list(' &#183; ',' &#183; ',''));
-        }
-        echo '<br/>';
-        echo get_the_excerpt(); ?>
-    </p>
-</a>
+echo '<a href="'.get_the_permalink().'" title="Länk till '.get_the_title().'">';
+    if(function_exists('makeitSrcset') && has_post_thumbnail()) {
+        makeitSrcset(get_post_thumbnail_id($post->ID));
+    }
+    the_title('<h3 class="">', '</h3>');
+    if(get_field('acf_cpt_meta')){
+        echo '<p>'.get_field('acf_cpt_meta').'</p>';
+    }
+echo '</a>';
