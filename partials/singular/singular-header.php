@@ -1,11 +1,14 @@
-<header class="">
-    <?php the_title( '<h1 class="">', '</h1>' );
+<header>
+    <?php the_title( '<h1>', '</h1>' );
+    if(function_exists('makeitSrcset') && has_post_thumbnail()) {
+        makeitSrcset(get_post_thumbnail_id($post->ID));
+    }
+
+    if(function_exists('get_field') && get_field('acf_reportage_detail')){
+        echo get_field('acf_reportage_detail');
+    }
 
     echo '<p class="">';
-    the_date('', '', '');
-    if (has_tag()) {
-        the_tags(' &#183; ', ' &#183; ');
-    }
-    edit_post_link('Redigera inl&auml;gg', ' &mdash; ', '');
+        edit_post_link('Redigera inl&auml;gg', ' &mdash; ', '');
     echo '</p>'; ?>
 </header>
