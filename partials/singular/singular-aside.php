@@ -14,11 +14,12 @@
     $related_posts = new WP_Query($related_posts_args);
 
     if ($related_posts->have_posts()) {
-
-        while ($related_posts->have_posts()) {
-            $related_posts->the_post();
-            hentry_item($post->ID);
-        }
-        wp_reset_postdata();
+        echo '<ul class="js-salvattore" data-columns>';
+            while ($related_posts->have_posts()) {
+                $related_posts->the_post();
+                hentry_item($post->ID);
+            }
+            wp_reset_postdata();
+        echo '</ul>';
     } ?>
 </aside>

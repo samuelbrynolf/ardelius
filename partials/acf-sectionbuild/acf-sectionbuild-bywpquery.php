@@ -38,10 +38,12 @@ if($post_slug){
 			echo '<h2>'.get_sub_field('acf_section_cpt-loop_title').'</h2>';
 		}
 
-		while ($sectional_loop->have_posts()) {
-			$sectional_loop->the_post();
-			hentry_item($post->ID);
-		}
-		wp_reset_postdata();
+		echo '<ul class="js-salvattore" data-columns>';
+			while ($sectional_loop->have_posts()) {
+				$sectional_loop->the_post();
+				hentry_item($post->ID);
+			}
+			wp_reset_postdata();
+		echo '</ul>';
 	}
 } // End if slug exists
