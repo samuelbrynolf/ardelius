@@ -34,16 +34,18 @@ if($post_slug){
 	$sectional_loop = new WP_Query($sectional_loop_args);
 
 	if ($sectional_loop->have_posts()) {
-		if(get_sub_field('acf_section_cpt-loop_title')){
-			echo '<h2>'.get_sub_field('acf_section_cpt-loop_title').'</h2>';
-		}
-
-		echo '<ul class="js-salvattore" data-columns>';
-			while ($sectional_loop->have_posts()) {
-				$sectional_loop->the_post();
-				hentry_item($post->ID);
+		echo '<section class="o-section">';
+			if(get_sub_field('acf_section_cpt-loop_title')){
+				echo '<h2 class="l-gutter a-section-title a-title-M">'.get_sub_field('acf_section_cpt-loop_title').'</h2>';
 			}
-			wp_reset_postdata();
-		echo '</ul>';
+
+			echo '<ul class="js-salvattore l-container js-layout-'.$col_count.'" data-columns>';
+				while ($sectional_loop->have_posts()) {
+					$sectional_loop->the_post();
+					hentry_item($post->ID);
+				}
+				wp_reset_postdata();
+			echo '</ul>';
+		echo '</section>';
 	}
 } // End if slug exists

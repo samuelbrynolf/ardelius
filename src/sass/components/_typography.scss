@@ -6,6 +6,7 @@
 .a-title-M,
 .a-title-S,
 strong{
+  font-family: $captionfont-1;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 
@@ -27,12 +28,12 @@ strong{
 }
 
 .a-title-M{
-  font-size: rem(36);
-  line-height: (48/36);
+  font-size: rem(21);
+  line-height: (36/21);
 }
 
 .a-title-S{
-  font-size: rem(24);
+  font-size: rem(18);
   line-height: (36/24);
   font-weight: bold;
 }
@@ -43,8 +44,8 @@ strong{
 }
 
 .a-fineprint{
-  font-size: rem(14);
-  line-height: (21/14);
+  font-size: rem(13);
+  line-height: (21/13);
   color: $subtle-textcolor;
 }
 

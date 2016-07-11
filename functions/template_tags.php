@@ -36,14 +36,16 @@ if(!function_exists('hentry_item')){
 			$vw_mq5 = 100;
 		}
 
-		echo '<li class="l-span">';
+		echo '<li>';
 			echo ($lightbox ? '' : '<a href="'.get_the_permalink().'" title="Länk till '.get_the_title().'">');
 				if(function_exists('makeitSrcset') && has_post_thumbnail()) {
 					makeitSrcset(get_post_thumbnail_id($postID, $vw_mq1, $vw_mq2, $vw_mq3, $vw_mq4, $vw_mq5, null, null, ($lightbox ? 'enable' : null)));
 				}
 				the_title('<h3 class="">', '</h3>');
 				if(function_exists('get_field') && get_field('acf_cpt_meta')){
-					echo '<p>'.get_field('acf_cpt_meta').'</p>';
+					echo '<div class="a-fineprint">';
+						echo get_field('acf_cpt_meta');
+					echo '</div>';
 				}
 			echo ($lightbox ? '' : '</a>');
 		echo '</li>';

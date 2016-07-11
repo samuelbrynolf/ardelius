@@ -1,27 +1,45 @@
-.js-salvattore[data-columns]::before {
-  content: '3 .column.size-1of3';
+.js-layout-1[data-columns]::before {
+  content: '1 .l-span.js-layout-1-item';
 }
 
-/* These are the classes that are going to be applied: */
-.column { float: left; }
-.size-1of3 { width: 33.333%; }
-
-.js-salvattore-test[data-columns]::before {
-  content: '2 .column.size-1of2';
+.js-layout-2[data-columns]::before {
+  content: '2 .l-span.js-layout-2-item';
 }
 
-/* These are the classes that are going to be applied: */
-.column {
-  float: left;
+.js-layout-3[data-columns]::before {
+  content: '3 .l-span.js-layout-3-item';
 }
 
-.size-1of3 { width: 33.333%; }
-.size-1of2 { width: 50%; }
-
-li{
-  padding: 20px;
+.js-layout-4[data-columns]::before {
+  content: '4 .l-span.js-layout-4-item';
 }
 
-li img{
-  margin-bottom: 10px;
+.js-layout-1-item,
+.js-layout-2-item,
+.js-layout-3-item,
+.js-layout-4-item {
+  width: 100%;
+  margin-bottom: $leading;
 }
+
+@media all and (min-width: $beta_query) {
+  .js-layout-2-item,
+  .js-layout-3-item,
+  .js-layout-4-item {
+    width: 50%;
+  }
+}
+
+@media all and (min-width: $charlie_query) {
+  .js-layout-3-item,
+  .js-layout-4-item {
+    width: 33.33%;
+  }
+}
+
+@media all and (min-width: $delta_query) {
+  .js-layout-4-item {
+    width: 25%;
+  }
+}
+

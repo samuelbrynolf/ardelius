@@ -1,0 +1,29 @@
+
+// Atoms -----------------------------------------------
+
+.a-global-header__title{
+  //font-family: $captionfont-1;
+  font-weight: bold;
+  line-height: rem($body_leading*3);
+
+  a{
+    color: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
+
+  span{
+    font-family: $bodyfont;
+    font-weight: 400;
+    //font-style: italic;
+    color: $subtle-textcolor;
+  }
+}
+
+
+
+// Molecules -----------------------------------------------
+
+.m-global-header{
+
+}
