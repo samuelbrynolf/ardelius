@@ -1,0 +1,45 @@
+// ATOMS
+
+.a-bio-title{
+  font-size: rem(27);
+  line-height: (42/27);
+  margin-bottom: $leading;
+  font-weight: 700;
+  text-align: left;
+}
+
+
+
+// MOLECULES
+
+.m-bio-text{
+  font-size: rem(18);
+  line-height: (30/18);
+
+  p + p{
+    margin-top: $leading;
+  }
+
+  a{
+    padding-bottom: rem(3);
+    color: inherit;
+    border-bottom: 1px solid;
+  }
+}
+
+
+
+// ORGANISM
+
+.o-global-footer{
+  padding-top: $leading*3;
+  padding-bottom: $leading*4;
+  background-color: $subtle-bgcolor;
+}
+
+.o-bio{
+
+  .a-avatar img{
+    border-radius: 50%;
+  }
+}

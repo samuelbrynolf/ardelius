@@ -2,9 +2,12 @@
 // Atoms -----------------------------------------------
 
 .a-global-header__title{
-  //font-family: $captionfont-1;
-  font-weight: bold;
-  line-height: rem($body_leading*3);
+  font-family: $captionfont-1;
+  font-size: rem(13);
+  //@extend .a-fineprint;
+  //font-weight: bold;
+  line-height: $leading*3;
+  //text-align: center;
 
   a{
     color: inherit;

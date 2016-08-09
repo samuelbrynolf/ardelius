@@ -5,7 +5,8 @@
 .a-title-L,
 .a-title-M,
 .a-title-S,
-strong{
+strong,
+.a-hentryitem-title{
   font-family: $captionfont-1;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -30,6 +31,7 @@ strong{
 .a-title-M{
   font-size: rem(21);
   line-height: (36/21);
+  text-align: center;
 }
 
 .a-title-S{

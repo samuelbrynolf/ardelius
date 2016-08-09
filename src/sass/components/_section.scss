@@ -1,9 +1,18 @@
 // Atoms -----------------------------
 
 .a-section-title{
-  margin-bottom: $leading;
+  margin-bottom: $leading*2;
 }
 
+.a-section-archivelink{
+  margin-top: $leading;
+  text-align: right;
+  color: $body-textcolor;
+
+  a{
+    color: inherit;
+  }
+}
 
 
 // Molecules -----------------------------
@@ -15,4 +24,43 @@
 .o-section{
   margin-top: $leading*2;
   margin-bottom: $leading*2;
+
+  & + .o-section,
+  &.is-standalone{
+    padding-top: $leading*2;
+    border-top: 1px solid $subtle-bordercolor;
+  }
+
+  &.is-standalone{
+    margin-top: 0;
+  }
+
+  a{
+    display: block;
+    color: inherit;
+  }
+}
+
+
+
+// States
+
+.o-section.s-is-blocsection{
+
+  .m-hentryitem .mis_container + .a-hentryitem-title{
+    margin-top: rem($body_leading + 9);
+    margin-bottom: $leading;
+    font-size: rem(27);
+    line-height: (42/27);
+    font-weight: 700;
+
+    & + .a-hentryitem-meta{
+      margin-top: 0;
+    }
+  }
+
+  .a-hentryitem-meta{
+    @extend .m-bio-text;
+    color: inherit;
+  }
 }

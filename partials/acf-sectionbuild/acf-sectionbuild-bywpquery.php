@@ -25,16 +25,27 @@ if($post_slug){
 		'order'   => 'ASC',
 	);
 
+	$blogsection = null;
+
 	if( $post_slug == 'post'){
 		$sectional_loop_args = $sectional_loop_cpt;
+		$sectional_loop_sectionlink = get_page_link(get_option('page_for_posts', true));
+		$blogsection = true;
 	} else {
 		$sectional_loop_args = array_merge($sectional_loop_cpt, $sectional_loop_order);
+		$sectional_loop_sectionlink = get_post_type_archive_link($post_slug);
 	}
 
 	$sectional_loop = new WP_Query($sectional_loop_args);
 
+	if( $post_slug == 'post' || $post_slug == 'reportage'){
+		$meta_descr = true;
+	} else {
+		$meta_descr = false;
+	}
+
 	if ($sectional_loop->have_posts()) {
-		echo '<section class="o-section">';
+		echo '<section class="o-section'.($blogsection ? ' s-is-blocsection' : '').'">';
 			if(get_sub_field('acf_section_cpt-loop_title')){
 				echo '<h2 class="l-gutter a-section-title a-title-M">'.get_sub_field('acf_section_cpt-loop_title').'</h2>';
 			}
@@ -42,10 +53,14 @@ if($post_slug){
 			echo '<ul class="js-salvattore l-container js-layout-'.$col_count.'" data-columns>';
 				while ($sectional_loop->have_posts()) {
 					$sectional_loop->the_post();
-					hentry_item($post->ID);
+					hentry_item($post->ID, $meta_descr);
 				}
 				wp_reset_postdata();
 			echo '</ul>';
+
+			if(get_sub_field('acf_section_cpt-sectionlink-text')){
+				echo '<p class="l-gutter a-fineprint a-section-archivelink"><a href="'.$sectional_loop_sectionlink.'">'.(get_sub_field('acf_section_cpt-sectionlink-text') ? get_sub_field('acf_section_cpt-sectionlink-text') : 'Visa alla').'</a></p>';
+			}
 		echo '</section>';
 	}
 } // End if slug exists
