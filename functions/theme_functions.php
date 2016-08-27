@@ -22,6 +22,19 @@ if ( !function_exists('body_classes')) {
 
 
 
+// MANIPULATE LOOPS -------------------------------------------------------------------
+
+function cpt_query($query){
+    if($query->is_main_query() && !is_home()){
+        $query->set('orderby', 'menu_order');
+        $query->set('order', 'ASC');
+    }
+    return $query;
+}
+add_action('pre_get_posts','cpt_query');
+
+
+
 // BUILD HEAD-TITLES -------------------------------------------------------------------
 // Note: This will be the fallback for using a seo plugin to rebuild your titles. For example use Yoast SEO: https://wordpress.org/plugins/wordpress-seo/
 

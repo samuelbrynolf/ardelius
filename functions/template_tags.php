@@ -5,10 +5,14 @@ if(!function_exists('hentry_item')){
 		$postID = null,
 		$meta_descr = false,
 		$layout_cols = 4,
-		$lightbox = false){
+		$lightbox = null){
 
 		if(is_null($postID) || !is_numeric($layout_cols)){
 			return;
+		}
+
+		if(is_null($lightbox) || !$lightbox){
+			$lightbox = false;
 		}
 
 		if($layout_cols == 4){
@@ -37,10 +41,10 @@ if(!function_exists('hentry_item')){
 			$vw_mq5 = 100;
 		}
 
-		echo '<li class="m-hentryitem'.($meta_descr ? ' s-has_meta_descr' : ' s-has_no_meta_descr').'">';
+		echo '<div class="m-hentryitem'.($meta_descr ? ' s-has_meta_descr' : ' s-has_no_meta_descr').'">';
 			echo ($lightbox ? '' : '<a href="'.get_the_permalink().'" title="Länk till '.get_the_title().'">');
 				if(function_exists('makeitSrcset') && has_post_thumbnail()) {
-					makeitSrcset(get_post_thumbnail_id($postID, $vw_mq1, $vw_mq2, $vw_mq3, $vw_mq4, $vw_mq5, null, null, ($lightbox ? 'enable' : null)));
+					makeitSrcset(get_post_thumbnail_id($postID), $vw_mq1, $vw_mq2, $vw_mq3, $vw_mq4, $vw_mq5, null, null, ($lightbox ? 'lightbox-true' : ''));
 				}
 				the_title('<h3 class="a-hentryitem-title">', '</h3>');
 				if($meta_descr == true){
@@ -53,6 +57,6 @@ if(!function_exists('hentry_item')){
 					echo '</div>';
 				}
 			echo ($lightbox ? '' : '</a>');
-		echo '</li>';
+		echo '</div>';
 	}
 }

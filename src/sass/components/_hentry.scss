@@ -29,6 +29,22 @@
   position: relative;
   margin-bottom: rem($alpha_gutter);
 
+  @media all and (min-width: $beta_query) {
+    margin-bottom: rem($beta_gutter);
+  }
+
+  @media all and (min-width: $charlie_query) {
+    margin-bottom: rem($charlie_gutter);
+  }
+
+  @media all and (min-width: $delta_query) {
+    margin-bottom: rem($delta_gutter);
+  }
+
+  @media all and (min-width: $echo_query) {
+    margin-bottom: rem($echo_gutter);
+  }
+
   .a-hentryitem-title{
     position: absolute;
     bottom: 0;
@@ -41,6 +57,6 @@
     color: #eee;
     background-image: linear-gradient(top, rgba(black, 0.00), rgba(black, 1));
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#000000', EndColorStr='#000000');
-
+    pointer-events: none;
   }
 }

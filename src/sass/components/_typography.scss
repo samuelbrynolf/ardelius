@@ -6,8 +6,9 @@
 .a-title-M,
 .a-title-S,
 strong,
-.a-hentryitem-title{
-  font-family: $captionfont-1;
+.a-hentryitem-title,
+.a-bio-title{
+  //font-family: $captionfont-1;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 

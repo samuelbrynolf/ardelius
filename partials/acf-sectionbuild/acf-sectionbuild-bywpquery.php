@@ -40,8 +40,10 @@ if($post_slug){
 
 	if( $post_slug == 'post' || $post_slug == 'reportage'){
 		$meta_descr = true;
+		$lightbox = false;
 	} else {
 		$meta_descr = false;
+		$lightbox = true;
 	}
 
 	if ($sectional_loop->have_posts()) {
@@ -50,13 +52,13 @@ if($post_slug){
 				echo '<h2 class="l-gutter a-section-title a-title-M">'.get_sub_field('acf_section_cpt-loop_title').'</h2>';
 			}
 
-			echo '<ul class="js-salvattore l-container js-layout-'.$col_count.'" data-columns>';
+			echo '<div class="js-salvattore l-container js-layout-'.$col_count.'" data-columns>';
 				while ($sectional_loop->have_posts()) {
 					$sectional_loop->the_post();
-					hentry_item($post->ID, $meta_descr);
+					hentry_item($post->ID, $meta_descr, $col_count, $lightbox);
 				}
 				wp_reset_postdata();
-			echo '</ul>';
+			echo '</div>';
 
 			if(get_sub_field('acf_section_cpt-sectionlink-text')){
 				echo '<p class="l-gutter a-fineprint a-section-archivelink"><a href="'.$sectional_loop_sectionlink.'">'.(get_sub_field('acf_section_cpt-sectionlink-text') ? get_sub_field('acf_section_cpt-sectionlink-text') : 'Visa alla').'</a></p>';
