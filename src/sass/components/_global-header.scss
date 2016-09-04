@@ -2,24 +2,43 @@
 // Atoms -----------------------------------------------
 
 .a-global-header__title{
-  font-family: $captionfont-1;
-  font-size: rem(13);
+  //font-family: $captionfont-1;
+  //font-size: rem(13);
   //@extend .a-fineprint;
   //font-weight: bold;
-  line-height: $leading*3;
+  //line-height: $leading*3;
   //text-align: center;
 
   a{
     color: inherit;
     font-weight: inherit;
-    line-height: inherit;
+    //line-height: inherit;
   }
 
   span{
-    font-family: $bodyfont;
-    font-weight: 400;
+    //font-family: $bodyfont;
+    //font-weight: 400;
     //font-style: italic;
-    color: $subtle-textcolor;
+    //color: $subtle-textcolor;
+  }
+}
+
+.a-global-nav-toggler{
+  position: fixed;
+  right: rem($alpha_gutter);
+  z-index: 1000;
+  display: block;
+  font-family: inherit;
+  font-size: rem($btnfontsize);
+  line-height: inherit;
+  text-align: right;
+
+  @media all and (min-width: $beta_query) {
+    right: rem($beta_gutter);
+  }
+
+  @media all and (min-width: $charlie_query) {
+    display: none;
   }
 }
 
@@ -28,5 +47,72 @@
 // Molecules -----------------------------------------------
 
 .m-global-header{
+  line-height: $leading*3;
+}
 
+.m-global-nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 500;
+  padding-top: $leading*6;
+  opacity: 0;
+  pointer-events: none;
+  background-color: rgba($body-bgcolor, 0.87);
+
+  li{
+    transform: translateY($leading*3);
+    text-align: center;
+  }
+
+  a{
+    color: inherit;
+  }
+
+  @media all and (min-width: $charlie_query) {
+    position: static;
+    float: right;
+    width: auto;
+    padding-top: 0;
+    opacity: 1;
+    pointer-events: auto;
+
+    li{
+      display: inline-block;
+      float: left;
+      transform: translateY(0);
+
+      & + li{
+        margin-left: $leading;
+      }
+    }
+  }
+}
+
+
+
+// States -----------------------------------------------
+
+.m-global-nav.s-is-active{
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+
+  li{
+    transform: translateY(0);
+  }
+}
+
+
+
+// Animation -----------------------------------------------
+
+.m-global-nav{
+  transition: opacity $anim_speed ease-out;
+
+  li{
+   transition: transform $anim_speed ease-out;
+  }
 }
