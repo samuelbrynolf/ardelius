@@ -61,7 +61,7 @@ if($post_slug){
 			echo '</div>';
 
 			if(get_sub_field('acf_section_cpt-sectionlink-text')){
-				echo '<p class="l-gutter a-fineprint a-section-archivelink"><a href="'.$sectional_loop_sectionlink.'">'.(get_sub_field('acf_section_cpt-sectionlink-text') ? get_sub_field('acf_section_cpt-sectionlink-text') : 'Visa alla').'</a></p>';
+				echo '<p class="l-gutter a-fineprint a-section-archivelink"><a href="'.$sectional_loop_sectionlink.'">'.(get_sub_field('acf_section_cpt-sectionlink-text') ? get_sub_field('acf_section_cpt-sectionlink-text') : 'Visa alla').' &rarr;</a></p>';
 			}
 		echo '</section>';
 	}

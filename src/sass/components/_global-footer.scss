@@ -3,9 +3,15 @@
 .a-bio-title{
   font-size: rem(27);
   line-height: (42/27);
+  margin-top: $leading;
   margin-bottom: $leading;
   font-weight: 700;
-  text-align: left;
+  text-align: center;
+
+  @media all and (min-width: $beta_query) {
+    margin-top: 0;
+    text-align: left;
+  }
 }
 
 
@@ -15,6 +21,7 @@
 .m-bio-text{
   font-size: rem(18);
   line-height: (30/18);
+  text-align: center;
 
   p + p{
     margin-top: $leading;
@@ -24,6 +31,10 @@
     padding-bottom: rem(3);
     color: inherit;
     border-bottom: 1px solid;
+  }
+
+  @media all and (min-width: $beta_query) {
+    text-align: left;
   }
 }
 

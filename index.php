@@ -8,7 +8,7 @@ get_header();
 		$blog_page = true;
 	}
 
-	echo '<article class="o-section is-standalone'.($blog_page ? ' s-is-blocsection' : '').'">';
+	echo '<article class="o-section is-standalone'.($blog_page ? ' s-is-blogsection' : '').'">';
 		get_template_part('partials/globals/global-archiveheader');
 
 		if (have_posts()) {

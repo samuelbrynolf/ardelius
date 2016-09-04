@@ -25,6 +25,7 @@
 
 .a-global-nav-toggler{
   position: fixed;
+  top: 0;
   right: rem($alpha_gutter);
   z-index: 1000;
   display: block;

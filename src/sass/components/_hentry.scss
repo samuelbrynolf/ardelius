@@ -9,10 +9,6 @@
   margin-top: $leading*0.75;
 }
 
-@media all and (min-width: $beta_query) {
-
-}
-
 
 
 // MOLECULES -----------------------------
@@ -58,5 +54,34 @@
     background-image: linear-gradient(top, rgba(black, 0.00), rgba(black, 1));
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#000000', EndColorStr='#000000');
     pointer-events: none;
+  }
+}
+
+
+
+// STATES -------------------------------------------------------------
+
+.o-section.s-is-blogsection {
+
+  .m-hentryitem + .m-hentryitem{
+    margin-top: $leading*3;
+  }
+
+  .m-hentryitem .mis_container + .a-hentryitem-title{
+    margin-top: rem($body_leading + 9);
+    margin-bottom: $leading;
+    font-size: rem(27);
+    line-height: (42/27);
+    font-weight: 700;
+
+    & + .a-hentryitem-meta{
+      margin-top: 0;
+    }
+  }
+
+  .a-hentryitem-meta{
+    @extend .m-bio-text;
+    text-align: left;
+    color: inherit;
   }
 }
