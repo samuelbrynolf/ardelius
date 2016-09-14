@@ -4,10 +4,6 @@
         makeitSrcset(get_post_thumbnail_id($post->ID));
     }
 
-    if(function_exists('get_field') && get_field('acf_reportage_detail')){
-        echo get_field('acf_reportage_detail');
-    }
-
     echo '<p class="">';
         edit_post_link('Redigera inl&auml;gg', ' &mdash; ', '');
     echo '</p>'; ?>

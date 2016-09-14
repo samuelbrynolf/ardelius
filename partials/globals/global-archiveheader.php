@@ -2,7 +2,7 @@
 
     if(is_404()) { ?>
         <h1 class="a-section-title a-title-M">404</h1>
-        <p>Sidan existerar inte. Tyvärr har sidan upphört, eller så är länken felaktig. <a href="<?php bloginfo('url'); ?>" title="Till startsidan">Gå till startsidan</a>.</p>;
+        <p>Sidan existerar inte. Tyvärr har sidan upphört, eller så är länken felaktig. <a href="<?php bloginfo('url'); ?>" title="Till startsidan">Gå till startsidan</a>.</p>
 
     <?php } elseif(is_home()){
         $blog_title = get_the_title(get_option('page_for_posts', true));

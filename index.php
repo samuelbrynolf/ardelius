@@ -8,7 +8,7 @@ get_header();
 		$blog_page = true;
 	}
 
-	echo '<article class="o-section is-standalone'.($blog_page ? ' s-is-blogsection' : '').'">';
+	echo '<article class="o-section is-standalone'.($blog_page ? ' s-is-blogsection' : '').'">'; // TODO Get a workng solution for 404s
 		get_template_part('partials/globals/global-archiveheader');
 
 		if (have_posts()) {

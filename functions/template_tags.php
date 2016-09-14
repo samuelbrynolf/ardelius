@@ -1,6 +1,4 @@
-<?php // Hentry Items, passed arguments are makeitSrcset configuration
-
-if(!function_exists('hentry_item')){
+<?php if(!function_exists('hentry_item')){
 	function hentry_item(
 		$postID = null,
 		$meta_descr = false,
@@ -49,14 +47,31 @@ if(!function_exists('hentry_item')){
 				the_title('<h3 class="a-hentryitem-title">', '</h3>');
 				if($meta_descr == true){
 					echo '<div class="a-fineprint a-hentryitem-meta">';
-						if(function_exists('get_field') && get_field('acf_cpt_meta')){
-							echo get_field('acf_cpt_meta');
-						} else{
+						if(function_exists('get_field') && get_field('acf_text-summary')){
+							echo get_field('acf_text-summary');
+						} else {
 							the_content('');
 						}
 					echo '</div>';
 				}
 			echo ($lightbox ? '' : '</a>');
 		echo '</div>';
+	}
+}
+
+
+
+// Function archivelink sends visitor from a section to an archive. Appears within  the ACH controlled sectionbuilder (starts with acf-sectionbuild-loop.php, ) ------------------------------------------
+
+
+
+if(!function_exists('section_archive_link')){
+	function section_archive_link($section_archive_url = null, $section_cta_text = 'Visa alla'){
+
+		if(is_null($section_archive_url) || is_empty($section_archive_url)){
+			return;
+		}
+
+		echo '<p class="l-gutter a-fineprint a-section-archivelink"><a href="'.$section_archive_url.'">'.$section_cta_text.' &rarr;</a></p>';
 	}
 }

@@ -61,14 +61,14 @@
 
 // STATES -------------------------------------------------------------
 
-.o-section.s-is-blogsection {
+.m-hentryitem.s-has_meta_descr{
 
-  .m-hentryitem + .m-hentryitem{
-    margin-top: $leading*3;
+  & + .m-hentryitem{
+    margin-top: $leading*4;
   }
 
-  .m-hentryitem .mis_container + .a-hentryitem-title{
-    margin-top: rem($body_leading + 9);
+  .mis_container + .a-hentryitem-title{
+    margin-top: rem($body_leading*1.5);
     margin-bottom: $leading;
     font-size: rem(27);
     line-height: (42/27);
@@ -76,6 +76,7 @@
 
     & + .a-hentryitem-meta{
       margin-top: 0;
+      max-width: rem(960);
     }
   }
 
