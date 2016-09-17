@@ -2,11 +2,11 @@
 // ATOMS -----------------------------
 
 .m-hentryitem .mis_container + .a-hentryitem-title{
-  margin-top: $leading;
+  //margin-top: $leading;
 }
 
 .m-hentryitem .a-hentryitem-title + .a-hentryitem-meta{
-  margin-top: $leading*0.75;
+  //margin-top: $leading*0.75;
 }
 
 
@@ -21,7 +21,8 @@
 
 // MOLECULES -----------------------------
 
-.m-hentryitem.s-has_no_meta_descr{
+.m-hentryitem.s-has_no_meta_descr,
+.m-gallery__item{
   position: relative;
   margin-bottom: rem($alpha_gutter);
 
@@ -67,11 +68,16 @@
     margin-top: $leading*4;
   }
 
+  a{
+    display: block;
+    color: inherit;
+  }
+
   .mis_container + .a-hentryitem-title{
-    margin-top: rem($body_leading*1.5);
+    margin-top: $leading;
     margin-bottom: $leading;
-    font-size: rem(27);
-    line-height: (42/27);
+    //font-size: rem(27);
+    //line-height: (42/27);
     font-weight: 700;
 
     & + .a-hentryitem-meta{
@@ -81,7 +87,7 @@
   }
 
   .a-hentryitem-meta{
-    @extend .m-bio-text;
+    //@extend .m-bio-text;
     text-align: left;
     color: inherit;
   }

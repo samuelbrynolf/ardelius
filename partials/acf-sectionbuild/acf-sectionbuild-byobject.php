@@ -10,7 +10,7 @@ if(get_sub_field('acf_section_twocol_title') && ($post_object_1 || $post_object_
 	return;
 }
 
-	echo '<div class="js-salvattore l-container js-layout-2" data-columns>';
+	echo '<div class="l-container js-layout-2" data-columns>';
 		if($post_object_1){
 			$post = $post_object_1;
 			setup_postdata($post);

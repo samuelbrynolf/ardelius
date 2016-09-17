@@ -46,7 +46,7 @@
 				}
 				the_title('<h3 class="a-hentryitem-title">', '</h3>');
 				if($meta_descr == true){
-					echo '<div class="a-fineprint a-hentryitem-meta">';
+					echo '<div class="a-hentryitem-meta">';
 						if(function_exists('get_field') && get_field('acf_text-summary')){
 							echo get_field('acf_text-summary');
 						} else {

@@ -52,7 +52,7 @@ if($post_slug){
 				echo '<h2 class="l-gutter a-section-title a-title-M">'.get_sub_field('acf_section_cpt-loop_title').'</h2>';
 			}
 
-			echo '<div class="js-salvattore l-container js-layout-'.$col_count.'" data-columns>';
+			echo '<div class="l-container js-layout-'.$col_count.'" data-columns>';
 				while ($sectional_loop->have_posts()) {
 					$sectional_loop->the_post();
 					hentry_item($post->ID, $meta_descr, $col_count, $lightbox);

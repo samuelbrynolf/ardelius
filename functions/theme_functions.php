@@ -103,15 +103,6 @@ if ( !function_exists( 'strip_archive_descriptions_p' )) {
 
 
 
-// MARK PRIVATE-POST-TITLES, FOR LOGGED IN USERS -------------------------------------------------------------------
-
-if ( !function_exists( 'trim_private_titles' )) {
-    function trim_private_titles($string){
-        $string = str_replace("Privat: ", "&#126; ", $string);
-        return $string;
-    }
-    add_filter('the_title', 'trim_private_titles');
-}
 
 // REMOVE EDITOR FOR PAGES -------------------------------------------------------------------
 
