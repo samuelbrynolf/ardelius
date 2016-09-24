@@ -6,14 +6,6 @@ if ( !function_exists('body_classes')) {
             $classes[] = 'no-thumb';
         }
 
-        if (is_single() && has_post_format('video')){
-            $classes[] = 'has-video';
-        }
-
-        if (is_front_page() && is_home() && !is_paged()) {
-            $classes[] = 'startpage';
-        }
-
         return $classes;
     }
 
@@ -106,12 +98,13 @@ if ( !function_exists( 'strip_archive_descriptions_p' )) {
 
 // REMOVE EDITOR FOR PAGES -------------------------------------------------------------------
 
-if ( !function_exists('remove_page_editor')) {
-    function remove_page_editor() {
+if ( !function_exists('remove_page_metaboxes')) {
+    function remove_page_metaboxes() {
         remove_post_type_support( 'page', 'editor' );
+        remove_post_type_support( 'page', 'thumbnail' );
     }
 
-    add_action( 'init', 'remove_page_editor' );
+    add_action( 'init', 'remove_page_metaboxes' );
 }
 
 // MOVE YOAST SEO-MODULE TO POSTS BOTTOM -------------------------------------------------------------------

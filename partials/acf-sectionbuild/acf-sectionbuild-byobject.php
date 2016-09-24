@@ -3,12 +3,17 @@
 $post_object_1 = get_sub_field('acf_section_twocol_postobj_one');
 $post_object_2 = get_sub_field('acf_section_twocol_postobj_two');
 
-if(get_sub_field('acf_section_twocol_title') && ($post_object_1 || $post_object_2)){
-	echo '<section class="o-section">';
-	echo '<h2 class="a-section-title a-title-M">'.get_sub_field('acf_section_twocol_title').'</h2>';
-} else {
+if(!$post_object_1 || !$post_object_2){
 	return;
 }
+
+echo '<section class="o-section">';
+
+	if(get_sub_field('acf_section_twocol_title')){
+		echo '<h2 class="a-section-title a-title-M">'.get_sub_field('acf_section_twocol_title').'</h2>';
+	} else {
+		return;
+	}
 
 	echo '<div class="l-container js-layout-2" data-columns>';
 		if($post_object_1){
