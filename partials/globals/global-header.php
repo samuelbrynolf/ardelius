@@ -1,6 +1,6 @@
 <header id="js-global-header" class="l-gutter m-global-header" role="banner">
 
-    <?php wp_nav_menu(array('container' => 'nav', 'container_class' => 'js-global-nav m-global-nav', 'items_wrap' => '<ul>%3$s</ul>'));
+    <?php wp_nav_menu(array('container' => 'nav', 'container_id' => 'js-global-nav','container_class' => 'm-global-nav', 'items_wrap' => '<ul>%3$s</ul>'));
 
     $startpage = null;
 
@@ -12,6 +12,7 @@
         echo '<a href="'.esc_url( home_url( '/' ) ).'" rel="home">'.get_bloginfo('name').' <span>&middot;</span> '.get_bloginfo('description').'</a>';
     echo ($startpage ? '</h1>' : '</h3>'); ?>
 
-
-    <button class="js-global-nav-toggler l-pull-right a-global-nav-toggler">Meny</button>
+    <button id="js-global-nav-toggler" class="l-pull-right a-global-nav-toggler c-hamburger c-hamburger--htx">
+        <span>Meny</span>
+    </button>
 </header>

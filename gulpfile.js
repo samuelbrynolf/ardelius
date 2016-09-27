@@ -15,7 +15,7 @@ del = require('del'),
 fs = require('fs'),
 ftp = require('gulp-ftp'),
 watch = require('gulp-watch'),
-// ftpkey = JSON.parse(fs.readFileSync('./.ftppass')),
+ftpkey = JSON.parse(fs.readFileSync('./.ftppass')),
 dev = true,
 
 settings = {
@@ -36,11 +36,11 @@ settings = {
         bundleOutputMin: 'bundled.js'
     },
     ftp: {
-        enabled: false,
-        host: "servername.com",
-        key: "passkey",
-        destination: '/relative/path',
-        fullUpload: ['!node_modules/**', '!./.idea/**', '!./.cache**', '!./.sass-cache/**', '!./.false/**', '!./.grunt/**', '!.ftppass', '!gulpfile.js', '!src', '!src/**', './**']
+        enabled: true,
+        host: "ftp.1979design.se",
+        key: "1979design",
+        destination: '/wp-content/themes/ardelius',
+        fullUpload: ['!node_modules/**', '!./.idea/**', '!./.cache**', '!./.sass-cache/**', '!./.false/**', '!./.grunt/**', '!.ftppass', '!.ftppass2' , '!gulpfile.js', '!gulpfile2.js', '!src', '!src/**', './**']
     }
 }
 
