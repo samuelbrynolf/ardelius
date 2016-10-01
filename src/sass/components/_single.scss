@@ -7,7 +7,12 @@
 
 // MOLECULES ----------------------------------
 
-.m-single__header{}
+.m-single__header{
+
+  .a-fineprint.edit-post{
+    margin-top: $leading;
+  }
+}
 
 .m-single__text{
   margin-top: $leading*2;

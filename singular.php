@@ -4,7 +4,7 @@
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<?php get_template_part('partials/singular/singular-header');
 
-			echo '<div class="l-gutter">';
+			echo '<div id="js-textcontent" class="l-container">';
 				echo '<div class="l-span-C9 l-span-D8 m-single__text">';
 					if($content = $post->post_content ) {
 						the_content();
