@@ -20,6 +20,10 @@
 						echo get_field('acf_text-summary');
 					}
 
+					if(function_exists('get_sub_field') && have_rows('acf_img-gallery')) {
+						echo '<p><a id="js-scroll_to_gallery" href="#">Se alla bilder</a></p>';
+					}
+
 					if ( is_user_logged_in() ) {
 						echo '<p class="a-fineprint edit-post">';
 							edit_post_link( 'Redigera inl&auml;gg', ' &mdash; ', '' );
@@ -29,7 +33,7 @@
 			echo '</section>';
 
 			if(function_exists('get_sub_field') && have_rows('acf_img-gallery')){
-				echo '<div class="l-container o-gallery js-layout-3" data-columns>';
+				echo '<div id="js-gallery" class="l-container o-gallery js-layout-3" data-columns>';
 					while (have_rows('acf_img-gallery')){
 						the_row();
 						if(get_sub_field('acf_img-gallery_img') && function_exists('makeitSrcset')){

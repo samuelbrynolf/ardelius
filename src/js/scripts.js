@@ -47,12 +47,12 @@
     }
 
     function scroll_to_content(){
-        var scroll_trigger = $('.js-scroll_to_content'),
-            text_content = $('#js-textcontent');
+        var scroll_trigger = $('#js-scroll_to_gallery'),
+            text_content = $('#js-gallery');
 
         scroll_trigger.on('click', function(){
             $('html, body').animate({
-                scrollTop: text_content.offset().top
+                scrollTop: text_content.offset().top + -96
             }, 1500);
         });
     }
