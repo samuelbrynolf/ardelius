@@ -1,13 +1,29 @@
 // ATOMS ----------------------------------
 
 .a-single__header-title{
-  margin-top: $leading*2;
+  font-size: rem(18);
+  line-height: (27/18);
+  font-weight: 600;
   margin-bottom: $leading;
 }
 
 // MOLECULES ----------------------------------
 
-.m-single__header{
+.m-single__featured-img {
+
+  @media all and (min-width: $charlie_query) {
+    float: left;
+    width: $spanwidth-8;
+    padding-right: rem($charlie_gutter/3);
+  }
+
+  @media all and (min-width: $delta_query) {
+    padding-right: rem($delta_gutter/3);
+  }
+
+  @media all and (min-width: $echo_query) {
+    padding-right: rem($echo_gutter/3);
+  }
 
   .a-fineprint.edit-post{
     margin-top: $leading;
@@ -16,7 +32,31 @@
 
 .m-single__text{
   margin-top: $leading*2;
-  margin-bottom: $leading*2;
+  padding-left: rem($alpha_gutter);
+  padding-right: rem($alpha_gutter);
+
+  @media all and (min-width: $beta_query) {
+    padding-left: rem($beta_gutter);
+    padding-right: rem($beta_gutter);
+  }
+
+  @media all and (min-width: $charlie_query) {
+    margin-top: 0;
+    float: left;
+    width: $spanwidth-4;
+    padding-right: rem($charlie_gutter);
+    padding-left: rem($charlie_gutter*0.666);
+  }
+
+  @media all and (min-width: $delta_query) {
+    padding-right: rem($delta_gutter);
+    padding-left: rem($delta_gutter*0.666);
+  }
+
+  @media all and (min-width: $echo_query) {
+    padding-right: rem($echo_gutter);
+    padding-left: rem($echo_gutter*0.666);
+  }
 
   p + p{
     margin-top: $leading;
@@ -25,16 +65,66 @@
 
 // ORGANISM ----------------------------------
 
+.o-single_article{
+  //margin-top: $leading*4;
+  padding-bottom: $leading*4;
+  background-image: linear-gradient(top, $body-bgcolor, $subtle-bgcolor);
+}
+
+.o-single_main-content{
+  margin-bottom: rem($alpha_gutter);
+
+  @media all and (min-width: $beta_query) {
+    margin-bottom: rem($beta_gutter);
+  }
+
+  @media all and (min-width: $charlie_query) {
+    margin-bottom: rem($charlie_gutter);
+  }
+
+  @media all and (min-width: $delta_query) {
+    margin-bottom: rem($delta_gutter);
+  }
+
+  @media all and (min-width: $echo_query) {
+    margin-bottom: rem($echo_gutter);
+  }
+}
 
 
 // STATES ----------------------------------
 
-.o-single_article.is-not-landscape{
+.o-single_main-content.is-not-landscape{
 
-  .m-single__header{}
-  .m-single__text{}
-  .o-gallery{}
+  .m-single__featured-img {
 
+    @media all and (min-width: $charlie_query) {
+      width: $spanwidth-4;
+    }
+
+    @media all and (min-width: $charlie_query) {
+
+    }
+
+    @media all and (min-width: $charlie_query) {
+
+    }
+  }
+
+  .m-single__text{
+
+    @media all and (min-width: $charlie_query) {
+      width: $spanwidth-6;
+    }
+
+    @media all and (min-width: $charlie_query) {
+
+    }
+
+    @media all and (min-width: $charlie_query) {
+
+    }
+  }
 }
 
 // ANIMATION ----------------------------------
