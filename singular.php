@@ -4,7 +4,7 @@
 		$featured_format_is_landscape = get_field('acf-featured-img-ratio');
 		//echo ($featured_format_is_landscape ? '' : 'is-not-landscape'); ?>
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<article id="post-<?php the_ID(); ?>" class="<?php echo ($featured_format_is_landscape ? '' : 'l-clearfix o-single_article is-not-landscape'); ?>">
 			<header class="m-single__header">
 				<?php the_title( '<h1 class="l-gutter a-title-XL a-single__header-title">', '</h1>' );
 				if(function_exists('makeitSrcset') && has_post_thumbnail()) {
@@ -18,8 +18,8 @@
 			    } ?>
 			</header>
 
-			<?php echo '<div id="js-textcontent" class="l-container">';
-				echo '<div class="l-span-C9 l-span-D8 m-single__text">';
+			<?php echo '<div id="js-textcontent" class="l-container m-single__text">';
+				echo '<div class="l-span-C9 l-span-D8">';
 					if($content = $post->post_content ) {
 						the_content();
 					} elseif(function_exists('get_field') && get_field('acf_text-summary')){
