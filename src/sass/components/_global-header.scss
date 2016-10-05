@@ -149,6 +149,21 @@
 
 .m-global-header{
   line-height: $leading*3;
+
+  @media all and (min-width: $charlie_query) {
+    margin-top: $leading*1.5;
+    margin-bottom: $leading*1.5;
+  }
+
+  @media all and (min-width: $delta_query) {
+    margin-top: $leading*1.5;
+    margin-bottom: $leading*3;
+  }
+
+  @media all and (min-width: $echo_query) {
+    margin-top: $leading*1.5;
+    margin-bottom: $leading*5;
+  }
 }
 
 .m-global-nav{

@@ -1,19 +1,25 @@
 // ATOMS ----------------------------------
 
 .a-single__header-title{
-  font-size: rem(18);
-  line-height: (27/18);
+  font-size: rem(24);
+  line-height: (36/24);
   font-weight: 600;
+  margin-top: $leading;
   margin-bottom: $leading;
+
+  @media all and (min-width: $charlie_query) {
+    margin-top: 0;
+    margin-bottom: $leading*2;
+  }
 }
 
 // MOLECULES ----------------------------------
 
-.m-single__featured-img {
+.m-single__featured-img img{
 
   @media all and (min-width: $charlie_query) {
-    float: left;
-    width: $spanwidth-8;
+    //float: left;
+    //width: $spanwidth-8;
     padding-right: rem($charlie_gutter/3);
   }
 
@@ -22,70 +28,79 @@
   }
 
   @media all and (min-width: $echo_query) {
-    padding-right: rem($echo_gutter/3);
-  }
-
-  .a-fineprint.edit-post{
-    margin-top: $leading;
+    padding-right: 0; // FIX AGAIN AFTER FINAL MAX-WIDTH IS SET
   }
 }
 
 .m-single__text{
-  padding-left: rem($alpha_gutter);
-  padding-right: rem($alpha_gutter);
-
-  @media all and (min-width: $beta_query) {
-    padding-left: rem($beta_gutter);
-    padding-right: rem($beta_gutter);
-  }
 
   @media all and (min-width: $charlie_query) {
-    float: left;
-    width: $spanwidth-4;
-    padding-right: rem($charlie_gutter);
-    padding-left: rem($charlie_gutter*0.666);
+    padding-right: rem($charlie_gutter*1.5);
+    padding-left: rem($charlie_gutter/4);
   }
 
   @media all and (min-width: $delta_query) {
-    padding-right: rem($delta_gutter);
-    padding-left: rem($delta_gutter*0.666);
+    padding-right: rem($delta_gutter*1.5);
+    padding-left: rem($delta_gutter/4);
   }
 
   @media all and (min-width: $echo_query) {
-    padding-right: rem($echo_gutter);
-    padding-left: rem($echo_gutter*0.666);
+    padding-right: rem($echo_gutter/2);
+    padding-left: rem($echo_gutter/2);
   }
 
-  p + p{
-    margin-top: $leading;
+  p {
+    max-width: rem(720);
+
+    & + p {
+      margin-top: $leading;
+
+      @media all and (min-width: $charlie_query) {
+        margin-top: $leading*2;
+      }
+    }
+  }
+}
+
+.m-single__text-inset{
+  padding-right: rem($alpha_gutter);
+  padding-left: rem($alpha_gutter);
+
+  @media all and (min-width: $beta_query) {
+    padding-right: rem($beta_gutter);
+    padding-left: rem($beta_gutter);
+  }
+
+  @media all and (min-width: $charlie_query) {
+    padding: 0;
   }
 }
 
 // ORGANISM ----------------------------------
 
 .o-single_article{
-  //margin-top: $leading*4;
+  overflow: hidden;
   padding-bottom: $leading*4;
   background-image: linear-gradient(top, $body-bgcolor, $subtle-bgcolor);
 }
 
-.o-single_main-content{
-  margin-bottom: rem($alpha_gutter);
+.o-single_article .o-gallery{
+  margin-top: rem($alpha_gutter);
 
   @media all and (min-width: $beta_query) {
-    margin-bottom: rem($beta_gutter);
+    margin-top: rem($beta_gutter);
   }
 
   @media all and (min-width: $charlie_query) {
-    margin-bottom: rem($charlie_gutter);
+    margin-top: rem($charlie_gutter);
   }
 
   @media all and (min-width: $delta_query) {
-    margin-bottom: rem($delta_gutter);
+    margin-top: rem($delta_gutter);
   }
 
   @media all and (min-width: $echo_query) {
-    margin-bottom: rem($echo_gutter);
+    margin-top: rem($echo_gutter);
   }
 }
 
@@ -94,46 +109,14 @@
 
 .o-single_main-content.is-not-landscape{
 
-  .m-single__featured-img {
-
-    @media all and (min-width: $charlie_query) {
-      width: $spanwidth-4;
-    }
-
-    @media all and (min-width: $charlie_query) {
-
-    }
-
-    @media all and (min-width: $charlie_query) {
-
-    }
+  .o-gallery{
+    margin-top: $leading*2;
   }
 
-  .m-single__text{
-
-    @media all and (min-width: $charlie_query) {
-      width: $spanwidth-6;
-    }
-
-    @media all and (min-width: $charlie_query) {
-
-    }
-
-    @media all and (min-width: $charlie_query) {
-
-    }
-  }
 }
 
 .no-thumb .m-single__text{
-  @extend .l-gutter;
 
-  @media all and (min-width: $charlie_query) {
-    float: none;
-    width: 100%;
-    max-width: $containerwidth;
-    padding-right: $spanwidth-4;
-  }
 }
 
 // ANIMATION ----------------------------------
