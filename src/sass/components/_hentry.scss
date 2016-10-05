@@ -87,5 +87,9 @@
     //@extend .m-bio-text;
     text-align: left;
     color: inherit;
+
+    p + p{
+      margin-top: $leading;
+    }
   }
 }

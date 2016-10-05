@@ -131,8 +131,8 @@
   line-height: $leading*3;
 
   @media all and (min-width: $charlie_query) {
-    margin-top: $leading*1.5;
-    margin-bottom: $leading*1.5;
+    margin-top: $leading;
+    margin-bottom: $leading*3;
   }
 
   @media all and (min-width: $delta_query) {

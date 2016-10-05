@@ -9,7 +9,7 @@
 
   @media all and (min-width: $charlie_query) {
     margin-top: 0;
-    margin-bottom: $leading*2;
+    margin-bottom: $leading;
     padding-top: $leading*2.5;
     border-top: 1px solid;
   }
@@ -23,18 +23,14 @@
 
   p {
     //max-width: rem(720);
-
-    & + p {
-      margin-top: $leading;
-
-      @media all and (min-width: $charlie_query) {
-        margin-top: $leading*2;
-      }
-    }
+    margin-top: $leading;
+    margin-bottom: $leading;
   }
 
   a{
+    padding-bottom: rem(3);
     color: inherit;
+    border-bottom: 1px solid;
   }
 }
 
@@ -143,7 +139,10 @@
 .no-thumb {
 
   .m-single__text{
-    width: $spanwidth-8;
+
+    @media all and (min-width: $charlie_query) {
+      width: $spanwidth-8;
+    }
   }
 }
 
