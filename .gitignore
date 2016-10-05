@@ -52,4 +52,4 @@ node_modules
 .ftppass
 style.css
 maps/style.css.map
-js
+js/**

@@ -2,7 +2,8 @@
   content: '1 .l-span.js-layout-1-item';
 }
 
-.js-layout-2[data-columns]::before {
+.js-layout-2[data-columns]::before,
+.o-single_main-content.is-not-landscape .js-layout-single_gallery::before{
   content: '1 .l-span.js-layout-2-item';
 
   @media all and (min-width: $beta_query) {
@@ -10,7 +11,8 @@
   }
 }
 
-.js-layout-3[data-columns]::before {
+.js-layout-3[data-columns]::before,
+.js-layout-single_gallery::before{
   content: '1 .l-span.js-layout-3-item';
 
   @media all and (min-width: $beta_query) {

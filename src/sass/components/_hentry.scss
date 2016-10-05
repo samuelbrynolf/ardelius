@@ -73,16 +73,13 @@
     color: inherit;
   }
 
-  .mis_container + .a-hentryitem-title{
+  .a-hentryitem-title{
     margin-top: $leading;
     margin-bottom: $leading;
-    //font-size: rem(27);
-    //line-height: (42/27);
     font-weight: 600;
 
     & + .a-hentryitem-meta{
-      margin-top: 0;
-      max-width: rem(960);
+      max-width: rem(720);
     }
   }
 
@@ -90,5 +87,9 @@
     //@extend .m-bio-text;
     text-align: left;
     color: inherit;
+
+    p + p{
+      margin-top: $leading;
+    }
   }
 }

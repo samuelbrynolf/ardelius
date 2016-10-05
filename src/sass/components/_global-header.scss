@@ -102,40 +102,20 @@
 // Atoms -----------------------------------------------
 
 .a-global-header__title{
-  //font-family: $captionfont-1;
-  //font-size: rem(13);
-  //@extend .a-fineprint;
-  //font-weight: bold;
-  //line-height: $leading*3;
-  //text-align: center;
 
   a{
     color: inherit;
-    font-weight: inherit;
-    //line-height: inherit;
-  }
-
-  span{
-    //font-family: $bodyfont;
-    //font-weight: 400;
-    //font-style: italic;
-    //color: $subtle-textcolor;
   }
 }
 
 .a-global-nav-toggler{
   position: fixed;
   top: 0;
-  right: rem($alpha_gutter);
+  right: 0;
   z-index: 1000;
-  //display: block;
-  //font-family: inherit;
-  //font-size: rem($btnfontsize);
-  //line-height: inherit;
-  //text-align: right;
 
   @media all and (min-width: $beta_query) {
-    right: rem($beta_gutter);
+    right: 0;
   }
 
   @media all and (min-width: $charlie_query) {
@@ -149,6 +129,21 @@
 
 .m-global-header{
   line-height: $leading*3;
+
+  @media all and (min-width: $charlie_query) {
+    margin-top: $leading;
+    margin-bottom: $leading*3;
+  }
+
+  @media all and (min-width: $delta_query) {
+    //margin-top: $leading*1.5;
+   // margin-bottom: $leading*3;
+  }
+
+  @media all and (min-width: $echo_query) {
+   // margin-top: $leading*1.5;
+    //margin-bottom: $leading*5;
+  }
 }
 
 .m-global-nav{

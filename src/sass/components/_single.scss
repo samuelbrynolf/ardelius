@@ -1,40 +1,149 @@
 // ATOMS ----------------------------------
 
 .a-single__header-title{
-  margin-top: $leading*2;
+  font-size: rem(24);
+  line-height: (36/24);
+  font-weight: 600;
+  margin-top: $leading;
   margin-bottom: $leading;
+
+  @media all and (min-width: $charlie_query) {
+    margin-top: 0;
+    margin-bottom: $leading;
+    padding-top: $leading*2.5;
+    border-top: 1px solid;
+  }
 }
 
 // MOLECULES ----------------------------------
 
-.m-single__header{
 
-  .a-fineprint.edit-post{
-    margin-top: $leading;
-  }
-}
 
 .m-single__text{
-  margin-top: $leading*2;
-  margin-bottom: $leading*2;
 
-  p + p{
+  p {
+    //max-width: rem(720);
     margin-top: $leading;
+    margin-bottom: $leading;
+  }
+
+  a{
+    padding-bottom: rem(3);
+    color: inherit;
+    border-bottom: 1px solid;
   }
 }
+
 
 // ORGANISM ----------------------------------
 
+.o-single_article{
+  overflow: hidden;
+  padding-bottom: $leading*4;
+  background-image: linear-gradient(top, $body-bgcolor, $subtle-bgcolor);
+}
+
+.o-single_article .o-gallery{
+  margin-top: rem($alpha_gutter);
+
+  @media all and (min-width: $beta_query) {
+    margin-top: rem($beta_gutter);
+  }
+
+  @media all and (min-width: $charlie_query) {
+    margin-top: rem($charlie_gutter);
+  }
+
+  @media all and (min-width: $delta_query) {
+    margin-top: rem($delta_gutter);
+  }
+
+  @media all and (min-width: $echo_query) {
+    margin-top: rem($echo_gutter);
+  }
+}
 
 
 // STATES ----------------------------------
 
-.o-single_article.is-not-landscape{
+.o-single_main-content.is-not-landscape{
 
-  .m-single__header{}
-  .m-single__text{}
-  .o-gallery{}
+  .o-gallery{
+    //margin-top: $leading*3;
 
+    @media all and (min-width: $charlie_query) {
+      margin-top: $leading*3;
+    }
+  }
+
+}
+
+.has-thumb{
+
+  .l-single-fullbleed{
+    @include fullbleed('dq');
+  }
+
+  .m-single__featured-img img{
+
+    @media all and (min-width: $charlie_query) {
+      padding-right: rem($charlie_gutter/3);
+    }
+
+    @media all and (min-width: $delta_query) {
+      padding-right: rem($delta_gutter/3);
+    }
+
+    @media all and (min-width: $echo_query) {
+      padding-right: 0; // FIX AGAIN AFTER FINAL MAX-WIDTH IS SET
+    }
+  }
+
+  .m-single__text{
+
+    @media all and (min-width: $charlie_query) {
+      padding-right: rem($charlie_gutter*1.5);
+      padding-left: rem($charlie_gutter/4);
+    }
+
+    @media all and (min-width: $delta_query) {
+      padding-right: rem($delta_gutter*1.5);
+      padding-left: rem($delta_gutter/4);
+    }
+
+    @media all and (min-width: $echo_query) {
+      padding-right: rem($echo_gutter/2);
+      padding-left: rem($echo_gutter/2);
+    }
+
+    p{
+      max-width: rem(720);
+    }
+  }
+
+  .m-single__text-inset{
+    padding-right: rem($alpha_gutter);
+    padding-left: rem($alpha_gutter);
+
+    @media all and (min-width: $beta_query) {
+      padding-right: rem($beta_gutter);
+      padding-left: rem($beta_gutter);
+    }
+
+    @media all and (min-width: $charlie_query) {
+      padding: 0;
+    }
+  }
+}
+
+.no-thumb {
+
+  .m-single__text{
+
+    @media all and (min-width: $charlie_query) {
+      width: $spanwidth-8;
+    }
+  }
 }
 
 // ANIMATION ----------------------------------
