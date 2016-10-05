@@ -15,7 +15,7 @@
 		} ?>
 
 		<article id="post-<?php the_ID(); ?>" class="o-single_article">
-			<div class="l-fullbleed_D">
+			<div class="l-single-fullbleed">
 				<section class="l-container o-single_main-content<?php echo ($featured_format_is_landscape ? '' : ' is-not-landscape'); ?>">
 
 					<?php if(function_exists('makeitSrcset') && has_post_thumbnail()) {
@@ -26,28 +26,29 @@
 						echo '<div class="m-single__text-inset">';
 							the_title( '<h1 class="a-single__header-title">', '</h1>' );
 
-							if ( is_user_logged_in() ) {
-								echo '<p class="a-fineprint edit-post">';
-								edit_post_link( 'Redigera inl&auml;gg', ' &mdash; ', '' );
-								echo '</p>';
-							}
+//							if ( is_user_logged_in() ) {
+//								echo '<p class="a-fineprint edit-post">';
+//								edit_post_link( 'Redigera inl&auml;gg', ' &mdash; ', '' );
+//								echo '</p>';
+//							}
 
 							if($content = $post->post_content ) {
 								the_content();
 							} elseif(function_exists('get_field') && get_field('acf_text-summary')){
 								echo get_field('acf_text-summary');
 							}
-						echo '</div>';
 
-						if(!$featured_format_is_landscape) {
-							get_template_part('partials/singular/singular-gallery');
-						}
 
-					echo '</div>';
+							if(!$featured_format_is_landscape && has_post_thumbnail()) {
+								get_template_part('partials/singular/singular-gallery');
+							}
+
+						echo '</div>'; // END TEXT-INSET
+					echo '</div>'; // END SINGLE TEXT
 				echo '</section>';
-			echo '</div>';
+			echo '</div>'; // END SINGLE FULLBLEED
 
-			if($featured_format_is_landscape) {
+			if($featured_format_is_landscape || !has_post_thumbnail()) {
 				get_template_part('partials/singular/singular-gallery');
 			}
 

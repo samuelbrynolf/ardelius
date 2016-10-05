@@ -2,7 +2,9 @@
 
 if ( !function_exists('body_classes')) {
     function body_classes($classes){
-        if (is_singular() && !has_post_thumbnail()){
+        if (is_singular() && has_post_thumbnail()){
+            $classes[] = 'has-thumb';
+        } else {
             $classes[] = 'no-thumb';
         }
 
