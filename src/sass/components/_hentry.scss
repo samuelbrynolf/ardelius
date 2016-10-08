@@ -88,6 +88,10 @@
     text-align: left;
     color: inherit;
 
+    p:after{
+      content: ' Se allt \2192';
+    }
+
     p + p{
       margin-top: $leading;
     }

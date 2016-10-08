@@ -50,7 +50,7 @@
 						if(function_exists('get_field') && get_field('acf_text-summary')){
 							echo get_field('acf_text-summary');
 						} else {
-							the_content('');
+							the_content('&#8594;');
 						}
 					echo '</div>';
 				}
