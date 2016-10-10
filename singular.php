@@ -24,7 +24,7 @@
 
 					echo '<div id="js-textcontent" class="'.$layoutSpans_textContent.' m-single__text">';
 						echo '<div class="m-single__text-inset">';
-							the_title( '<h1 class="a-single__header-title">', '</h1>' );
+							the_title( '<h1 class="a-single__header-title a-title-L">', '</h1>' );
 
 //							if ( is_user_logged_in() ) {
 //								echo '<p class="a-fineprint edit-post">';

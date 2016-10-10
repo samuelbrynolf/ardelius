@@ -2,6 +2,7 @@
 
 .a-section-title{
   margin-bottom: $leading*2;
+  text-align: center;
 }
 
 .a-section-archivelink{
@@ -22,8 +23,8 @@
 // Organism -----------------------------
 
 .o-section{
-  margin-top: $leading*2;
-  margin-bottom: $leading*2;
+  margin-top: $leading*3;
+  //margin-bottom: $leading*3;
 
   @media all and (min-width: $beta_query) {
     padding-right: rem($beta_gutter);
@@ -37,12 +38,10 @@
 
   & + .o-section,
   &.is-standalone{
-    padding-top: $leading*2;
-    border-top: 1px solid $subtle-bordercolor;
-  }
-
-  &.is-standalone{
+    //margin-top: $leading;
     margin-top: 0;
+    padding-top: $leading*3;
+    border-top: 1px solid $subtle-bordercolor;
   }
 
   a{

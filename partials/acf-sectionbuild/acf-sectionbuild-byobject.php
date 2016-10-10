@@ -10,7 +10,7 @@ if(!$post_object_1 || !$post_object_2){
 echo '<section class="o-section">';
 
 	if(get_sub_field('acf_section_twocol_title')){
-		echo '<h2 class="a-section-title a-title-M">'.get_sub_field('acf_section_twocol_title').'</h2>';
+		echo '<h2 class="l-gutter a-section-title a-title-M">'.get_sub_field('acf_section_twocol_title').'</h2>';
 	} else {
 		return;
 	}

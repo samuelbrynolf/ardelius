@@ -11,10 +11,11 @@
 
 
 
-// MOLECULES -----------------------------
+  // MOLECULES -----------------------------
 
 .m-hentryitem{
-  margin-bottom: $leading*2;
+  margin-bottom: $leading*3;
+  text-align: center;
 }
 
 
@@ -64,17 +65,13 @@
 
 .m-hentryitem.s-has_meta_descr{
 
-  & + .m-hentryitem{
-    margin-top: $leading*4;
-  }
-
   a{
     display: block;
     color: inherit;
   }
 
   .a-hentryitem-title{
-    margin-top: $leading;
+    margin-top: $leading*1.5;
     margin-bottom: $leading;
     font-weight: 600;
 
@@ -85,7 +82,7 @@
 
   .a-hentryitem-meta{
     //@extend .m-bio-text;
-    text-align: left;
+    //text-align: left;
     color: inherit;
 
     p:after{
