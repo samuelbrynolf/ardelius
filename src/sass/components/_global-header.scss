@@ -2,20 +2,23 @@
 
 .c-hamburger {
   display: block;
-  position: relative;
+  //position: relative;
   overflow: hidden;
   margin: 0;
   padding: 0;
-  width: rem(48);
-  height: rem(48);
+  width: rem(60);
+  height: rem(60);
   font-size: 0;
   text-indent: -9999px;
   appearance: none;
-  box-shadow: none;
   border-radius: none;
   border: none;
   cursor: pointer;
   transition: background 0.3s;
+  //border-top: 1px solid darken($body-bgcolor, 6%);
+  //border-bottom: 1px solid darken($body-bgcolor, 6%);
+  //border-left: 1px solid darken($body-bgcolor, 6%);
+  box-shadow: -6px 0 6px 0 rgba(black, 0.05);
 }
 
 .c-hamburger:focus {
@@ -25,12 +28,14 @@
 .c-hamburger span {
   display: block;
   position: absolute;
-  top: rem(23);
-  left: rem(12);
-  right: rem(12);
+  top: rem(29);
+  left: rem(15);
+  right: rem(15);
   height: rem(3);
   color: $body-textcolor;
-  background: $body-bgcolor;
+  background-color: $hamburger-line-color;
+
+  //TODO add corresponding half gutters for beta?
 }
 
 .c-hamburger span::before,
@@ -40,7 +45,7 @@
   left: 0;
   width: 100%;
   height: rem(3);
-  background-color: $body-bgcolor;
+  background-color: $hamburger-line-color;
   content: "";
 }
 
@@ -53,7 +58,7 @@
 }
 
 .c-hamburger--htx {
-  background-color: $body-textcolor;
+  background-color: $hamburger-bg-color;
 }
 
 .c-hamburger--htx span {
@@ -74,23 +79,26 @@
   transition-property: bottom, transform;
 }
 
-/* active state, i.e. menu open */
+// STATE -------------
+
 .c-hamburger--htx.s-is-active {
-  background-color: lighten($body-textcolor, 24%);
+  background-color: $hamburger-bg-color_active;
 }
 
 .c-hamburger--htx.s-is-active span {
-  background: none;
+  background: $hamburger-bg-color_active;
 }
 
 .c-hamburger--htx.s-is-active span::before {
   top: 0;
   transform: rotate(45deg);
+  background-color: $hamburger-line-color_active;
 }
 
 .c-hamburger--htx.s-is-active span::after {
   bottom: 0;
   transform: rotate(-45deg);
+  background-color: $hamburger-line-color_active;
 }
 
 .c-hamburger--htx.s-is-active span::before,
@@ -102,17 +110,23 @@
 // Atoms -----------------------------------------------
 
 .a-global-header__title{
+  //text-align: center;
 
   a{
     color: inherit;
+  }
+
+  @media all and (min-width: $beta_query) {
+    text-align: left;
   }
 }
 
 .a-global-nav-toggler{
   position: fixed;
-  top: 0;
+  top: $leading/2;
+  //top: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 500;
 
   @media all and (min-width: $beta_query) {
     right: 0;
@@ -128,7 +142,7 @@
 // Molecules -----------------------------------------------
 
 .m-global-header{
-  line-height: $leading*3;
+  line-height: rem($body_leading*3 + $fontsize);
 
   @media all and (min-width: $charlie_query) {
     margin-top: $leading;

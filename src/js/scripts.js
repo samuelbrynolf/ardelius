@@ -42,7 +42,7 @@
 
             setTimeout(function(){
                 $this.addClass('s-faded-is-visible');
-            }, i*250);
+            }, i*150);
         });
     }
 

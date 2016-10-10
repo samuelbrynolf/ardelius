@@ -49,10 +49,10 @@
     z-index: 100;
     width: 100%;
     margin-top: 0;
-    padding: $leading*3 rem($alpha_gutter) $leading*2 rem($alpha_gutter);
-    font-size: rem(13);
+    padding: $leading*3 rem($alpha_gutter) $leading*1.5 rem($alpha_gutter);
+    @extend .a-fineprint;
     text-align: center;
-    color: #eee;
+    color: $action-color;
     background-image: linear-gradient(top, rgba(black, 0.00), rgba(black, 1));
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#000000', EndColorStr='#000000');
     pointer-events: none;
@@ -67,7 +67,7 @@
 
   a{
     display: block;
-    color: inherit;
+    //color: inherit;
   }
 
   .a-hentryitem-title{
@@ -81,12 +81,11 @@
   }
 
   .a-hentryitem-meta{
-    //@extend .m-bio-text;
-    //text-align: left;
-    color: inherit;
+    color: $subtle-textcolor;
 
     p:after{
-      content: ' Se allt \2192';
+      content: ' / Se allt';
+      color: $action-color;
     }
 
     p + p{

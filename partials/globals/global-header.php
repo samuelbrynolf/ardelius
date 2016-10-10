@@ -8,7 +8,7 @@
         $startpage = true;
     }
 
-    echo ($startpage ? '<h1 class="l-pull-left a-global-header__title">' : '<h3 class="a-global-header__title">');
+    echo ($startpage ? '<h1 class="a-global-header__title">' : '<h3 class="a-global-header__title">');
         echo '<a href="'.esc_url( home_url( '/' ) ).'" rel="home">'.get_bloginfo('name').' <span>&middot;</span> '.get_bloginfo('description').'</a>';
     echo ($startpage ? '</h1>' : '</h3>'); ?>
 

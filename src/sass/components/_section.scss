@@ -5,13 +5,14 @@
   text-align: center;
 }
 
-.a-section-archivelink{
+p.a-section-archivelink{
   margin-top: $leading;
-  text-align: right;
+  margin-bottom: $leading*3;
+  text-align: center;
   color: $body-textcolor;
 
   a{
-    color: inherit;
+    color: $action-color;
   }
 }
 

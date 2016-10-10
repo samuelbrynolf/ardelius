@@ -55,7 +55,7 @@ $echo_gutter: 48; // (Use as variable: "$gutter_echo" and "$gutter_echo_half")
 // 2 -----------------------------------------------------------------------------------------------------------
 
 $fontsize: 16;
-$body_leading: 27;
+$body_leading: 24;
 
 $fontsize_beta: 18;
 $body_leading_beta: 30;
@@ -124,15 +124,20 @@ $bodyfont: 'jaf-bernino-sans', serif;
 
 // 5 -----------------------------------------------------------------------------------------------------------
 
-$body-bgcolor: #fff;
-$body-textcolor: #111;
-$action-color: 	blue;
-$subtle-textcolor: #aaa;
-$subtle-bgcolor: #eee;
-$subtle-bordercolor: #ccc;
+$body-bgcolor: #f4f4f4;
+$body-textcolor: #00131a;
+$action-color: 	#0091ab;
+$subtle-textcolor: #50595c;
+$subtle-bgcolor: #e2e4e4;
+$subtle-bordercolor: #c4c9cc;
 $input-bgcolor: $body-bgcolor;
 $highlight-bgcolor: ;
 $error-text: ;
+
+$hamburger-line-color: $action-color;
+$hamburger-bg-color: white;
+$hamburger-line-color_active: white;
+$hamburger-bg-color_active: $action-color;
 
 // 6 -----------------------------------------------------------------------------------------------------------
 

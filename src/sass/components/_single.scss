@@ -4,14 +4,20 @@
   //font-size: rem(24);
   //line-height: (36/24);
   //font-weight: 600;
-  margin-top: $leading;
-  margin-bottom: $leading;
+  position: relative;
+  margin-top: $leading*2;
+  margin-bottom: $leading*1.25;
+  padding-bottom: $leading;
+  text-align: center;
+  border-bottom: 1px solid;
 
   @media all and (min-width: $charlie_query) {
     margin-top: 0;
     margin-bottom: $leading;
     padding-top: $leading*2.5;
-    border-top: 1px dotted;
+    padding-bottom: 0;
+    border-top: 1px solid; // ??? dotted
+    border-bottom: none;
   }
 }
 
@@ -25,12 +31,13 @@
     //max-width: rem(720);
     margin-top: $leading;
     margin-bottom: $leading;
+    color: $subtle-textcolor;
   }
 
   a{
-    padding-bottom: rem(3);
-    color: inherit;
-    border-bottom: 1px dotted;
+    //padding-bottom: rem(3);
+    //color: inherit;
+    //border-bottom: 1px dotted;
   }
 }
 
