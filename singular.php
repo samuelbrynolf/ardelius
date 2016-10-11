@@ -16,7 +16,7 @@
 
 		<article id="post-<?php the_ID(); ?>" class="o-single_article">
 			<div class="l-single-fullbleed">
-				<section class="l-container o-single_main-content<?php echo ($featured_format_is_landscape ? '' : ' is-not-landscape'); ?>">
+				<div class="l-container o-single_main-content<?php echo ($featured_format_is_landscape ? '' : ' is-not-landscape'); ?>">
 
 					<?php if(function_exists('makeitSrcset') && has_post_thumbnail()) {
 						makeitSrcset(get_post_thumbnail_id($post->ID), null, null, null, null, null, $layoutSpans_featuredImg);
@@ -38,7 +38,6 @@
 								echo get_field('acf_text-summary');
 							}
 
-
 							if(!$featured_format_is_landscape && has_post_thumbnail()) {
 								get_template_part('partials/singular/singular-gallery');
 							}
@@ -54,7 +53,7 @@
 
 		echo '</article>';
 
-			get_template_part('partials/singular/singular-aside'); ?>
+		get_template_part('partials/singular/singular-aside'); ?>
 
 	<?php }
 

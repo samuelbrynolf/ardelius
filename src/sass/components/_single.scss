@@ -26,18 +26,12 @@
 
 
 .m-single__text{
+  //max-width: rem(720);
+  color: $subtle-textcolor;
 
   p {
-    //max-width: rem(720);
     margin-top: $leading;
     margin-bottom: $leading;
-    color: $subtle-textcolor;
-  }
-
-  a{
-    //padding-bottom: rem(3);
-    //color: inherit;
-    //border-bottom: 1px dotted;
   }
 }
 
@@ -46,7 +40,7 @@
 
 .o-single_article{
   overflow: hidden;
-  padding-bottom: $leading*4;
+  padding-bottom: $leading*3; // Or is *4 best?
   background-image: linear-gradient(top, $body-bgcolor, $subtle-bgcolor);
 }
 

@@ -1,21 +1,19 @@
 
 // Atoms ---------------------------------
 
-.a-hero-title{
+.a-overlay-title{
   position: absolute;
-  //right: 0;
-  //top: 50%;
-  //transform: translateY(-50%);
-  //right: rem($alpha_gutter);
-  right: 0;
-  bottom: rem($body_leading);
-  z-index: 50;
+  bottom: 0;
+  z-index: 100;
+  width: 100%;
+  margin-top: 0;
+  padding: $leading*3 rem($alpha_gutter) $leading rem($alpha_gutter);
   @extend .a-fineprint;
-  color: inherit;
-  max-width: 96%;
-  padding: rem($body_leading/4) rem($body_leading/2);
-  background-color: white;
-  background-color: rgba(white, 0.4);
+  text-align: center;
+  color: $action-color;
+  background-image: linear-gradient(top, rgba(black, 0.00), rgba(black, 1));
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#000000', EndColorStr='#000000');
+  pointer-events: none;
 }
 
 // Modules -------------------------------

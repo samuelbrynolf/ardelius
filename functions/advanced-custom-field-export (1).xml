@@ -26,10 +26,10 @@
 >
 
 <channel>
-	<title>Ardelius</title>
+	<title>Erik Ardelius</title>
 	<link>http://localhost</link>
 	<description>Fotograf</description>
-	<pubDate>Sat, 01 Oct 2016 20:26:15 +0000</pubDate>
+	<pubDate>Tue, 11 Oct 2016 12:24:54 +0000</pubDate>
 	<language></language>
 	<wp:wxr_version>1.1</wp:wxr_version>
 	<wp:base_site_url>http://localhost</wp:base_site_url>
@@ -49,7 +49,7 @@
 		<wp:post_name>acf_summering</wp:post_name>
 		<wp:status>publish</wp:status>
 		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>4</wp:menu_order>
+		<wp:menu_order>3</wp:menu_order>
 		<wp:post_type>acf</wp:post_type>
 		<wp:post_password></wp:post_password>
 		<wp:postmeta>
@@ -91,7 +91,7 @@
 		<wp:post_name>acf_bildgalleri</wp:post_name>
 		<wp:status>publish</wp:status>
 		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>2</wp:menu_order>
+		<wp:menu_order>4</wp:menu_order>
 		<wp:post_type>acf</wp:post_type>
 		<wp:post_password></wp:post_password>
 		<wp:postmeta>
@@ -137,7 +137,7 @@
 		<wp:post_name>acf_toppyta</wp:post_name>
 		<wp:status>publish</wp:status>
 		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>3</wp:menu_order>
+		<wp:menu_order>1</wp:menu_order>
 		<wp:post_type>acf</wp:post_type>
 		<wp:post_password></wp:post_password>
 		<wp:postmeta>
@@ -146,19 +146,15 @@
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>field_57e66c265877a</wp:meta_key>
-			<wp:meta_value><![CDATA[a:11:{s:3:"key";s:19:"field_57e66c265877a";s:5:"label";s:4:"Bild";s:4:"name";s:12:"acf_hero_img";s:4:"type";s:5:"image";s:12:"instructions";s:346:"Toppytan innefattar en stor utfallande bild i toppen på den här sidan. Du har möjlighet att lägga till rubrik och underrubrik, samt länka ytan till någon annan del i portfolion. Du måste inte använda toppytan alls, men om du gör det är det egentligen bara krav på att lägga dit bilden—rubrikerna och länken gör du som du vill med.";s:8:"required";s:1:"0";s:11:"save_format";s:2:"id";s:12:"preview_size";s:6:"medium";s:7:"library";s:3:"all";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:2:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:0;}]]></wp:meta_value>
+			<wp:meta_value><![CDATA[a:11:{s:3:"key";s:19:"field_57e66c265877a";s:5:"label";s:4:"Bild";s:4:"name";s:12:"acf_hero_img";s:4:"type";s:5:"image";s:12:"instructions";s:346:"Toppytan innefattar en stor utfallande bild i toppen på den här sidan. Du har möjlighet att lägga till rubrik och underrubrik, samt länka ytan till någon annan del i portfolion. Du måste inte använda toppytan alls, men om du gör det är det egentligen bara krav på att lägga dit bilden—rubrikerna och länken gör du som du vill med.";s:8:"required";s:1:"0";s:11:"save_format";s:2:"id";s:12:"preview_size";s:6:"medium";s:7:"library";s:3:"all";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:0;}]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>field_57e66c7a5877b</wp:meta_key>
 			<wp:meta_value><![CDATA[a:14:{s:3:"key";s:19:"field_57e66c7a5877b";s:5:"label";s:6:"Rubrik";s:4:"name";s:14:"acf_hero_title";s:4:"type";s:4:"text";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"html";s:9:"maxlength";s:0:"";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:1;}]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
-			<wp:meta_key>field_57e66cdb5877c</wp:meta_key>
-			<wp:meta_value><![CDATA[a:14:{s:3:"key";s:19:"field_57e66cdb5877c";s:5:"label";s:11:"Underrubrik";s:4:"name";s:17:"acf_hero_subtitle";s:4:"type";s:4:"text";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"html";s:9:"maxlength";s:0:"";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:2;}]]></wp:meta_value>
-		</wp:postmeta>
-		<wp:postmeta>
 			<wp:meta_key>field_57e66d5d5877d</wp:meta_key>
-			<wp:meta_value><![CDATA[a:11:{s:3:"key";s:19:"field_57e66d5d5877d";s:5:"label";s:15:"Länka toppytan";s:4:"name";s:12:"acf_hero_url";s:4:"type";s:9:"page_link";s:12:"instructions";s:21:"Vart ska länken gå?";s:8:"required";s:1:"0";s:9:"post_type";a:1:{i:0;s:3:"all";}s:10:"allow_null";s:1:"0";s:8:"multiple";s:1:"0";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:3;}]]></wp:meta_value>
+			<wp:meta_value><![CDATA[a:11:{s:3:"key";s:19:"field_57e66d5d5877d";s:5:"label";s:15:"Länka toppytan";s:4:"name";s:12:"acf_hero_url";s:4:"type";s:9:"page_link";s:12:"instructions";s:21:"Vart ska länken gå?";s:8:"required";s:1:"0";s:9:"post_type";a:1:{i:0;s:3:"all";}s:10:"allow_null";s:1:"0";s:8:"multiple";s:1:"0";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:2;}]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>position</wp:meta_key>
@@ -191,7 +187,7 @@
 		<wp:post_name>acf_sektionsbyggare</wp:post_name>
 		<wp:status>publish</wp:status>
 		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>1</wp:menu_order>
+		<wp:menu_order>5</wp:menu_order>
 		<wp:post_type>acf</wp:post_type>
 		<wp:post_password></wp:post_password>
 		<wp:postmeta>
@@ -283,7 +279,7 @@
 		<wp:post_name>acf_typsnitt-via-typekit</wp:post_name>
 		<wp:status>publish</wp:status>
 		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>5</wp:menu_order>
+		<wp:menu_order>7</wp:menu_order>
 		<wp:post_type>acf</wp:post_type>
 		<wp:post_password></wp:post_password>
 		<wp:postmeta>
@@ -325,7 +321,7 @@
 		<wp:post_name>acf_bildformat-for-featured-image</wp:post_name>
 		<wp:status>publish</wp:status>
 		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>1000</wp:menu_order>
+		<wp:menu_order>2</wp:menu_order>
 		<wp:post_type>acf</wp:post_type>
 		<wp:post_password></wp:post_password>
 		<wp:postmeta>

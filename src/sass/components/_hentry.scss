@@ -44,18 +44,7 @@
   }
 
   .a-hentryitem-title{
-    position: absolute;
-    bottom: 0;
-    z-index: 100;
-    width: 100%;
-    margin-top: 0;
-    padding: $leading*3 rem($alpha_gutter) $leading*1.5 rem($alpha_gutter);
-    @extend .a-fineprint;
-    text-align: center;
-    color: $action-color;
-    background-image: linear-gradient(top, rgba(black, 0.00), rgba(black, 1));
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#000000', EndColorStr='#000000');
-    pointer-events: none;
+    @extend .a-overlay-title;
   }
 }
 

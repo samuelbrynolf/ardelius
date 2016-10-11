@@ -38,8 +38,6 @@
   display: block;
   width: auto;
   height: rem($inputheight);
-  padding-right: rem($alpha_gutter/$btnfontsize);
-  padding-left:  rem($alpha_gutter/$btnfontsize);
   font-family: $bodyfont;
   font-size: rem($btnfontsize);
   line-height: rem($inputheight);
@@ -47,7 +45,6 @@
   text-decoration: none;
   color: $action-color;
   border: 1px solid $action-color;
-  background-color: $body-bgcolor;
 }
 
 

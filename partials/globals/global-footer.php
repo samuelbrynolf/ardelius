@@ -1,6 +1,6 @@
 <footer id="colophon" class="o-global-footer" role="contentinfo">
     <div class="l-container o-bio">
-        <div class="l-pre-A4 l-pre-B0 l-span-A4 l-span-B3 l-span-C2">
+        <div class="l-pre-A3 l-pre-B0 l-span-A6 l-span-B3 l-span-C2">
             <?php if(function_exists('makeitSrcset') && function_exists('get_field') && get_field('acf_avatar', 'option')) {
                 makeitSrcset(get_field('acf_avatar', 'option'), 100, 100, 100, 100, 100, 'a-avatar');
             } ?>

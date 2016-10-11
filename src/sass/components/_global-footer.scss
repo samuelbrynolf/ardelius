@@ -1,8 +1,6 @@
 // ATOMS
 
 .a-bio-title{
-  //font-size: rem(27);
-  //line-height: (42/27);
   margin-top: $leading;
   margin-bottom: $leading;
   font-weight: 600;
@@ -19,18 +17,10 @@
 // MOLECULES
 
 .m-bio-text{
-  //font-size: rem(18);
-  //line-height: (30/18);
   text-align: center;
 
   p + p{
     margin-top: $leading;
-  }
-
-  a{
-    //padding-bottom: rem(3);
-    //color: inherit;
-    //border-bottom: 1px dotted;
   }
 
   @media all and (min-width: $beta_query) {
@@ -46,6 +36,10 @@
   padding-top: $leading*3;
   padding-bottom: $leading*4;
   background-color: $subtle-bgcolor;
+}
+
+.o-single_article + .o-global-footer{
+  background-color: $body-bgcolor;
 }
 
 .o-bio{

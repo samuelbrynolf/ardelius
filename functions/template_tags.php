@@ -72,6 +72,6 @@ if(!function_exists('section_archive_link')){
 			return;
 		}
 
-		echo '<p class="l-gutter a-fineprint a-section-archivelink"><a href="'.$section_archive_url.'">'.$section_cta_text.'</a></p>';
+		echo '<p class="l-gutter a-section-archivelink"><a class="a-btn" href="'.$section_archive_url.'">'.$section_cta_text.'</a></p>';
 	}
 }
