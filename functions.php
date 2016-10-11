@@ -61,6 +61,7 @@ add_action( 'after_setup_theme', 'shell_setup' );
  */
 function shell_scripts() {
 	wp_enqueue_style( 'shell-style', get_stylesheet_uri() );
+	wp_deregister_script('jquery');
 	wp_enqueue_script( 'shell-bundled-scripts', get_template_directory_uri() . '/js/bundled.js', array(), '', true );
 }
 add_action( 'wp_enqueue_scripts', 'shell_scripts' );
@@ -69,4 +70,5 @@ add_action( 'wp_enqueue_scripts', 'shell_scripts' );
 
 require get_template_directory() . '/functions/theme_functions.php';
 require get_template_directory() . '/functions/template_tags.php';
+require get_template_directory() . '/functions/ajax-pagin.php';
 // require get_template_directory() . '/functions/acf.php';

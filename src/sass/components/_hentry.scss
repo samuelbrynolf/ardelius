@@ -82,3 +82,16 @@
     }
   }
 }
+
+
+
+// ANIMATION -------------------------------------------------------------
+
+.js-added-HTML .m-hentryitem{
+  opacity: 0;
+  transition: opacity $anim_speed*6 ease-out;
+
+  .mis_img{
+    opacity: 1;
+  }
+}
