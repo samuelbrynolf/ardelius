@@ -20,7 +20,7 @@
             menu_trigger = $('#js-global-nav-toggler'),
             target = $('#js-global-nav');
 
-        menu_trigger.bind('tap', function(){
+        menu_trigger.on('click', function(){
             target.toggleClass('s-is-active');
             menu_trigger.toggleClass('s-is-active');
         });
@@ -71,9 +71,9 @@
     nav_toggler();
     scroll_to_content();
 
-    //$('#js-nextPostsLink').on('click', function(){
-    //    easein_item('.mis_img');
-    //});
+    $('#js-nextPostsLink').on('click', function(){
+        easein_item('.mis_img');
+    });
 
 
 	
