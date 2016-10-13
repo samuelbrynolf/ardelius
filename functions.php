@@ -70,5 +70,5 @@ add_action( 'wp_enqueue_scripts', 'shell_scripts' );
 
 require get_template_directory() . '/functions/theme_functions.php';
 require get_template_directory() . '/functions/template_tags.php';
-require get_template_directory() . '/functions/ajax-pagin.php';
+require get_template_directory() . '/functions/post_loader.php';
 // require get_template_directory() . '/functions/acf.php';

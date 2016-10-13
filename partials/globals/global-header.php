@@ -16,7 +16,3 @@
         <span>Meny</span>
     </button>
 </header>
-
-<?php //$queried_object = get_queried_object();
-//
-//echo $queried_object->name;
