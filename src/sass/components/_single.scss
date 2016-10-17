@@ -1,15 +1,19 @@
 // ATOMS ----------------------------------
 
 .a-single__header-title{
-  //font-size: rem(24);
-  //line-height: (36/24);
-  //font-weight: 600;
   position: relative;
   margin-top: $leading*2;
-  margin-bottom: $leading*1.25;
-  padding-bottom: $leading;
+  margin-bottom: $leading*0.5;
+  padding-bottom: $leading*0.75;
   text-align: center;
+  color: $body-textcolor;
   border-bottom: 1px solid;
+
+  @media all and (min-width: $beta_query) {
+    margin-bottom: $leading_beta*0.5;
+    padding-bottom: $leading_beta*0.75;
+    text-align: left;
+  }
 
   @media all and (min-width: $charlie_query) {
     margin-top: 0;
@@ -26,12 +30,17 @@
 
 
 .m-single__text{
-  //max-width: rem(720);
   color: $subtle-textcolor;
 
   p {
+    max-width: rem(612);
     margin-top: $leading;
     margin-bottom: $leading;
+
+    @media all and (min-width: $beta_query) {
+      margin-top: $leading_beta;
+      margin-bottom: $leading_beta;
+    }
   }
 }
 
@@ -42,6 +51,10 @@
   overflow: hidden;
   padding-bottom: $leading*3; // Or is *4 best?
   background-image: linear-gradient(top, $body-bgcolor, $subtle-bgcolor);
+
+  @media all and (min-width: $beta_query) {
+    padding-bottom: $leading_beta*3;
+  }
 }
 
 .o-single_article .o-gallery{
@@ -83,6 +96,7 @@
 
   .l-single-fullbleed{
     @include fullbleed('dq');
+    display: block;
   }
 
   .m-single__featured-img img{
@@ -118,7 +132,7 @@
     }
 
     p{
-      max-width: rem(720);
+      // max-width: rem(720); TODO WHY?
     }
   }
 
@@ -160,7 +174,3 @@
 // STATES ----------------------------------
 
 // ANIMATION ----------------------------------
-
-
-
-

@@ -2,7 +2,6 @@
 
 .c-hamburger {
   display: block;
-  //position: relative;
   overflow: hidden;
   margin: 0;
   padding: 0;
@@ -15,9 +14,6 @@
   border: none;
   cursor: pointer;
   transition: background 0.3s;
-  //border-top: 1px solid darken($body-bgcolor, 6%);
-  //border-bottom: 1px solid darken($body-bgcolor, 6%);
-  //border-left: 1px solid darken($body-bgcolor, 6%);
   box-shadow: -6px 0 6px 0 rgba(black, 0.05);
 }
 
@@ -58,7 +54,7 @@
 }
 
 .c-hamburger--htx {
-  background-color: $hamburger-bg-color;
+  background-color: rgba($hamburger-bg-color, 0.87);
 }
 
 .c-hamburger--htx span {
@@ -124,11 +120,11 @@
 .a-global-nav-toggler{
   position: fixed;
   top: $leading/2;
-  //top: 0;
   right: 0;
   z-index: 500;
 
   @media all and (min-width: $beta_query) {
+    top: rem($body_leading_beta + $fontsize_beta)/2;
     right: 0;
   }
 
@@ -143,6 +139,10 @@
 
 .m-global-header{
   line-height: rem($body_leading*3 + $fontsize);
+
+  @media all and (min-width: $beta_query) {
+    line-height: rem($body_leading_beta*3 + $fontsize_beta);
+  }
 
   @media all and (min-width: $charlie_query) {
     margin-top: $leading;

@@ -72,7 +72,6 @@
             $load_stop = parseInt($load_trigger.attr('data-load_stop'));
 
         $load_trigger.on('click', function(){
-
             $.ajax({
                 type: 'POST',
                 url: '/wp-admin/admin-ajax.php',
@@ -86,7 +85,7 @@
                     $loadtarget.append(data);
                     easein_item('.mis_img');
                     $offset_current = ($offset_current + $offset_val);
-                    if($offset_current = $load_stop){
+                    if($offset_current == $load_stop){
                         $load_trigger.remove();
                     }
                 },

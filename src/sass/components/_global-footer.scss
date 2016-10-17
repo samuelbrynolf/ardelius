@@ -1,14 +1,12 @@
 // ATOMS
 
 .a-bio-title{
-  margin-top: $leading;
+  margin-top: $leading*1.25;
   margin-bottom: $leading;
-  font-weight: 600;
-  text-align: center;
 
   @media all and (min-width: $beta_query) {
     margin-top: 0;
-    text-align: left;
+    margin-bottom: $leading_beta;
   }
 }
 
@@ -17,14 +15,15 @@
 // MOLECULES
 
 .m-bio-text{
-  text-align: center;
+  @extend .a-fineprint;
+  color: darken($subtle-textcolor, 6%);
 
   p + p{
     margin-top: $leading;
-  }
 
-  @media all and (min-width: $beta_query) {
-    text-align: left;
+    @media all and (min-width: $beta_query) {
+      margin-top: $leading_beta;
+    }
   }
 }
 
@@ -35,7 +34,14 @@
 .o-global-footer{
   padding-top: $leading*3;
   padding-bottom: $leading*4;
+  text-align: center;
   background-color: $subtle-bgcolor;
+
+  @media all and (min-width: $beta_query) {
+    text-align: left;
+    padding-top: $leading_beta*3;
+    padding-bottom: $leading_beta*4;
+  }
 }
 
 .o-single_article + .o-global-footer{

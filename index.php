@@ -35,9 +35,9 @@ get_header();
 			echo '</div>';
 		}
 
-		echo '<div class="l-gutter">';
+		echo '<p class="l-gutter a-section-archivelink">';
 			next_posts_link('Visa fler');
-		echo '</div>';
+		echo '</p>';
 	echo '</article>';
 
 get_footer();

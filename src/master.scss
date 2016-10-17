@@ -4,8 +4,6 @@
 @import "sass/skeleton/_reset";
 @import "sass/skeleton/_base";
 @import "sass/skeleton/_layout";
-@import "sass/vendors/_salvattore";
-@import "sass/components/_media";
 
 @import "sass/components/_typography";
 @import "sass/components/_formelements";
@@ -16,3 +14,6 @@
 @import "sass/components/_section.scss";
 @import "sass/components/_hentry.scss";
 @import "sass/components/_single.scss";
+
+@import "sass/vendors/_salvattore";
+@import "sass/vendors/_mis";

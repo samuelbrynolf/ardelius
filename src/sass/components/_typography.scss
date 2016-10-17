@@ -27,14 +27,23 @@ strong,
   font-size: rem(30);
   line-height: (42/30);
   font-weight: 600;
+
+  @media all and (min-width: $beta_query) {
+    font-size: rem(42);
+    line-height: (56/42);
+  }
 }
 
 .a-title-M{
   font-size: rem(21);
-  line-height: (48/36);
+  line-height: (30/21);
   font-weight: 600;
   text-transform: uppercase;
-  //text-align: center;
+
+  @media all and (min-width: $beta_query) {
+    font-size: rem(24);
+    line-height: (36/24);
+  }
 }
 
 .a-title-S{
@@ -51,6 +60,11 @@ strong,
 .a-fineprint{
   font-size: rem(14);
   line-height: (21/14);
+
+  @media all and (min-width: $beta_query) {
+    font-size: rem(16);
+    line-height: (24/16);
+  }
 }
 
 //a[href^="http://"],
