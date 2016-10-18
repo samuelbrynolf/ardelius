@@ -43,6 +43,7 @@
   line-height: rem($inputheight);
   text-align: center;
   text-decoration: none;
+  border-radius: $soft_border;
   color: white;
   background-color: $action-color;
 }

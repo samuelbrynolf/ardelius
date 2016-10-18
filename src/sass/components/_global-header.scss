@@ -10,11 +10,11 @@
   font-size: 0;
   text-indent: -9999px;
   appearance: none;
-  border-radius: none;
   border: none;
   cursor: pointer;
   transition: background 0.3s;
-  box-shadow: -6px 0 6px 0 rgba(black, 0.05);
+  border-radius: $soft_border;
+  box-shadow: -4px 0 4px 0 rgba(black, 0.05);
 }
 
 .c-hamburger:focus {
@@ -25,8 +25,8 @@
   display: block;
   position: absolute;
   top: rem(29);
-  left: rem(15);
-  right: rem(15);
+  left: rem(16);
+  right: rem(16);
   height: rem(3);
   color: $body-textcolor;
   background-color: $hamburger-line-color;
@@ -170,15 +170,11 @@
   padding-top: $leading*6;
   opacity: 0;
   pointer-events: none;
-  background-color: rgba($body-bgcolor, 0.87);
+  background-color: rgba($body-bgcolor, 0.96);
 
   li{
     transform: translateY($leading*3);
     text-align: center;
-  }
-
-  a{
-    color: inherit;
   }
 
   @media all and (min-width: $charlie_query) {
@@ -188,6 +184,10 @@
     padding-top: 0;
     opacity: 1;
     pointer-events: auto;
+
+    a{
+      color: inherit;
+    }
 
     li{
       display: inline-block;
@@ -211,7 +211,19 @@
   pointer-events: auto;
 
   li{
+    @extend %a-title-L;
     transform: translateY(0);
+
+    & + li{
+      margin-top: $leading;
+      padding-top: $leading;
+      border-top: 1px solid $subtle-bordercolor;
+
+      @media all and (min-width: $beta_query) {
+        margin-top: $leading_beta*1.5;
+        padding-top: $leading_beta*1.5;
+      }
+    }
   }
 }
 

@@ -1,22 +1,31 @@
 // ATOMS
 
 .a-bio-title{
-  margin-top: $leading*1.25;
-  margin-bottom: $leading;
+  margin-top: $leading;
+  margin-bottom: $leading*1.25;
+  padding-bottom: $leading;
+  font-size: rem(21);
+  line-height: (30/21);
+  font-weight: 600;
+  color: $body-textcolor;
+  border-bottom: 1px solid $subtle-bordercolor;
 
   @media all and (min-width: $beta_query) {
     margin-top: 0;
     margin-bottom: $leading_beta;
+    padding-bottom: $leading_beta;
   }
 }
-
-
 
 // MOLECULES
 
 .m-bio-text{
+  margin-bottom: $leading*1.25;
   @extend .a-fineprint;
-  color: darken($subtle-textcolor, 6%);
+
+  @media all and (min-width: $beta_query) {
+    margin-bottom: $leading_beta;
+  }
 
   p + p{
     margin-top: $leading;
@@ -33,14 +42,19 @@
 
 .o-global-footer{
   padding-top: $leading*3;
-  padding-bottom: $leading*4;
+  padding-bottom: $leading*3;
   text-align: center;
+  color: darken($subtle-textcolor, 9%);
   background-color: $subtle-bgcolor;
 
   @media all and (min-width: $beta_query) {
     text-align: left;
     padding-top: $leading_beta*3;
-    padding-bottom: $leading_beta*4;
+    padding-bottom: $leading_beta*3;
+  }
+
+  a{
+    color: darken($action-color, 2%);
   }
 }
 
@@ -51,6 +65,10 @@
 .o-bio{
 
   .a-avatar img{
-    border-radius: 50%;
+    //border-radius: 50%;
+
+    @media all and (min-width: $beta_query) {
+      //border-radius: 0;
+    }
   }
 }

@@ -23,7 +23,8 @@ strong,
   line-height: (72/60);
 }
 
-.a-title-L{
+.a-title-L,
+%a-title-L{
   font-size: rem(30);
   line-height: (42/30);
   font-weight: 600;
@@ -34,11 +35,11 @@ strong,
   }
 }
 
-.a-title-M{
+.a-title-M,
+%a-title-M{
   font-size: rem(21);
   line-height: (30/21);
   font-weight: 600;
-  text-transform: uppercase;
 
   @media all and (min-width: $beta_query) {
     font-size: rem(24);

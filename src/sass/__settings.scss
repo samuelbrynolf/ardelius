@@ -47,7 +47,7 @@ $spanwidth-12: 100%;
 // 1.2 -----------------------------------------------------------------------------------------------------------
 
 $alpha_gutter: 16; // (Use as variable: "$gutter_alpha" and "$gutter_alpha_half")
-$beta_gutter: 30; // Use as variable: "$gutter_beta" and "$gutter_beta_half")
+$beta_gutter: 36; // Use as variable: "$gutter_beta" and "$gutter_beta_half")
 $charlie_gutter: 42; // (Use as variable: "$gutter_charlie" and "$gutter_charlie_half")
 $delta_gutter: 48; // (Use as variable: "$gutter_delta" and "$gutter_delta_half")
 $echo_gutter: 48; // (Use as variable: "$gutter_echo" and "$gutter_echo_half")
@@ -58,7 +58,7 @@ $fontsize: 16;
 $body_leading: 24;
 
 $fontsize_beta: 18;
-$body_leading_beta: 30;
+$body_leading_beta: 27;
 
 $fontsize_charlie: 14;
 $body_leading_charlie: $body_leading;
@@ -124,10 +124,10 @@ $bodyfont: 'jaf-bernino-sans', sans-serif;
 
 // 5 -----------------------------------------------------------------------------------------------------------
 
-$body-bgcolor: #f4f4f4;
+$body-bgcolor: #f5f5f5;
 $body-textcolor: #00080b;
 $action-color: 	#0091ab;
-$subtle-textcolor: #50595c;
+$subtle-textcolor: #53585a;
 $subtle-bgcolor: #e2e4e4;
 $subtle-bordercolor: #b4babe;
 $input-bgcolor: $body-bgcolor;
@@ -143,6 +143,7 @@ $hamburger-bg-color_active: $action-color;
 
 $header_lh: $leading*3;
 $anim_speed: 180ms;
+$soft_border: 3px;
 
 // 7 -----------------------------------------------------------------------------------------------------------
 
