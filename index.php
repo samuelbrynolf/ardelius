@@ -27,19 +27,17 @@ get_header();
 				$col_count = 3;
 			}
 
-			echo '<section id="js-pagin_target">';
-				echo '<div class="js-salvattore l-container js-layout-'.$col_count.'" data-columns>';
-					while ( have_posts() ) {
-						the_post();
-						hentry_item($post->ID, $meta_descr, $col_count, $lightbox);
-					}
-				echo '</div>';
-			echo '</section>';
+			echo '<div id="js-post_loader_target" class="js-salvattore l-container js-layout-'.$col_count.'" data-columns>';
+				while ( have_posts() ) {
+					the_post();
+					hentry_item($post->ID, $meta_descr, $col_count, $lightbox);
+				}
+			echo '</div>';
 		}
 
-		echo '<div class="l-gutter">';
+		echo '<p class="l-gutter a-section-archivelink">';
 			next_posts_link('Visa fler');
-		echo '</div>';
+		echo '</p>';
 	echo '</article>';
 
 get_footer();

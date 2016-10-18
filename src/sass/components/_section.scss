@@ -3,14 +3,25 @@
 .a-section-title{
   margin-bottom: $leading*2;
   text-align: center;
+
+  @media all and (min-width: $beta_query) {
+    margin-bottom: $leading_beta*2;
+  }
 }
 
 p.a-section-archivelink{
-  margin-top: $leading;
+  //margin-top: $leading;
   margin-bottom: $leading*3;
 
+  @media all and (min-width: $beta_query) {
+    //margin-top: $leading_beta;
+    //width: 62.5%;
+    // margin: 0 auto $leading_beta*3 auto; TODO mayby only for hentry w description?
+    margin-bottom: $leading_beta*3;
+  }
+
   a{
-    color: $action-color;
+    color: white;
   }
 }
 
@@ -26,8 +37,9 @@ p.a-section-archivelink{
   //margin-bottom: $leading*3;
 
   @media all and (min-width: $beta_query) {
-    padding-right: rem($beta_gutter);
-    padding-left: rem($beta_gutter);
+    margin-top: $leading_beta*3;
+    //padding-right: rem($beta_gutter);
+    //padding-left: rem($beta_gutter);
   }
 
   @media all and (min-width: $charlie_query) {
@@ -41,6 +53,10 @@ p.a-section-archivelink{
     margin-top: 0;
     padding-top: $leading*3;
     border-top: 1px solid $subtle-bordercolor;
+
+    @media all and (min-width: $beta_query) {
+      padding-top: $leading_beta*3;
+    }
   }
 
   a{

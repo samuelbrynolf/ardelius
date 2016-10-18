@@ -7,11 +7,11 @@
 		//echo ($featured_format_is_landscape ? '' : 'is-not-landscape');
 
 		if($featured_format_is_landscape){
-			$layoutSpans_featuredImg = 'l-span-C8 m-single__featured-img';
-			$layoutSpans_textContent = 'l-span-C4';
+			$layoutSpans_featuredImg = 'l-span-A12 l-span-C8 m-single__featured-img';
+			$layoutSpans_textContent = 'l-span-A12 l-span-C4';
 		} else {
-			$layoutSpans_featuredImg = 'l-span-C5 m-single__featured-img';
-			$layoutSpans_textContent = 'l-span-C7';
+			$layoutSpans_featuredImg = 'l-span-A12 l-span-C5 m-single__featured-img';
+			$layoutSpans_textContent = 'l-span-A12 l-span-C7';
 		} ?>
 
 		<article id="post-<?php the_ID(); ?>" class="o-single_article">
@@ -44,7 +44,7 @@
 
 						echo '</div>'; // END TEXT-INSET
 					echo '</div>'; // END SINGLE TEXT
-				echo '</section>';
+				echo '</div>';
 			echo '</div>'; // END SINGLE FULLBLEED
 
 			if($featured_format_is_landscape || !has_post_thumbnail()) {
