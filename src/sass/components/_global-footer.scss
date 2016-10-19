@@ -15,6 +15,13 @@
     margin-bottom: $leading_beta;
     padding-bottom: $leading_beta;
   }
+
+  @media all and (min-width: $charlie_query) {
+    margin-bottom: $leading_charlie;
+    padding-bottom: $leading_charlie;
+    font-size: rem(24);
+    line-height: (36/24);
+  }
 }
 
 // MOLECULES
@@ -27,11 +34,19 @@
     margin-bottom: $leading_beta;
   }
 
+  @media all and (min-width: $charlie_query) {
+    margin-bottom: $leading_charlie;
+  }
+
   p + p{
     margin-top: $leading;
 
     @media all and (min-width: $beta_query) {
       margin-top: $leading_beta;
+    }
+
+    @media all and (min-width: $charlie_query) {
+      margin-top: $leading_charlie;
     }
   }
 }
@@ -53,6 +68,11 @@
     padding-bottom: $leading_beta*3;
   }
 
+  @media all and (min-width: $charlie_query) {
+    padding-top: $leading_charlie*3;
+    padding-bottom: $leading_charlie*3;
+  }
+
   a{
     color: darken($action-color, 2%);
   }
@@ -60,15 +80,4 @@
 
 .o-single_article + .o-global-footer{
   background-color: $body-bgcolor;
-}
-
-.o-bio{
-
-  .a-avatar img{
-    //border-radius: 50%;
-
-    @media all and (min-width: $beta_query) {
-      //border-radius: 0;
-    }
-  }
 }

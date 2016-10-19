@@ -21,11 +21,12 @@
     margin-bottom: $leading_beta*3;
     text-align: left;
   }
+
+  @media all and (min-width: $charlie_query) {
+    margin-bottom: $leading_charlie*3;
+    text-align: left;
+  }
 }
-
-
-
-// MOLECULES -----------------------------
 
 .m-hentryitem.s-has_no_meta_descr,
 .m-gallery__item{
@@ -53,15 +54,10 @@
   }
 }
 
-
-
-// STATES -------------------------------------------------------------
-
 .m-hentryitem.s-has_meta_descr{
 
   a{
     display: block;
-    //color: inherit;
   }
 
   .a-hentryitem-title{
@@ -72,6 +68,13 @@
     @media all and (min-width: $beta_query) {
       margin-top: $leading_beta;
       margin-bottom: $leading_beta/2;
+    }
+
+    @media all and (min-width: $charlie_query) {
+      margin-top: $leading_charlie*2;
+      margin-bottom: $leading_charlie;
+      font-size: rem(21);
+      line-height: (30/21);
     }
 
     //& + .a-hentryitem-meta{
@@ -92,6 +95,10 @@
 
       @media all and (min-width: $beta_query) {
         margin-top: $leading_beta;
+      }
+
+      @media all and (min-width: $charlie_query) {
+        margin-top: $leading_charlie;
       }
     }
   }

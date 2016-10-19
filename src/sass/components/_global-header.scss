@@ -106,7 +106,6 @@
 // Atoms -----------------------------------------------
 
 .a-global-header__title{
-  //text-align: center;
 
   a{
     color: inherit;
@@ -145,8 +144,9 @@
   }
 
   @media all and (min-width: $charlie_query) {
-    margin-top: $leading;
-    margin-bottom: $leading*3;
+    margin-top: $leading_charlie*2;
+    margin-bottom: $leading_charlie*2;
+    line-height: rem($body_leading_charlie*3 + $fontsize_charlie);
   }
 
   @media all and (min-width: $delta_query) {
@@ -195,7 +195,7 @@
       transform: translateY(0);
 
       & + li{
-        margin-left: $leading;
+        margin-left: $leading_charlie;
       }
     }
   }
@@ -211,7 +211,8 @@
   pointer-events: auto;
 
   li{
-    @extend %a-title-L;
+    font-size: rem(30);
+    line-height: (42/30);
     transform: translateY(0);
 
     & + li{

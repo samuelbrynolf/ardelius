@@ -10,15 +10,16 @@
   border-bottom: 1px solid;
 
   @media all and (min-width: $beta_query) {
-    margin-bottom: $leading_beta*0.5;
-    padding-bottom: $leading_beta*0.75;
+    margin-top: $leading_beta*3;
+    margin-bottom: $leading_beta*1.5;
+    padding-bottom: $leading_beta*1.25;
     text-align: left;
   }
 
   @media all and (min-width: $charlie_query) {
     margin-top: 0;
-    margin-bottom: $leading;
-    padding-top: $leading*2.5;
+    margin-bottom: $leading_charlie*2.25;
+    padding-top: $leading_charlie*3;
     padding-bottom: 0;
     border-top: 1px solid; // ??? dotted
     border-bottom: none;
@@ -33,13 +34,18 @@
   color: $subtle-textcolor;
 
   p {
-    max-width: rem(612);
     margin-top: $leading;
     margin-bottom: $leading;
 
     @media all and (min-width: $beta_query) {
+      max-width: rem(620);
       margin-top: $leading_beta;
       margin-bottom: $leading_beta;
+    }
+
+    @media all and (min-width: $charlie_query) {
+      margin-top: $leading_charlie;
+      margin-bottom: $leading_charlie;
     }
   }
 }
@@ -54,6 +60,10 @@
 
   @media all and (min-width: $beta_query) {
     padding-bottom: $leading_beta*3;
+  }
+
+  @media all and (min-width: $charlie_query) {
+    padding-bottom: $leading_charlie*2;
   }
 }
 
@@ -86,7 +96,7 @@
     //margin-top: $leading*3;
 
     @media all and (min-width: $charlie_query) {
-      margin-top: $leading*3;
+      margin-top: $leading_charlie*2;
     }
   }
 
@@ -99,18 +109,22 @@
     display: block;
   }
 
-  .m-single__featured-img img{
+  .m-single__featured-img {
+    background-color: transparent;
 
-    @media all and (min-width: $charlie_query) {
-      padding-right: rem($charlie_gutter/3);
-    }
+    img {
 
-    @media all and (min-width: $delta_query) {
-      padding-right: rem($delta_gutter/3);
-    }
+      @media all and (min-width: $charlie_query) {
+        padding-right: rem($charlie_gutter/3);
+      }
 
-    @media all and (min-width: $echo_query) {
-      padding-right: 0; // FIX AGAIN AFTER FINAL MAX-WIDTH IS SET
+      @media all and (min-width: $delta_query) {
+        padding-right: rem($delta_gutter/3);
+      }
+
+      @media all and (min-width: $echo_query) {
+        padding-right: 0; // FIX AGAIN AFTER FINAL MAX-WIDTH IS SET
+      }
     }
   }
 

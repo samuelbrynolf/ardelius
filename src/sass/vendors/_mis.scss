@@ -10,3 +10,7 @@
 .no-js .mis_container > .mis_img{
   display:none
 }
+
+.mis_container{
+  background-color: lighten($body-textcolor, 6%);
+}

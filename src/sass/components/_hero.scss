@@ -6,6 +6,7 @@
   bottom: 0;
   z-index: 100;
   width: 100%;
+  max-width: 100%;
   margin-top: 0;
   padding: $leading*3 rem($alpha_gutter) $leading*1.5 rem($alpha_gutter);
   @extend .a-fineprint;
@@ -16,7 +17,11 @@
   pointer-events: none;
 
   @media all and (min-width: $beta_query) {
-    padding: $leading_beta*3 rem($beta_gutter) $leading_beta*1.5 rem($beta_gutter);
+    padding: $leading_beta*6 rem($beta_gutter) $leading_beta*1.5 rem($beta_gutter);
+  }
+
+  @media all and (min-width: $charlie_query) {
+    padding: $leading_charlie*12 rem($charlie_gutter) $leading_charlie*3 rem($charlie_gutter);
   }
 }
 
