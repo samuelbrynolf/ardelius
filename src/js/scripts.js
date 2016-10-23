@@ -65,7 +65,7 @@
 
         var $loadtarget = $('#js-post_loader_target'),
             $load_trigger = $('#js-postloader_trigger'),
-            $query_is_hierarchial = $load_trigger.attr('data-queried_hierarchical'),
+            $query_is_hierarchial = $load_trigger.attr('data-queried_hierarchical'), // TODO WILL BUG - ANOTHER HOOK NEEDED
             $query_name = $load_trigger.attr('data-queried_name'),
             $offset_val = parseInt($load_trigger.attr('data-offset')),
             $offset_current = $offset_val,

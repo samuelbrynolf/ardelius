@@ -73,6 +73,25 @@ endif;
 
 
 
+// RENAME INLÄGG OR POSTS TO X -------------------------------------------------------------------
+
+function wd_admin_menu_rename() {
+    global $menu; // Global to get menu array
+    $menu[5][0] = 'Textfokus'; // Change name of posts to portfolio
+}
+add_action( 'admin_menu', 'wd_admin_menu_rename' );
+
+
+
+// REMOVE COMMENTS LINK IN ADMIN -------------------------------------------------------------------
+
+function wd_admin_menu_remove() {
+    remove_menu_page( 'edit-comments.php' );
+}
+add_action( 'admin_menu', 'wd_admin_menu_remove' );
+
+
+
 // FILTER ARCHIVE TITLES/LABELS -------------------------------------------------------------------
 
 add_filter('get_the_archive_title', function ($title) {

@@ -2,29 +2,23 @@
 
 get_header();
 
-	$blog_page = false;
-
-	if(is_home()){
-		$blog_page = true;
-	}
-
-	echo '<article class="o-section is-standalone'.($blog_page ? ' s-is-blogsection' : '').'">'; // TODO Get a workng solution for 404s
+	echo '<article class="o-section is-standalone">'; // TODO Get a workng solution for 404s
 		get_template_part('partials/globals/global-archiveheader');
 
 		if (have_posts()) {
 
 			$lightbox = true;
 
-			if($blog_page || is_post_type_archive('reportage')){
+			if(is_post_type_archive('portratt')) {
+				$meta_descr = false;
+				$col_count = 2;
+			} elseif(is_post_type_archive('singlar')) {
+				$meta_descr = false;
+				$col_count = 3;
+			} else {
 				$meta_descr = true;
 				$lightbox = false;
 				$col_count = 1;
-			} elseif(is_post_type_archive('portratt')) {
-				$meta_descr = false;
-				$col_count = 2;
-			} else {
-				$meta_descr = false;
-				$col_count = 3;
 			}
 
 			echo '<div id="js-post_loader_target" class="js-salvattore l-container js-layout-'.$col_count.'" data-columns>';
