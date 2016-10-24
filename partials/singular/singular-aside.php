@@ -1,19 +1,9 @@
 <?php $current_cpt = get_post_type();
 $current_postID = array(get_the_ID());
 
-$related_posts_args = array(
-    'post_type' => $current_cpt,
-    'post__not_in' => $current_postID,
-    'posts_per_page' => -1,
-    'post_status' => 'publish'
-);
+// Set hentry-features
 
-$related_posts_loop_order = array(
-    'orderby' => 'menu_order',
-    'order'   => 'ASC',
-);
-
-if( $current_cpt == 'post' || $current_cpt == 'reportage'){
+if( $current_cpt == 'text-bild' || $current_cpt == 'post'){
     $meta_descr = true;
     $lightbox = false;
     $layout_cols = 2;
@@ -23,16 +13,61 @@ if( $current_cpt == 'post' || $current_cpt == 'reportage'){
     $layout_cols = 3;
 }
 
+// Set hentry-features for post & title (all)
+
 if($current_cpt == 'post'){
-    $aside_title = 'Mer ur bloggen';
+    $aside_title = 'Mer nyheter';
     $layout_cols = 1;
-    $related_posts = $related_posts_args;
 } else {
     $aside_title = 'Fler '.$current_cpt;
-    $related_posts = array_merge($related_posts_args, $related_posts_loop_order);
 }
 
-$related_posts = new WP_Query($related_posts);
+// Set loop-query
+
+if( $current_cpt == 'post'){
+    $related_posts_args = array(
+        'post_type' => $current_cpt,
+    );
+} else {
+    $tax_terms_arr_imgtext = get_the_terms( get_the_ID(), 'typ' );
+    $tax_terms_arr_imgplain = get_the_terms( get_the_ID(), 'bildtyp' );
+
+    if ( !empty($tax_terms_arr_imgtext) ){
+        $tax_terms_imgtext = array_shift($tax_terms_arr_imgtext);
+        $related_posts_args = array(
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'typ',
+                    'field'    => 'id',
+                    'terms'    => $tax_terms_imgtext->term_id
+                ),
+            ),
+        );
+    }
+
+    if ( !empty($tax_terms_arr_imgplain) ){
+        $tax_terms_imgplain = array_shift($tax_terms_arr_imgplain);
+        $related_posts_args = array(
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'bildtyp',
+                    'field'    => 'id',
+                    'terms'    => $tax_terms_imgplain ->term_id
+                ),
+            ),
+        );
+    }
+}
+
+$related_posts_loop_order = array(
+    'post__not_in' => $current_postID,
+    'posts_per_page' => -1,
+    'post_status' => 'publish',
+    'orderby' => 'menu_order',
+    'order'   => 'ASC',
+);
+
+$related_posts = new WP_Query(array_merge($related_posts_args, $related_posts_loop_order));
 
 if ($related_posts->have_posts()) {
     echo '<aside class="o-section">';

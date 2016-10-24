@@ -7,7 +7,6 @@
 	
 (function($) {
 
-
 //==============================================================================================================
 
 // 1. FUNCTIONS
@@ -20,7 +19,7 @@
             menu_trigger = $('#js-global-nav-toggler'),
             target = $('#js-global-nav');
 
-        menu_trigger.on('click', function(){
+        menu_trigger.bind('tap', function(){
             target.toggleClass('s-is-active');
             menu_trigger.toggleClass('s-is-active');
         });
@@ -46,17 +45,6 @@
         });
     }
 
-    function scroll_to_content(){
-        var scroll_trigger = $('#js-scroll_to_gallery'),
-            text_content = $('#js-gallery');
-
-        scroll_trigger.on('click', function(){
-            $('html, body').animate({
-                scrollTop: text_content.offset().top + -96
-            }, 1500);
-        });
-    }
-
     function post_loader(){
 
         $.ajaxSetup({
@@ -71,7 +59,7 @@
             $offset_current = $offset_val,
             $load_stop = parseInt($load_trigger.attr('data-load_stop'));
 
-        $load_trigger.on('click', function(){
+        $load_trigger.bind('tap', function(){
             $.ajax({
                 type: 'POST',
                 url: '/wp-admin/admin-ajax.php',
@@ -109,7 +97,6 @@
 
     easein_item('.mis_img');
     nav_toggler();
-    scroll_to_content();
     post_loader();
 
 

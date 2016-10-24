@@ -30,7 +30,7 @@
             settings.body.append(fragment);
             var popup_elems = $('.' + settings.imgcloned_class).add(overlay);
 
-            popup_src.on('click', function(e){
+            popup_src.bind('tap', function(e){
                 var $this = $(this);
                 var thisclone = $('#'+ $this.attr('data-misid'));
                 var thisclone_width = thisclone.width();
@@ -58,11 +58,10 @@
                 e.preventDefault(e);
             });
 
-            popup_elems.on('click', function(e){
+            popup_elems.bind('tap', function(e){
                 popup_elems.removeClass(settings.show_class);
                 e.preventDefault();
             });
-
             return this;
         }
     };
@@ -70,7 +69,7 @@
     if($.fn.mis_popup) {
         var popup_src = $('.mis_popup');
         if(popup_src.length){
-            //popup_src.mis_popup(); TODO ACTIVATE AND MAKE CUSTOM ENQUEUE FOR PLUGIN
+            popup_src.mis_popup(); // TODO ACTIVATE AND MAKE CUSTOM ENQUEUE FOR PLUGIN
         }
     }
 }( jQuery, document ));

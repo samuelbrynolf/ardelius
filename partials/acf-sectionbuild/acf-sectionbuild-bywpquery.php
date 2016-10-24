@@ -16,6 +16,8 @@ if($post_slug){
 		$col_count = 4;
 	}
 
+	// TODO setup tax queries instead
+
 	$sectional_loop_tag = array(
 		'tag' => $query_tag
 	);
