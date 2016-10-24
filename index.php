@@ -1,29 +1,51 @@
-<?php // Index is used as archive-, category-, tag- and home-template.
+<?php // Index is used as a global archive-template: posts, cpt-archives, custom tax archive and tags.
 
 get_header();
+	$col_count = 2;
+
+	if(is_home()){
+		$col_count = 1;
+	}
+
+	if(is_tax() && function_exists('get_sub_field')){
+		$current_taxterm_id = get_queried_object()->term_id;
+
+		while(has_sub_field('tax-template_layoutcols', 'option')){
+			if(get_sub_field('tax-template_term-id') === $current_taxterm_id){
+				$col_count = get_sub_field('tax-template_col-count');
+				break;
+			}
+		}
+	}
+
+	if(is_tag() && function_exists('get_sub_field')){
+		$current_tagterm_id = get_queried_object()->term_id;
+
+		while(has_sub_field('tag-template_layoutcols', 'option')){
+			if(get_sub_field('tag-template_term-id') === $current_taxterm_id){
+				$col_count = get_sub_field('tag-template_col-count');
+				break;
+			}
+		}
+	}
 
 	echo '<article class="o-section is-standalone">'; // TODO Get a workng solution for 404s
 		get_template_part('partials/globals/global-archiveheader');
 
 		if (have_posts()) {
 
-			$lightbox = true;
-
-			if(is_post_type_archive('portratt')) {
-				$meta_descr = false;
-				$col_count = 2;
-			} elseif(is_post_type_archive('singlar')) {
-				$meta_descr = false;
-				$col_count = 3;
-			} else {
-				$meta_descr = true;
-				$lightbox = false;
-				$col_count = 1;
-			}
-
 			echo '<div id="js-post_loader_target" class="js-salvattore l-container js-layout-'.$col_count.'" data-columns>';
 				while ( have_posts() ) {
 					the_post();
+
+					$meta_descr = true;
+					$lightbox = false;
+
+					if('bilder' == get_post_type()) {
+						$meta_descr = false;
+						$lightbox = true;
+					}
+
 					hentry_item($post->ID, $meta_descr, $col_count, $lightbox);
 				}
 			echo '</div>';

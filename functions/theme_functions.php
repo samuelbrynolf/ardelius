@@ -77,9 +77,18 @@ endif;
 
 function wd_admin_menu_rename() {
     global $menu; // Global to get menu array
-    $menu[5][0] = 'Textfokus'; // Change name of posts to portfolio
+    $menu[5][0] = 'Nyheter'; // Change name of posts to portfolio
 }
 add_action( 'admin_menu', 'wd_admin_menu_rename' );
+
+
+
+// RENAME INLÄGG OR POSTS TO X -------------------------------------------------------------------
+
+function remove_meta_boxes() {
+    remove_meta_box( 'categorydiv', 'post', 'side');
+}
+add_action( 'admin_menu', 'remove_meta_boxes' );
 
 
 
