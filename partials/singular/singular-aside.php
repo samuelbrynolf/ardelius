@@ -17,7 +17,12 @@ if( $current_cpt == 'text-bild' || $current_cpt == 'post'){
 
 if($current_cpt == 'post'){
     $aside_title = 'Mer nyheter';
-    $layout_cols = 1;
+} elseif($current_cpt == 'text-bild'){
+    $terms = wp_get_post_terms( get_the_ID(), 'typ', array("fields" => "names"));
+    $aside_title = 'Fler '.$terms[0];
+} elseif($current_cpt == 'bilder'){
+    $terms = wp_get_post_terms( get_the_ID(), 'bildtyp', array("fields" => "names"));
+    $aside_title = 'Fler '.$terms[0];
 } else {
     $aside_title = 'Fler '.$current_cpt;
 }

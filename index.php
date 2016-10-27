@@ -2,6 +2,7 @@
 
 get_header();
 	$col_count = 2;
+	$current_taxterm_id = null;
 
 	if(is_home()){
 		$col_count = 1;
