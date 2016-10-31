@@ -18,11 +18,36 @@
 
   @media all and (min-width: $charlie_query) {
     margin-top: 0;
-    margin-bottom: $leading_charlie*2.25;
+    margin-bottom: $leading_charlie*2;
     padding-top: $leading_charlie*3;
     padding-bottom: 0;
     border-top: 1px solid; // ??? dotted
     border-bottom: none;
+  }
+}
+
+.single-post .a-single__header-title{
+  margin-top: $leading;
+
+  @media all and (min-width: $beta_query) {
+    margin-top: $leading_beta*2;
+  }
+
+  @media all and (min-width: $charlie_query) {
+    margin-bottom: $leading_charlie*2.5;
+  }
+}
+
+.m-single__text .a-single__postdate{
+  max-width: 100%;
+  text-align: center;
+
+  @media all and (min-width: $beta_query) {
+    text-align: left;
+  }
+
+  @media all and (min-width: $charlie_query) {
+    margin-top: 0;
   }
 }
 
