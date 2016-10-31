@@ -21,12 +21,4 @@
         the_archive_description('<h2>','</h2>');
     }
 
-    // NO POSTS OF EMPTY SEARCH ------------------------------------------
-
-    if (!have_posts()) {
-        echo '<section class="o-section">';
-            echo '<p>Inget inneh&aring;ll &auml;nnu...';
-        echo '</section>';
-    }
-
 echo '</header>';

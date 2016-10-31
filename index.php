@@ -6,6 +6,9 @@ get_header();
 
 	if(is_home()){
 		$col_count = 1;
+		$maxw_decr = 'decr-maxw is-blog-hentries ';
+	} else {
+		$maxw_decr = null;
 	}
 
 	if(is_tax() && function_exists('get_sub_field')){
@@ -35,7 +38,7 @@ get_header();
 
 		if (have_posts()) {
 
-			echo '<div id="js-post_loader_target" class="js-salvattore l-container js-layout-'.$col_count.'" data-columns>';
+			echo '<div id="js-post_loader_target" class="js-salvattore '.$maxw_decr.'l-container js-layout-'.$col_count.'" data-columns>';
 				while ( have_posts() ) {
 					the_post();
 

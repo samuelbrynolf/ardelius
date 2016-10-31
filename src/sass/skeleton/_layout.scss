@@ -99,11 +99,11 @@
 	padding-left: rem($alpha_gutter/2);
 
 	&.decr-maxw{
-		max-width: $max_width_decr;
+		max-width: rem($max_width_decr);
 	}
 
 	&.incr-maxw{
-		max-width: $max_width_incr;
+		max-width: rem($max_width_incr);
 	}
 }
 

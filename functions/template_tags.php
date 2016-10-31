@@ -44,15 +44,21 @@
 				if(function_exists('makeitSrcset') && has_post_thumbnail()) {
 					makeitSrcset(get_post_thumbnail_id($postID), $vw_mq1, $vw_mq2, $vw_mq3, $vw_mq4, $vw_mq5, null, null, ($lightbox ? 'lightbox-true' : ''));
 				}
-				the_title('<h3 class="a-hentryitem-title">', '</h3>');
+
+				the_title('<h3 class="l-clear a-hentryitem-title">', '</h3>');
+
 				if($meta_descr == true){
-					echo '<div class="a-hentryitem-meta a-fineprint">';
-						if(function_exists('get_field') && get_field('acf_text-summary')){
-							echo get_field('acf_text-summary');
-						} else {
-							the_content('&#8594;');
+					echo '<p class="a-hentryitem-meta a-fineprint">';
+						if('post' == get_post_type($postID)){
+							the_date('', '<strong class="a-hentryitem-postdate">', ' / </strong>');
 						}
-					echo '</div>';
+
+						if(function_exists('get_field') && get_field('acf_text-summary')){
+							echo strip_tags(get_field('acf_text-summary'));
+						} else {
+							echo strip_tags(the_content());
+						}
+					echo '</p>';
 				}
 			echo ($lightbox ? '' : '</a>');
 		echo '</div>';

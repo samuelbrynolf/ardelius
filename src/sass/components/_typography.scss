@@ -56,23 +56,17 @@ strong,
   }
 }
 
-.a-title-S{
-  font-size: rem(18);
-  line-height: (36/24);
-  font-weight: 600;
-}
-
 .a-preamble{
   font-size: rem(21);
   line-height: (30/21);
 }
 
 .a-fineprint{
+  max-width: rem(620);
   font-size: rem(14);
   line-height: (21/14);
 
   @media all and (min-width: $charlie_query) {
-    max-width: rem(560);
     font-size: rem(16);
     line-height: (24/16);
   }

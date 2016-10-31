@@ -23,7 +23,7 @@ $echo_screen: 1700; // (Use as variable: "$echo_query")
 $max_width: 1680; // (Use as variable: "$containerwidth")
 
 // Decreased maxwidth
-$max_width_decr: 7em; // (Use as HTML-class, added to l-container: "decr-maxw")
+$max_width_decr: 960; // (Use as HTML-class, added to l-container: "decr-maxw")
 
 // Increased maxwidth
 $max_width_incr: 1200px; // (Use as HTML-class, added to l-container: "incr-mw")

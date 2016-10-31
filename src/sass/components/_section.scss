@@ -36,6 +36,10 @@ p.a-section-archivelink{
   }
 }
 
+.blog p.a-section-archivelink{
+  max-width: rem($max_width_decr);
+}
+
 
 // Molecules -----------------------------
 

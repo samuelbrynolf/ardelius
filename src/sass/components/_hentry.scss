@@ -1,17 +1,17 @@
 
 // ATOMS -----------------------------
 
-.m-hentryitem .mis_container + .a-hentryitem-title{
-  //margin-top: $leading;
+.is-blog-hentries .m-hentryitem.s-has_meta_descr .a-hentryitem-title{
+  @extend .a-title-L;
 }
 
-.m-hentryitem .a-hentryitem-title + .a-hentryitem-meta{
-  //margin-top: $leading*0.75;
+.a-hentryitem-postdate{
+  //padding-right: rem(6);
+  color: $body-textcolor;
 }
 
 
-
-  // MOLECULES -----------------------------
+// MOLECULES -----------------------------
 
 .m-hentryitem{
   margin-bottom: $leading*3;
@@ -50,7 +50,7 @@
   }
 
   .a-hentryitem-title{
-    @extend .a-overlay-title;
+    @extend %a-overlay-title;
   }
 }
 
@@ -85,21 +85,9 @@
   .a-hentryitem-meta{
     color: $subtle-textcolor;
 
-    p:after{
+    &:after{
       content: ' / Se allt';
       color: $action-color;
-    }
-
-    p + p{
-      margin-top: $leading;
-
-      @media all and (min-width: $beta_query) {
-        margin-top: $leading_beta;
-      }
-
-      @media all and (min-width: $charlie_query) {
-        margin-top: $leading_charlie;
-      }
     }
   }
 }
