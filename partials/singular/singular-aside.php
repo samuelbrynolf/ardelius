@@ -31,9 +31,12 @@ if($current_cpt == 'post'){
 
 if( $current_cpt == 'post'){
     $related_posts_args = array(
-        'post_type' => $current_cpt,
+        'post_type' => $current_cpt
     );
 } else {
+	if(!$terms){
+		return;
+	}
     $tax_terms_arr_imgtext = get_the_terms( get_the_ID(), 'typ' );
     $tax_terms_arr_imgplain = get_the_terms( get_the_ID(), 'bildtyp' );
 

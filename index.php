@@ -33,7 +33,7 @@ get_header();
 		}
 	}
 
-	echo '<article class="o-section is-standalone">'; // TODO Get a workng solution for 404s
+	echo '<article class="o-section is-standalone">';
 		get_template_part('partials/globals/global-archiveheader');
 
 		if (have_posts()) {
