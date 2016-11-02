@@ -62,9 +62,12 @@ strong,
 }
 
 .a-fineprint{
-  max-width: rem(620);
   font-size: rem(14);
   line-height: (21/14);
+
+  @media all and (min-width: $beta_query) {
+    max-width: rem(620);
+  }
 
   @media all and (min-width: $charlie_query) {
     font-size: rem(16);

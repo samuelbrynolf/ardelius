@@ -54,8 +54,16 @@
 @media all and (min-width: $charlie_query) {
 
   .a-btn:hover{
-    color: $body-textcolor;
-    border-color: $body-textcolor;
+    color: white;
     cursor: pointer;
+    background-color: darken($action-color, 3%);
   }
+}
+
+
+
+// ANIMATION ---------------------------------------------------------------
+
+.a-btn{
+  transition: background-color $anim_speed ease-out;
 }

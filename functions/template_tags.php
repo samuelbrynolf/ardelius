@@ -56,7 +56,7 @@
 						if(function_exists('get_field') && get_field('acf_text-summary')){
 							echo strip_tags(get_field('acf_text-summary'));
 						} else {
-							echo strip_tags(the_content());
+							echo strip_tags(get_the_content());
 						}
 					echo '</p>';
 				}

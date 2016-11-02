@@ -14,20 +14,13 @@
 }
 
 p.a-section-archivelink{
-  //margin-top: $leading;
   margin-bottom: $leading*3;
 
   @media all and (min-width: $beta_query) {
-    //margin-top: $leading_beta;
-    //width: 62.5%;
-    // margin: 0 auto $leading_beta*3 auto; TODO mayby only for hentry w description?
     margin-bottom: $leading_beta*3;
   }
 
   @media all and (min-width: $charlie_query) {
-    //margin-top: $leading_beta;
-    //width: 62.5%;
-    // margin: 0 auto $leading_beta*3 auto; TODO mayby only for hentry w description?
     margin-bottom: $leading_charlie*3;
   }
 
@@ -89,4 +82,12 @@ p.a-section-archivelink{
     padding-top: 0;
     border-top: none;
   }
+}
+
+
+
+// States --------------------------------------------------------
+
+p.a-section-archivelink a:hover{
+  //color: white;
 }
