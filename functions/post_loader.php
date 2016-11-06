@@ -1,22 +1,32 @@
 <?php if(!function_exists('postloader_eventhook_setup')){
+
 	function postloader_eventhook_setup() {
+
 		global $wp_query;
 		$load_stop = $wp_query->max_num_pages;
-		$queried_object = get_queried_object();
-		$queried_is_hierarchical = $queried_object->hierarchical;
-		$queried_name = $queried_object->name;
 		$offset = get_option('posts_per_page');
+		$query_var_type = null;
+		$query_var_tax = 0;
+		$query_var_name = null;
 
-		if($queried_is_hierarchical){
-			$queried_is_hierarchical = '1';
+		if(is_tax()){
+			$query_var_type = 'taxonomy';
+			$query_var_tax = get_query_var('taxonomy');
+			$query_var_name = get_query_var('term');
+		} elseif(is_post_type_archive()){
+			$query_var_type = 'post_type';
+			$query_var_name = get_query_var('post_type');
+		} elseif(is_tag()){
+			$query_var_type = 'tag';
+			$query_var_name = get_query_var('tag');
 		} else {
-			$queried_is_hierarchical = '0';
+			$query_var_type = 'post';
 		}
 
-		if(empty($queried_name)){
+		if(is_null($query_var_type)){
 			return 'class="a-btn"';
 		} else {
-			return 'id="js-postloader_trigger" class="a-btn" data-queried_hierarchical="'.$queried_is_hierarchical.'" data-queried_name="'.$queried_name.'" data-offset="'.$offset.'" data-loadingText="Laddar fler..." data-load_stop="'.$load_stop.'"';
+			return 'id="js-postloader_trigger" class="a-btn" data-query-var-type="'.$query_var_type.'" data-query-var-tax="'.$query_var_tax.'" data-query-var-name="'.$query_var_name.'" data-offset="'.$offset.'" data-loadingText="Laddar fler..." data-load_stop="'.$load_stop.'"';
 		}
 	}
 	add_filter('next_posts_link_attributes', 'postloader_eventhook_setup');
@@ -29,19 +39,36 @@
 
 
 if(!function_exists( 'postloader_loop' )){
-	function postloader_loop($query_is_hierarchial, $query_name, $offset) {
+	function postloader_loop($query_var_type, $query_var_tax, $query_var_name, $offset) {
 
 		$posts_per_page = get_option('posts_per_page');
 
-		if ( $query_is_hierarchial ) {
+		// MAN KAN DELA POST TYPE ARGS ju, inte två loopar för post och post_type
+
+		if ( 'taxonomy' == $query_var_type ){
+
 			$args_custom = array(
-				'post_type' => $query_name,
+
+			);
+
+		} elseif ( 'post_type' == $query_var_type ){
+
+			$args_custom = array(
+
+			);
+
+		} elseif ( 'tag' == $query_var_type ){
+
+			$args_custom = array(
+
+			);
+
+		} elseif ( 'post' == $query_var_type ){
+
+			$args_custom = array(
+				'post_type' => 'post',
 				'orderby'   => 'menu_order',
 				'order'     => 'ASC',
-			);
-		} else {
-			$args_custom = array(
-				'tag' => $query_name
 			);
 		}
 
@@ -74,11 +101,12 @@ if(!function_exists( 'postloader_loop' )){
 
 if(!function_exists( 'postloader_setup' )){
 	function postloader_setup() {
-		$query_is_hierarchial = $_POST['query_is_hierarchial'];
-		$query_name = $_POST['query_name'];
+		$query_var_type = $_POST['query_var_type'];
+		$query_var_tax = $_POST['query_var_tax'];
+		$query_var_name = $_POST['query_var_name'];
 		$offset = $_POST['offset'];
 
-		$content = postloader_loop($query_is_hierarchial, $query_name, $offset);
+		$content = postloader_loop($query_var_type, $query_var_tax, $query_var_name, $offset);
 		die($content);
 	}
 	add_action('wp_ajax_nopriv_postloader_setup', 'postloader_setup');

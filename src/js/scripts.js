@@ -53,11 +53,21 @@
 
         var $loadtarget = $('#js-post_loader_target'),
             $load_trigger = $('#js-postloader_trigger'),
-            $query_is_hierarchial = $load_trigger.attr('data-queried_hierarchical'), // TODO WILL BUG - ANOTHER HOOK NEEDED
-            $query_name = $load_trigger.attr('data-queried_name'),
+            $query_var_type = $load_trigger.attr('data-query-var-type'),
+            $query_var_tax = $load_trigger.attr('data-query-var-tax'),
+            $query_var_name = $load_trigger.attr('data-query-var-name'),
             $offset_val = parseInt($load_trigger.attr('data-offset')),
             $offset_current = $offset_val,
             $load_stop = parseInt($load_trigger.attr('data-load_stop'));
+
+        //console.log($loadtarget);
+        //console.log($load_trigger);
+        console.log($query_var_type);
+        console.log($query_var_tax);
+        console.log($query_var_name);
+        //console.log($offset_val);
+        //console.log($offset_current);
+        //console.log($load_stop);
 
         $load_trigger.bind('tap', function(){
             $.ajax({
@@ -65,13 +75,16 @@
                 url: '/wp-admin/admin-ajax.php',
                 data: {
                     action: 'postloader_setup',
-                    query_is_hierarchial: $query_is_hierarchial,
-                    query_name: $query_name,
+                    query_var_type: $query_var_type,
+                    query_var_tax: $query_var_tax,
+                    query_var_name: $query_var_name,
                     offset: $offset_current
                 },
                 success: function (data) {
+                    console.log('succsee');
+
                     $loadtarget.append(data);
-                    easein_item('.mis_img');
+                    //easein_item('.mis_img');
                     $offset_current = ($offset_current + $offset_val);
                     if($offset_current == $load_stop){
                         $load_trigger.remove();
@@ -79,6 +92,7 @@
                 },
                 error: function (MLHttpRequest, textStatus, errorThrown) {
                     $load_trigger.removeAttr('id');
+                    console.log(data);
                 }
             });
             return false;
