@@ -179,8 +179,9 @@
   }
 
   @media all and (min-width: $delta_query) {
-    //margin-top: $leading*1.5;
-   // margin-bottom: $leading*3;
+    margin-top: $leading_delta*2;
+    margin-bottom: $leading_delta*2;
+    line-height: rem($body_leading_delta*3 + $fontsize_delta);
   }
 
   @media all and (min-width: $echo_query) {

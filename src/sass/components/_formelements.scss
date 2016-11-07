@@ -1,38 +1,38 @@
 
 // ATOMS ---------------------------------------------------------------
 
-.a-inputText,
-.a-textarea{
-  width: 100%;
-  height: rem($inputheight);
-  font-size: rem($inputfontsize);
-  line-height: rem($inputheight);
-  font-family: $bodyfont;
-  background-color: $input-bgcolor;
-
-  &::-webkit-input-placeholder {
-    color: $subtle-textcolor;
-  }
-
-  &:-moz-placeholder {
-    color: $subtle-textcolor;
-    opacity: 1;
-  }
-
-  &::-moz-placeholder {
-    color: $subtle-textcolor;
-    opacity: 1;
-  }
-
-  &:-ms-input-placeholder {
-    color: $subtle-textcolor;
-  }
-
-  &.inline{
-    display: inline-block;
-    width: auto;
-  }
-}
+//.a-inputText,
+//.a-textarea{
+//  width: 100%;
+//  height: rem($inputheight);
+//  font-size: rem($inputfontsize);
+//  line-height: rem($inputheight);
+//  font-family: $bodyfont;
+//  background-color: $input-bgcolor;
+//
+//  &::-webkit-input-placeholder {
+//    color: $subtle-textcolor;
+//  }
+//
+//  &:-moz-placeholder {
+//    color: $subtle-textcolor;
+//    opacity: 1;
+//  }
+//
+//  &::-moz-placeholder {
+//    color: $subtle-textcolor;
+//    opacity: 1;
+//  }
+//
+//  &:-ms-input-placeholder {
+//    color: $subtle-textcolor;
+//  }
+//
+//  &.inline{
+//    display: inline-block;
+//    width: auto;
+//  }
+//}
 
 .a-btn{
   display: block;
@@ -43,8 +43,14 @@
   line-height: rem($inputheight);
   text-align: center;
   text-decoration: none;
-  color: white;
+  color: rgba(white, 0.9);
   background-color: $action-color;
+
+  @media all and (min-width: $delta_query) {
+    height: rem($inputheight*1.5);
+    line-height: rem($inputheight*1.5);
+    //font-size: rem($btnfontsize*1.15);
+  }
 }
 
 

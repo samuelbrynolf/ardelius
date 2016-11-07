@@ -26,6 +26,10 @@
     margin-bottom: $leading_charlie*3;
     text-align: left;
   }
+
+  @media all and (min-width: $delta_query) {
+    margin-bottom: $leading_delta*4;
+  }
 }
 
 .m-hentryitem.s-has_no_meta_descr,
@@ -77,6 +81,13 @@
       line-height: (30/21);
     }
 
+    @media all and (min-width: $delta_query) {
+      margin-top: $leading_delta*2;
+      margin-bottom: $leading_delta*1.5;
+      font-size: rem(24);
+      line-height: (36/24);
+    }
+
     //& + .a-hentryitem-meta{
     //  max-width: rem(720);
     //}
@@ -84,6 +95,10 @@
 
   .a-hentryitem-meta{
     color: $subtle-textcolor;
+
+    @media all and (min-width: $beta_query) {
+      max-width: rem(620);
+    }
 
     &:after{
       content: ' / Se allt';

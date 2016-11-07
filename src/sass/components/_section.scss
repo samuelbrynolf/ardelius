@@ -11,6 +11,10 @@
   @media all and (min-width: $charlie_query) {
     margin-bottom: $leading_charlie*3;
   }
+
+  @media all and (min-width: $delta_query) {
+    margin-bottom: $leading_delta*4;
+  }
 }
 
 p.a-section-archivelink{
@@ -22,6 +26,10 @@ p.a-section-archivelink{
 
   @media all and (min-width: $charlie_query) {
     margin-bottom: $leading_charlie*3;
+  }
+
+  @media all and (min-width: $delta_query) {
+    margin-bottom: $leading_delta*4;
   }
 
   a{
@@ -56,6 +64,10 @@ p.a-section-archivelink{
     padding-left: 0;
   }
 
+  @media all and (min-width: $delta_query) {
+    margin-top: $leading_delta*4;
+  }
+
   & + .o-section,
   &.is-standalone{
     //margin-top: $leading;
@@ -69,6 +81,10 @@ p.a-section-archivelink{
 
     @media all and (min-width: $charlie_query) {
       padding-top: $leading_charlie*3;
+    }
+
+    @media all and (min-width: $delta_query) {
+      padding-top: $leading_delta*4;
     }
   }
 

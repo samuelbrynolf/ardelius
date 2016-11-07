@@ -5,7 +5,7 @@
                 makeitSrcset(get_field('acf_avatar', 'option'), 100, 100, 100, 100, 100, 'a-avatar');
             } ?>
         </div>
-        <div class="l-span-A12 l-span-B7 l-span-C8 l-span-D7 m-bio">
+        <div class="l-span-A12 l-span-B7 l-span-C8 l-pre-D1 l-span-D9 m-bio">
             <?php if(function_exists('get_field') && get_field('acf_biografi_title', 'option')) {
                 echo '<h3 class="a-bio-title">';
                     the_field('acf_biografi_title', 'option');

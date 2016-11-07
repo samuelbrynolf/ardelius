@@ -7,10 +7,9 @@
   bottom: 0;
   z-index: 100;
   width: 100%;
-  max-width: 100%;
+  @extend %a-fineprint;
   margin-top: 0;
   padding: $leading*4 rem($alpha_gutter) $leading rem($alpha_gutter);
-  @extend .a-fineprint;
   text-align: center;
   color: #777;
   background-image: linear-gradient(top, rgba(black, 0.00), rgba(black, 1));
@@ -23,6 +22,10 @@
 
   @media all and (min-width: $charlie_query) {
     padding: $leading_charlie*4 rem($charlie_gutter) $leading_charlie*1.5 rem($charlie_gutter);
+  }
+
+  @media all and (min-width: $delta_query) {
+    padding: $leading_delta*6 rem($delta_gutter) $leading_delta*1.5 rem($delta_gutter);
   }
 }
 
@@ -43,5 +46,9 @@ a.m-hero{
 
   @media all and (min-width: $charlie_query) {
     margin-bottom: $leading_charlie*3;
+  }
+
+  @media all and (min-width: $delta_query) {
+    margin-bottom: $leading_delta*4;
   }
 }

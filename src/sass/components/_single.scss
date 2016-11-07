@@ -24,6 +24,11 @@
     border-top: 1px solid; // ??? dotted
     border-bottom: none;
   }
+
+  @media all and (min-width: $delta_query) {
+    margin-bottom: $leading_delta*2;
+    padding-top: $leading_delta*2.5;
+  }
 }
 
 .single-post .a-single__header-title{
@@ -34,15 +39,22 @@
   }
 
   @media all and (min-width: $charlie_query) {
+    margin-top: $leading_charlie*2.75;
     margin-bottom: $leading_charlie*2.5;
+  }
+
+  @media all and (min-width: $delta_query) {
+    margin-top: $leading_delta*2.5;
   }
 }
 
 .m-single__text .a-single__postdate{
   max-width: 100%;
+  margin-top: $leading*1.5;
   text-align: center;
 
   @media all and (min-width: $beta_query) {
+    margin-top: $leading_beta;
     text-align: left;
   }
 
@@ -69,8 +81,14 @@
     }
 
     @media all and (min-width: $charlie_query) {
+      max-width: rem(840);
       margin-top: $leading_charlie;
       margin-bottom: $leading_charlie;
+    }
+
+    @media all and (min-width: $delta_query) {
+      margin-top: $leading_delta;
+      margin-bottom: $leading_delta;
     }
   }
 }
@@ -89,6 +107,10 @@
 
   @media all and (min-width: $charlie_query) {
     padding-bottom: $leading_charlie*2;
+  }
+
+  @media all and (min-width: $delta_query) {
+    padding-bottom: $leading_delta*2;
   }
 }
 
@@ -122,6 +144,10 @@
 
     @media all and (min-width: $charlie_query) {
       margin-top: $leading_charlie*2;
+    }
+
+    @media all and (min-width: $delta_query) {
+      margin-top: $leading_delta*2;
     }
   }
 
@@ -168,10 +194,6 @@
     @media all and (min-width: $echo_query) {
       padding-right: rem($echo_gutter/2);
       padding-left: rem($echo_gutter/2);
-    }
-
-    p{
-      // max-width: rem(720); TODO WHY?
     }
   }
 

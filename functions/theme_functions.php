@@ -7,7 +7,6 @@ if ( !function_exists('body_classes')) {
         } else {
             $classes[] = 'no-thumb';
         }
-
         return $classes;
     }
 

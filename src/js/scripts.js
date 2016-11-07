@@ -59,7 +59,7 @@
             $layout_cols = $(loadtarget).attr('data-columns'),
             $offset_val = parseInt($load_trigger.attr('data-offset')),
             $offset_current = $offset_val,
-            $load_stop = parseInt($load_trigger.attr('data-load_stop'));
+            $pagin_count = parseInt($load_trigger.attr('data-load_stop'));
 
         $load_trigger.bind('tap', function(){
 
@@ -104,7 +104,7 @@
                     easein_item('.mis_img');
                     $offset_current = ($offset_current + $offset_val);
 
-                    if($offset_current == $load_stop){
+                    if($offset_current > ($pagin_count * $offset_val) -1){
                         $load_trigger.remove();
                     }
                 },

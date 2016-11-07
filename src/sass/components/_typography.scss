@@ -37,6 +37,11 @@ strong,
     font-size: rem(36);
     line-height: (48/36);
   }
+
+  @media all and (min-width: $delta_query) {
+    font-size: rem(42);
+    line-height: (56/42);
+  }
 }
 
 .a-title-M,
@@ -54,6 +59,11 @@ strong,
     font-size: rem(30);
     line-height: (42/30);
   }
+
+  @media all and (min-width: $delta_query) {
+    font-size: rem(36);
+    line-height: (48/36);
+  }
 }
 
 .a-preamble{
@@ -61,17 +71,18 @@ strong,
   line-height: (30/21);
 }
 
-.a-fineprint{
+.a-fineprint,
+%a-fineprint{
   font-size: rem(14);
   line-height: (21/14);
-
-  @media all and (min-width: $beta_query) {
-    max-width: rem(620);
-  }
 
   @media all and (min-width: $charlie_query) {
     font-size: rem(16);
     line-height: (24/16);
+  }
+
+  @media all and (min-width: $delta_query) {
+    line-height: (27/16);
   }
 }
 
