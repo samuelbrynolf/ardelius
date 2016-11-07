@@ -19,7 +19,7 @@ if ( !function_exists('body_classes')) {
 // MANIPULATE LOOPS -------------------------------------------------------------------
 
 function cpt_query($query){
-    if($query->is_main_query() && !is_home()){
+    if($query->is_main_query() && (is_tax() ||is_post_type_archive()) && !is_admin()){
         $query->set('orderby', 'menu_order');
         $query->set('order', 'ASC');
     }

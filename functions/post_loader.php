@@ -39,7 +39,7 @@
 
 
 if(!function_exists( 'postloader_loop' )){
-	function postloader_loop($query_var_type, $query_var_tax, $query_var_name, $offset) {
+	function postloader_loop($query_var_type, $query_var_tax, $query_var_name, $layout_cols, $offset) {
 
 		$posts_per_page = get_option('posts_per_page');
 
@@ -48,33 +48,49 @@ if(!function_exists( 'postloader_loop' )){
 		if ( 'taxonomy' == $query_var_type ){
 
 			$args_custom = array(
+				'tax_query' => array(
+					array(
+						'taxonomy' => $query_var_tax,
+						'field'    => 'slug',
+						'terms'    => $query_var_name
+					),
+				),
 
-			);
-
-		} elseif ( 'post_type' == $query_var_type ){
-
-			$args_custom = array(
-
+				'posts_per_page' => $posts_per_page,
+				'orderby'   => 'menu_order',
+				'order'     => 'ASC',
 			);
 
 		} elseif ( 'tag' == $query_var_type ){
 
 			$args_custom = array(
-
+				'post_type' => array( 'post', 'text-bild', 'bilder'),
+				'tag' => $query_var_name,
+				'posts_per_page' => $posts_per_page,
 			);
 
-		} elseif ( 'post' == $query_var_type ){
+		} elseif ( 'post_type' == $query_var_type ){
 
 			$args_custom = array(
-				'post_type' => 'post',
+				'post_type' => $query_var_name,
+				'posts_per_page' => $posts_per_page,
 				'orderby'   => 'menu_order',
-				'order'     => 'ASC',
+				'order'     => 'ASC'
 			);
+
+		} elseif( 'post' == $query_var_type ){
+
+			$args_custom = array(
+				'post_type' => $query_var_name,
+				'posts_per_page' => $posts_per_page
+			);
+
+		} else {
+			return;
 		}
 
 		$args_general = array(
 			'offset'         => $offset,
-			'posts_per_page' => $posts_per_page,
 			'post_status'    => 'publish'
 		);
 
@@ -86,7 +102,16 @@ if(!function_exists( 'postloader_loop' )){
 			while ( $postloader->have_posts() ) {
 				$postloader->the_post();
 				global $post;
-				hentry_item( $post->ID, true, 2, false );
+
+				$meta_descr = true;
+				$lightbox = false;
+
+				if('bilder' == get_post_type()) {
+					$meta_descr = false;
+					$lightbox = true;
+				}
+
+				hentry_item( $post->ID, $meta_descr, $layout_cols, $lightbox); // TODO PASS COL PARAM VIA data- that is triggered from parent
 			}
 		}
 		wp_reset_postdata();
@@ -104,9 +129,10 @@ if(!function_exists( 'postloader_setup' )){
 		$query_var_type = $_POST['query_var_type'];
 		$query_var_tax = $_POST['query_var_tax'];
 		$query_var_name = $_POST['query_var_name'];
+		$layout_cols = $_POST['layout_cols'];
 		$offset = $_POST['offset'];
 
-		$content = postloader_loop($query_var_type, $query_var_tax, $query_var_name, $offset);
+		$content = postloader_loop($query_var_type, $query_var_tax, $query_var_name, $layout_cols, $offset);
 		die($content);
 	}
 	add_action('wp_ajax_nopriv_postloader_setup', 'postloader_setup');

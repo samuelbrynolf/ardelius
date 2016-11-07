@@ -28,9 +28,8 @@
             });
 
             settings.body.append(fragment);
-            var popup_elems = $('.' + settings.imgcloned_class).add(overlay);
 
-            popup_src.bind('tap', function(e){
+            settings.body.on('click', '.mis_popup', function(e){
                 var $this = $(this);
                 var thisclone = $('#'+ $this.attr('data-misid'));
                 var thisclone_width = thisclone.width();
@@ -47,22 +46,16 @@
                 overlay.addClass(settings.show_class);
                 thisclone.addClass(settings.show_class);
 
-                settings.body.one('keyup', function(e){
-                    if (e.keyCode == 27) {
-                        popup_elems.removeClass(settings.show_class);
-                        e.preventDefault(e);
-                    }
-                });
+                return this;
 
                 e.stopPropagation(e);
                 e.preventDefault(e);
             });
 
-            popup_elems.bind('tap', function(e){
-                popup_elems.removeClass(settings.show_class);
-                e.preventDefault();
+            overlay.on('click', function(){
+                overlay.removeClass('s-is-visible');
+                $('.' + settings.imgcloned_class).removeClass(settings.show_class);
             });
-            return this;
         }
     };
 

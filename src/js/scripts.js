@@ -51,25 +51,18 @@
             cache: false
         });
 
-        var $loadtarget = $('#js-post_loader_target'),
+        var loadtarget = document.querySelector('#js-post_loader_target'),
             $load_trigger = $('#js-postloader_trigger'),
             $query_var_type = $load_trigger.attr('data-query-var-type'),
             $query_var_tax = $load_trigger.attr('data-query-var-tax'),
             $query_var_name = $load_trigger.attr('data-query-var-name'),
+            $layout_cols = $(loadtarget).attr('data-columns'),
             $offset_val = parseInt($load_trigger.attr('data-offset')),
             $offset_current = $offset_val,
             $load_stop = parseInt($load_trigger.attr('data-load_stop'));
 
-        //console.log($loadtarget);
-        //console.log($load_trigger);
-        console.log($query_var_type);
-        console.log($query_var_tax);
-        console.log($query_var_name);
-        //console.log($offset_val);
-        //console.log($offset_current);
-        //console.log($load_stop);
-
         $load_trigger.bind('tap', function(){
+
             $.ajax({
                 type: 'POST',
                 url: '/wp-admin/admin-ajax.php',
@@ -78,21 +71,45 @@
                     query_var_type: $query_var_type,
                     query_var_tax: $query_var_tax,
                     query_var_name: $query_var_name,
+                    layout_cols: $layout_cols,
                     offset: $offset_current
                 },
-                success: function (data) {
-                    console.log('succsee');
 
-                    $loadtarget.append(data);
-                    //easein_item('.mis_img');
+                success: function (data) { // https://gist.github.com/rnmp/bf6c5d8db9487862aba1
+
+                    var hentries_html = $.parseHTML(data),
+                        hentries = [];
+
+                    $.each(hentries_html, function(i, el){
+                        hentries.push(el);
+                        salvattore.appendElements(loadtarget, hentries);
+
+                        var $el = $(el),
+                        $el_img = $el.find('img.mis_popup');
+
+                        if($el_img.hasClass('mis_popup') && $.fn.mis_popup){
+
+                            $el_img.each(function(){
+                                 var $this = $(this),
+                                     $popped_id = $this.attr('data-misid');
+
+                                $this.clone()
+                                     .addClass('mis_is-cloned')
+                                     .attr('sizes', '100vw')
+                                     .attr('id', $popped_id).appendTo('body');
+                            });
+                        }
+                    });
+
+                    easein_item('.mis_img');
                     $offset_current = ($offset_current + $offset_val);
+
                     if($offset_current == $load_stop){
                         $load_trigger.remove();
                     }
                 },
                 error: function (MLHttpRequest, textStatus, errorThrown) {
                     $load_trigger.removeAttr('id');
-                    console.log(data);
                 }
             });
             return false;
