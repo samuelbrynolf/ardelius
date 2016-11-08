@@ -33,6 +33,12 @@
         });
     }
 
+
+
+    // --------------------------
+
+
+
     function easein_item(elem){
         var arr_elem = $(elem);
 
@@ -44,6 +50,12 @@
             }, i*150);
         });
     }
+
+
+
+    // --------------------------
+
+
 
     function post_loader(){
 
@@ -115,6 +127,22 @@
             return false;
         });
     }
+
+
+
+    // --------------------------
+
+    function scroll_to_footer(){
+        var $scroll_trigger = $('.js-scroll-trigger__footer a');
+
+        $scroll_trigger.bind('tap', function(e){
+            $('html, body').animate({
+                scrollTop: $('#js-footer').offset().top
+            }, 1000);
+
+            e.preventDefault();
+        });
+    }
 	
 
 	
@@ -129,6 +157,7 @@
     easein_item('.mis_img');
     nav_toggler();
     post_loader();
+    scroll_to_footer();
 
 
 	

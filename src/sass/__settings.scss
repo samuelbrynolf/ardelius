@@ -18,9 +18,9 @@
 
 $beta_screen: 760; // (Use as variable: "$beta_query")
 $charlie_screen: 1024; // (Use as variable: "$charlie_query")
-$delta_screen: 1400; // (Use as variable: "$delta_query")
-$echo_screen: 1700; // (Use as variable: "$echo_query")
-$max_width: 1680; // (Use as variable: "$containerwidth")
+$delta_screen: 1560; // (Use as variable: "$delta_query")
+$echo_screen: 1880; // (Use as variable: "$echo_query")
+$max_width:  1680; // (Use as variable: "$containerwidth")
 
 // Decreased maxwidth
 $max_width_decr: 960; // (Use as HTML-class, added to l-container: "decr-maxw")
@@ -126,9 +126,9 @@ $bodyfont: 'jaf-bernino-sans', sans-serif;
 
 $body-bgcolor: #f5f5f5;
 $body-textcolor: #00080b;
-$action-color: 	#0091ab;
+$action-color: 	#ff4f42;
 $subtle-textcolor: #53585a;
-$subtle-bgcolor: #e2e4e4;
+$subtle-bgcolor: #eee;
 $subtle-bordercolor: #b4babe;
 $input-bgcolor: $body-bgcolor;
 $highlight-bgcolor: ;

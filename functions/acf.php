@@ -1,4 +1,169 @@
 <?php if(function_exists("register_field_group")) {
+
+	register_field_group(array (
+		'id' => 'acf_layout-for-listningssidor',
+		'title' => 'Layout för listningssidor',
+		'fields' => array (
+			array (
+				'key' => 'field_580d7aec3c2c3',
+				'label' => 'Layout för listning av enkla bilder (t. ex singlar, porträtt)',
+				'name' => 'tax-template_layoutcols',
+				'type' => 'repeater',
+				'sub_fields' => array (
+					array (
+						'key' => 'field_580d7b2c3c2c4',
+						'label' => 'Vilken bildtyp?',
+						'name' => 'tax-template_term-id',
+						'type' => 'taxonomy',
+						'column_width' => '',
+						'taxonomy' => 'bildtyp',
+						'field_type' => 'select',
+						'allow_null' => 0,
+						'load_save_terms' => 0,
+						'return_format' => 'id',
+						'multiple' => 0,
+					),
+					array (
+						'key' => 'field_580d7c063c2c5',
+						'label' => 'Antal kolumner',
+						'name' => 'tax-template_col-count',
+						'type' => 'radio',
+						'column_width' => '',
+						'choices' => array (
+							1 => 1,
+							2 => 2,
+							3 => 3,
+							4 => 4,
+						),
+						'other_choice' => 0,
+						'save_other_choice' => 0,
+						'default_value' => '',
+						'layout' => 'horizontal',
+					),
+				),
+				'row_min' => '',
+				'row_limit' => '',
+				'layout' => 'table',
+				'button_label' => 'Add Row',
+			),
+			array (
+				'key' => 'field_580dfbcabf9c1',
+				'label' => 'Layout för tagg-listningar',
+				'name' => 'tag-template_layoutcols',
+				'type' => 'repeater',
+				'sub_fields' => array (
+					array (
+						'key' => 'field_580dfbcabf9c2',
+						'label' => 'Vilken tagg?',
+						'name' => 'tag-template_term-id',
+						'type' => 'taxonomy',
+						'column_width' => '',
+						'taxonomy' => 'post_tag',
+						'field_type' => 'select',
+						'allow_null' => 0,
+						'load_save_terms' => 0,
+						'return_format' => 'id',
+						'multiple' => 0,
+					),
+					array (
+						'key' => 'field_580dfbcabf9c3',
+						'label' => 'Antal kolumner',
+						'name' => 'tag-template_col-count',
+						'type' => 'radio',
+						'column_width' => '',
+						'choices' => array (
+							1 => 1,
+							2 => 2,
+							3 => 3,
+							4 => 4,
+						),
+						'other_choice' => 0,
+						'save_other_choice' => 0,
+						'default_value' => '',
+						'layout' => 'horizontal',
+					),
+				),
+				'row_min' => '',
+				'row_limit' => '',
+				'layout' => 'table',
+				'button_label' => 'Add Row',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'options_page',
+					'operator' => '==',
+					'value' => 'acf-options',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+	register_field_group(array (
+		'id' => 'acf_bildgalleri',
+		'title' => 'Bildgalleri',
+		'fields' => array (
+			array (
+				'key' => 'field_57dd94dbac1be',
+				'label' => 'Skapa ett bildgalleri',
+				'name' => 'acf_img-gallery',
+				'type' => 'repeater',
+				'instructions' => 'Lägg till de bilder som ska associeras med reportaget / bloggposten.',
+				'sub_fields' => array (
+					array (
+						'key' => 'field_57dd9542ac1bf',
+						'label' => 'Bildgalleri',
+						'name' => 'acf_img-gallery_img',
+						'type' => 'image',
+						'column_width' => '',
+						'save_format' => 'id',
+						'preview_size' => 'medium',
+						'library' => 'all',
+					),
+				),
+				'row_min' => '',
+				'row_limit' => '',
+				'layout' => 'table',
+				'button_label' => 'Ny bild',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'post',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'text-bild',
+					'order_no' => 0,
+					'group_no' => 1,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 2,
+	));
 	register_field_group(array (
 		'id' => 'acf_toppyta',
 		'title' => 'Toppyta',
@@ -55,40 +220,7 @@
 			'hide_on_screen' => array (
 			),
 		),
-		'menu_order' => 1,
-	));
-	register_field_group(array (
-		'id' => 'acf_bildformat-for-featured-image',
-		'title' => 'Bildformat för Featured Image',
-		'fields' => array (
-			array (
-				'key' => 'field_57f01895ad3d6',
-				'label' => 'Är bilden liggande?',
-				'name' => 'acf-featured-img-ratio',
-				'type' => 'true_false',
-				'instructions' => 'Sätt "Ja" om <strong>Featured Image</strong> är i liggande format.',
-				'message' => '<strong>Ja</strong> — bilden är i liggande format.',
-				'default_value' => 1,
-			),
-		),
-		'location' => array (
-			array (
-				array (
-					'param' => 'post_type',
-					'operator' => '!=',
-					'value' => 'page',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-			),
-		),
-		'options' => array (
-			'position' => 'side',
-			'layout' => 'default',
-			'hide_on_screen' => array (
-			),
-		),
-		'menu_order' => 2,
+		'menu_order' => 3,
 	));
 	register_field_group(array (
 		'id' => 'acf_summering',
@@ -122,62 +254,6 @@
 			'hide_on_screen' => array (
 			),
 		),
-		'menu_order' => 3,
-	));
-	register_field_group(array (
-		'id' => 'acf_bildgalleri',
-		'title' => 'Bildgalleri',
-		'fields' => array (
-			array (
-				'key' => 'field_57dd94dbac1be',
-				'label' => 'Skapa ett bildgalleri',
-				'name' => 'acf_img-gallery',
-				'type' => 'repeater',
-				'instructions' => 'Lägg till de bilder som ska associeras med reportaget / bloggposten.',
-				'sub_fields' => array (
-					array (
-						'key' => 'field_57dd9542ac1bf',
-						'label' => 'Bildgalleri',
-						'name' => 'acf_img-gallery_img',
-						'type' => 'image',
-						'column_width' => '',
-						'save_format' => 'id',
-						'preview_size' => 'medium',
-						'library' => 'all',
-					),
-				),
-				'row_min' => '',
-				'row_limit' => '',
-				'layout' => 'table',
-				'button_label' => 'Ny bild',
-			),
-		),
-		'location' => array (
-			array (
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'post',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-			),
-			array (
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'reportage',
-					'order_no' => 0,
-					'group_no' => 1,
-				),
-			),
-		),
-		'options' => array (
-			'position' => 'normal',
-			'layout' => 'default',
-			'hide_on_screen' => array (
-			),
-		),
 		'menu_order' => 4,
 	));
 	register_field_group(array (
@@ -200,7 +276,7 @@
 							array (
 								'key' => 'field_57e6cf560fd8b',
 								'label' => 'Sektionsrubrik',
-								'name' => 'acf_section_cpt-loop_title',
+								'name' => 'acf_section_title',
 								'type' => 'text',
 								'column_width' => '',
 								'default_value' => '',
@@ -213,23 +289,95 @@
 							array (
 								'key' => 'field_57e672ef35a59',
 								'label' => 'Vad vill du lista?',
-								'name' => 'acf_section_post-type_slug',
+								'name' => 'acf_section_content-picker',
 								'type' => 'select',
 								'column_width' => '',
 								'choices' => array (
-									'post' => 'Blogginlägg',
-									'reportage' => 'Reportage',
-									'portratt' => 'Portträtt',
-									'singlar' => 'Singlar',
+									1 => 'Nyheter',
+									2 => 'Innehåll från ‘Bilder med text’',
+									3 => 'Innehåll från ‘Bilder’',
+									4 => 'Innehåll med en specifik tagg',
 								),
 								'default_value' => '',
 								'allow_null' => 0,
 								'multiple' => 0,
 							),
 							array (
+								'key' => 'field_580d05e2e89de',
+								'label' => 'Okej! Innehåll från ‘Bilder med text’. Vilken kategori?',
+								'name' => 'acf_section_textbild-taxterm',
+								'type' => 'taxonomy',
+								'conditional_logic' => array (
+									'status' => 1,
+									'rules' => array (
+										array (
+											'field' => 'field_57e672ef35a59',
+											'operator' => '==',
+											'value' => '2',
+										),
+									),
+									'allorany' => 'all',
+								),
+								'column_width' => '',
+								'taxonomy' => 'typ',
+								'field_type' => 'select',
+								'allow_null' => 0,
+								'load_save_terms' => 0,
+								'return_format' => 'id',
+								'multiple' => 0,
+							),
+							array (
+								'key' => 'field_58124fd135e26',
+								'label' => 'Okej! Innehåll från ‘Bilder’. Vilken kategori?',
+								'name' => 'acf_section_bild-taxterm',
+								'type' => 'taxonomy',
+								'conditional_logic' => array (
+									'status' => 1,
+									'rules' => array (
+										array (
+											'field' => 'field_57e672ef35a59',
+											'operator' => '==',
+											'value' => '3',
+										),
+									),
+									'allorany' => 'all',
+								),
+								'column_width' => '',
+								'taxonomy' => 'bildtyp',
+								'field_type' => 'select',
+								'allow_null' => 0,
+								'load_save_terms' => 0,
+								'return_format' => 'id',
+								'multiple' => 0,
+							),
+							array (
+								'key' => 'field_580cfcdc0f8cf',
+								'label' => 'Okej! Lista bilder som har en specifik tagg. Välj vilken:',
+								'name' => 'acf_section_tag',
+								'type' => 'taxonomy',
+								'conditional_logic' => array (
+									'status' => 1,
+									'rules' => array (
+										array (
+											'field' => 'field_57e672ef35a59',
+											'operator' => '==',
+											'value' => '4',
+										),
+									),
+									'allorany' => 'all',
+								),
+								'column_width' => '',
+								'taxonomy' => 'post_tag',
+								'field_type' => 'select',
+								'allow_null' => 0,
+								'load_save_terms' => 0,
+								'return_format' => 'id',
+								'multiple' => 0,
+							),
+							array (
 								'key' => 'field_57e674451ac59',
 								'label' => 'Hur många ska visas?',
-								'name' => 'acf_section_post-type_count',
+								'name' => 'acf_section_hentry-count',
 								'type' => 'text',
 								'instructions' => 'Du måste ange antalet i siffor',
 								'column_width' => '',
@@ -243,7 +391,7 @@
 							array (
 								'key' => 'field_57e674be9e700',
 								'label' => 'Hur många kolumner ska användas i större skärmar?',
-								'name' => 'acf_section_post-type_layout',
+								'name' => 'acf_section_layout',
 								'type' => 'radio',
 								'column_width' => '',
 								'choices' => array (
@@ -259,7 +407,7 @@
 							),
 							array (
 								'key' => 'field_57e6756afbb95',
-								'label' => 'Sektionen avslutas med en textlänk där man ser allt av samma typ. Vad ska det stå?',
+								'label' => 'Sektionen kan avslutas med en textlänk vilken leder till allt innehåll av samma typ, som vald listning. Aktivera genom att namnge länken här.',
 								'name' => 'acf_section_cta-text',
 								'type' => 'text',
 								'column_width' => '',
@@ -376,6 +524,42 @@
 		'menu_order' => 5,
 	));
 	register_field_group(array (
+		'id' => 'acf_typsnitt-via-typekit',
+		'title' => 'Typsnitt via Typekit',
+		'fields' => array (
+			array (
+				'key' => 'field_57eac7ce6bbf0',
+				'label' => 'Typekit-ID',
+				'name' => 'acf_typekit_id',
+				'type' => 'text',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'options_page',
+					'operator' => '==',
+					'value' => 'acf-options',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 5,
+	));
+	register_field_group(array (
 		'id' => 'acf_visitkort',
 		'title' => 'Visitkort',
 		'fields' => array (
@@ -433,39 +617,36 @@
 		'menu_order' => 6,
 	));
 	register_field_group(array (
-		'id' => 'acf_typsnitt-via-typekit',
-		'title' => 'Typsnitt via Typekit',
+		'id' => 'acf_bildformat-for-featured-image',
+		'title' => 'Bildformat för Featured Image',
 		'fields' => array (
 			array (
-				'key' => 'field_57eac7ce6bbf0',
-				'label' => 'Typekit-ID',
-				'name' => 'acf_typekit_id',
-				'type' => 'text',
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => '',
+				'key' => 'field_57f01895ad3d6',
+				'label' => 'Är bilden liggande?',
+				'name' => 'acf-featured-img-ratio',
+				'type' => 'true_false',
+				'instructions' => 'Sätt "Ja" om <strong>Featured Image</strong> är i liggande format.',
+				'message' => '<strong>Ja</strong> — bilden är i liggande format.',
+				'default_value' => 1,
 			),
 		),
 		'location' => array (
 			array (
 				array (
-					'param' => 'options_page',
-					'operator' => '==',
-					'value' => 'acf-options',
+					'param' => 'post_type',
+					'operator' => '!=',
+					'value' => 'page',
 					'order_no' => 0,
 					'group_no' => 0,
 				),
 			),
 		),
 		'options' => array (
-			'position' => 'normal',
+			'position' => 'side',
 			'layout' => 'default',
 			'hide_on_screen' => array (
 			),
 		),
-		'menu_order' => 7,
+		'menu_order' => 1000,
 	));
 }

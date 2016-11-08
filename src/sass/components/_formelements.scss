@@ -43,8 +43,8 @@
   line-height: rem($inputheight);
   text-align: center;
   text-decoration: none;
-  color: rgba(white, 0.9);
-  background-color: $action-color;
+  //color: rgba(white, 0.9);
+  background-color: #6bd3cc;
 
   @media all and (min-width: $delta_query) {
     height: rem($inputheight*1.5);
@@ -71,5 +71,5 @@
 // ANIMATION ---------------------------------------------------------------
 
 .a-btn{
-  transition: background-color $anim_speed ease-out;
+  transition: background-color $anim_speed linear;
 }

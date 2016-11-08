@@ -90,3 +90,11 @@
   z-index:550;
   pointer-events: none;
 }
+
+.mis_figcaption{
+  @extend %a-fineprint;
+  padding: rem(6) rem(12);
+  text-align: right;
+  color: $subtle-textcolor;
+  background-color: $body-bgcolor;
+}
