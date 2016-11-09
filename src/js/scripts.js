@@ -136,6 +136,9 @@
         var $scroll_trigger = $('.js-scroll-trigger__footer a');
 
         $scroll_trigger.bind('tap', function(e){
+
+            $('#js-global-nav-toggler').trigger('click');
+
             $('html, body').animate({
                 scrollTop: $('#js-footer').offset().top
             }, 1000);

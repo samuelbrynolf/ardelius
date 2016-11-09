@@ -143,7 +143,7 @@
   z-index: 500;
 
   @media all and (min-width: $beta_query) {
-    top: rem($body_leading_beta + $fontsize_beta)/2;
+    top: rem($body_leading_beta*3 - 60);
     right: 0;
   }
 
