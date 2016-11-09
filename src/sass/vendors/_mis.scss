@@ -23,6 +23,14 @@
   }
 }
 
+.mis_figcaption{
+  @extend %a-fineprint;
+  padding: rem(6) rem(12);
+  text-align: right;
+  color: $subtle-textcolor;
+  background-color: $body-bgcolor;
+}
+
 
 // Hover fade effect
 
@@ -44,30 +52,32 @@
 
 // Overlay style
 
-.mis_popup{cursor:pointer}
+.mis_popup{
+  cursor:pointer;
+}
 
 #mis_overlay,
 .mis_popup.mis_is-cloned{
   visibility:hidden;
-  z-index:-500;
   opacity:0;
-  pointer-events:none;
-  -webkit-transition:opacity 125ms ease-out;
-  -moz-transition:opacity 125ms ease-out;
-  -o-transition:opacity 125ms ease-out;
-  transition:opacity 125ms ease-out}
+  pointer-events: none;
+  transition: opacity 125ms ease-out;
+}
 
 #mis_overlay {
   position:fixed;
+  z-index:500;
   top:0;
   right:0;
   bottom:0;
   left:0;
-  background-color:rgba(0,0,0,.75)
+  background-color:rgba(0,0,0,.75);
+  cursor: pointer;
 }
 
 .mis_popup.mis_is-cloned{
   position:fixed;
+  z-index:550;
   top:50%;
   left:50%;
   transform:translate(-50%,-50%);
@@ -82,19 +92,5 @@
 }
 
 #mis_overlay.s-is-visible{
-  z-index:500;
   pointer-events: auto;
-}
-
-.mis_popup.mis_is-cloned.s-is-visible{
-  z-index:550;
-  pointer-events: none;
-}
-
-.mis_figcaption{
-  @extend %a-fineprint;
-  padding: rem(6) rem(12);
-  text-align: right;
-  color: $subtle-textcolor;
-  background-color: $body-bgcolor;
 }
