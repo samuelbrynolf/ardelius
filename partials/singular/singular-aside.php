@@ -15,16 +15,23 @@ if( $current_cpt == 'text-bild' || $current_cpt == 'post'){
 
 // Set hentry-features for post & title (all)
 
-if($current_cpt == 'post'){
-    $aside_title = 'Mer nyheter';
-} elseif($current_cpt == 'text-bild'){
-    $terms = wp_get_post_terms( get_the_ID(), 'typ', array("fields" => "names"));
-    $aside_title = 'Fler '.$terms[0];
+if($current_cpt == 'text-bild'){
+	$terms = wp_get_post_terms( get_the_ID(), 'typ', array("fields" => "names"));
+
 } elseif($current_cpt == 'bilder'){
-    $terms = wp_get_post_terms( get_the_ID(), 'bildtyp', array("fields" => "names"));
-    $aside_title = 'Fler '.$terms[0];
+	$terms = wp_get_post_terms( get_the_ID(), 'bildtyp', array("fields" => "names"));
+}
+
+if($current_cpt == 'post'){
+	$aside_title = 'Mer nyheter';
+} elseif($current_cpt == 'text-bild' || $current_cpt == 'bilder'){
+	if($terms){
+		$aside_title = 'Fler '.$terms[0];
+	} else {
+		return;
+	}
 } else {
-    $aside_title = 'Fler '.$current_cpt;
+	$aside_title = 'Fler '.$current_cpt;
 }
 
 // Set loop-query

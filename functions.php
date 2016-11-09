@@ -66,7 +66,11 @@ add_action( 'after_setup_theme', 'shell_setup' );
  * Enqueue scripts and styles.
  */
 function shell_scripts() {
-	wp_enqueue_style( 'shell-style', get_stylesheet_uri() );
+
+	if(!function_exists('ccss_enqueue_full_css')) {
+		wp_enqueue_style( 'shell-style', get_stylesheet_uri() );
+	}
+
 	wp_deregister_script('jquery');
 	wp_enqueue_script( 'shell-bundled-scripts', get_template_directory_uri() . '/js/bundled.js', array(), '', true );
 
