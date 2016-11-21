@@ -1,7 +1,6 @@
 html{
   font-size: $fontsize+0px;
   box-sizing: border-box;
-  transform: translateZ(0);
 }
 
 @media all and (min-width: $beta_query) {

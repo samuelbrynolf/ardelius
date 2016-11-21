@@ -1,4 +1,4 @@
-<header id="js-global-header" class="l-gutter m-global-header" role="banner">
+<header id="js-global-header" class="l-gutter m-global-header">
 
     <?php wp_nav_menu(array('container' => 'nav', 'container_id' => 'js-global-nav','container_class' => 'm-global-nav', 'items_wrap' => '<ul>%3$s</ul>'));
 

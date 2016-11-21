@@ -1,4 +1,4 @@
-<footer id="js-footer" class="o-global-footer" role="contentinfo">
+<footer id="js-footer" class="o-global-footer">
     <div class="l-container o-bio">
         <div class="l-pre-A3 l-pre-B1 l-pre-C0 l-span-A6 l-span-B3 l-span-C2">
             <?php if(function_exists('makeitSrcset') && function_exists('get_field') && get_field('acf_avatar', 'option')) {
