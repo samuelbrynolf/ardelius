@@ -72,7 +72,7 @@
 
 
 if(!function_exists('section_archive_link')){
-	function section_archive_link($section_archive_url = null, $section_cta_text = 'Visa alla'){
+	function section_archive_link($section_archive_url = null, $section_cta_text){
 
 		if(is_null($section_archive_url) || empty($section_archive_url)){
 			return;

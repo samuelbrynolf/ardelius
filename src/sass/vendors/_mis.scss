@@ -75,7 +75,22 @@
   bottom:0;
   left:0;
   background-color:rgba(0,0,0,.75);
+  background-image: url('img/icon-close--inv.svg');
+  background-repeat: no-repeat;
+  background-position: right rem($alpha_gutter) top rem($alpha_gutter*1.75);
   cursor: pointer;
+
+  @media all and (min-width: $beta_query) {
+    background-position: right rem($beta_gutter/2) top rem($beta_gutter);
+  }
+
+  @media all and (min-width: $charlie_query) {
+    background-position: right rem($charlie_gutter) top rem($charlie_gutter);
+  }
+
+  @media all and (min-width: $delta_query) {
+    background-position: right rem($delta_gutter) top rem($delta_gutter);
+  }
 }
 
 .mis_popup.mis_is-cloned{
@@ -85,7 +100,7 @@
   left:50%;
   transform:translate(-50%,-50%);
   width:96%;
-  max-width:1280px
+  max-width:1280px;
 }
 
 #mis_overlay.s-is-visible,

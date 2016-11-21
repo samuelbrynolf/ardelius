@@ -11,8 +11,6 @@ echo '<section class="o-section">';
 
 	if(get_sub_field('acf_section_twocol_title')){
 		echo '<h2 class="l-gutter a-section-title a-title-M">'.get_sub_field('acf_section_twocol_title').'</h2>';
-	} else {
-		return;
 	}
 
 	echo '<div class="l-container js-layout-2" data-columns>';
@@ -31,6 +29,8 @@ echo '<section class="o-section">';
 		}
 	echo '</div>';
 
-	section_archive_link(get_sub_field('acf_section_twocol_cta-url'), get_sub_field('acf_section_twocol_cta-text'));
+	if(get_sub_field( 'acf_section_twocol_cta-text' )) {
+		section_archive_link( get_sub_field( 'acf_section_twocol_cta-url' ), get_sub_field( 'acf_section_twocol_cta-text' ) );
+	}
 
 echo '</section>';
