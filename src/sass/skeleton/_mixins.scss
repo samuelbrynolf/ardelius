@@ -1,90 +1,90 @@
-
-// MIXINS & FUNCTIONS (prefixes removed since Grunt-setup uses Autoprefixer)
-//==============================================================================================================
-
-@mixin fullbleed($mq:bq){
-  @if $mq == 'aq' {
-    @media all and (max-width: $beta_query) {
-      margin-right: rem(-$alpha_gutter);
-      margin-left: rem(-$alpha_gutter);
-    }
-  }
-
-  @if $mq == 'bq' {
-    @media all and (max-width: $charlie_query) {
-      margin-right: rem(-$beta_gutter);
-      margin-left: rem(-$beta_gutter);
-    }
-
-    @media all and (max-width: $beta_query) {
-      margin-right: rem(-$alpha_gutter);
-      margin-left: rem(-$alpha_gutter);
-    }
-  }
-
-  @if $mq == 'cq' {
-    @media all and (max-width: $delta_query) {
-      margin-right: rem(-$charlie_gutter);
-      margin-left: rem(-$charlie_gutter);
-    }
-
-    @media all and (max-width: $charlie_query) {
-      margin-right: rem(-$beta_gutter);
-      margin-left: rem(-$beta_gutter);
-    }
-
-    @media all and (max-width: $beta_query) {
-      margin-right: rem(-$alpha_gutter);
-      margin-left: rem(-$alpha_gutter);
-    }
-  }
-
-  @if $mq == 'dq' {
-    @media all and (max-width: $echo_query) {
-      margin-right: rem(-$delta_gutter);
-      margin-left: rem(-$delta_gutter);
-    }
-
-    @media all and (max-width: $delta_query) {
-      margin-right: rem(-$charlie_gutter);
-      margin-left: rem(-$charlie_gutter);
-    }
-
-    @media all and (max-width: $charlie_query) {
-      margin-right: rem(-$beta_gutter);
-      margin-left: rem(-$beta_gutter);
-    }
-
-    @media all and (max-width: $beta_query) {
-      margin-right: rem(-$alpha_gutter);
-      margin-left: rem(-$alpha_gutter);
-    }
-  }
-
-  @if $mq == 'eq' {
-    @media all and (max-width: $echo_query) {
-      margin-right: rem(-$delta_gutter);
-      margin-left: rem(-$delta_gutter);
-    }
-
-    @media all and (max-width: $delta_query) {
-      margin-right: rem(-$charlie_gutter);
-      margin-left: rem(-$charlie_gutter);
-    }
-
-    @media all and (max-width: $charlie_query) {
-      margin-right: rem(-$beta_gutter);
-      margin-left: rem(-$beta_gutter);
-    }
-
-    @media all and (max-width: $beta_query) {
-      margin-right: rem(-$alpha_gutter);
-      margin-left: rem(-$alpha_gutter);
-    }
-
-    @media all and (min-width: $echo_query) {
-      margin-right: rem(-$echo_gutter);
-      margin-left: rem(-$echo_gutter);
-    }
-  }
-}
+//
+//// MIXINS & FUNCTIONS (prefixes removed since Grunt-setup uses Autoprefixer)
+////==============================================================================================================
+//
+//@mixin fullbleed($mq:bq){
+//  @if $mq == 'aq' {
+//    @media all and (max-width: $beta_query) {
+//      margin-right: rem(-$alpha_gutter);
+//      margin-left: rem(-$alpha_gutter);
+//    }
+//  }
+//
+//  @if $mq == 'bq' {
+//    @media all and (max-width: $charlie_query) {
+//      margin-right: rem(-$beta_gutter);
+//      margin-left: rem(-$beta_gutter);
+//    }
+//
+//    @media all and (max-width: $beta_query) {
+//      margin-right: rem(-$alpha_gutter);
+//      margin-left: rem(-$alpha_gutter);
+//    }
+//  }
+//
+//  @if $mq == 'cq' {
+//    @media all and (max-width: $delta_query) {
+//      margin-right: rem(-$charlie_gutter);
+//      margin-left: rem(-$charlie_gutter);
+//    }
+//
+//    @media all and (max-width: $charlie_query) {
+//      margin-right: rem(-$beta_gutter);
+//      margin-left: rem(-$beta_gutter);
+//    }
+//
+//    @media all and (max-width: $beta_query) {
+//      margin-right: rem(-$alpha_gutter);
+//      margin-left: rem(-$alpha_gutter);
+//    }
+//  }
+//
+//  @if $mq == 'dq' {
+//    @media all and (max-width: $echo_query) {
+//      margin-right: rem(-$delta_gutter);
+//      margin-left: rem(-$delta_gutter);
+//    }
+//
+//    @media all and (max-width: $delta_query) {
+//      margin-right: rem(-$charlie_gutter);
+//      margin-left: rem(-$charlie_gutter);
+//    }
+//
+//    @media all and (max-width: $charlie_query) {
+//      margin-right: rem(-$beta_gutter);
+//      margin-left: rem(-$beta_gutter);
+//    }
+//
+//    @media all and (max-width: $beta_query) {
+//      margin-right: rem(-$alpha_gutter);
+//      margin-left: rem(-$alpha_gutter);
+//    }
+//  }
+//
+//  @if $mq == 'eq' {
+//    @media all and (max-width: $echo_query) {
+//      margin-right: rem(-$delta_gutter);
+//      margin-left: rem(-$delta_gutter);
+//    }
+//
+//    @media all and (max-width: $delta_query) {
+//      margin-right: rem(-$charlie_gutter);
+//      margin-left: rem(-$charlie_gutter);
+//    }
+//
+//    @media all and (max-width: $charlie_query) {
+//      margin-right: rem(-$beta_gutter);
+//      margin-left: rem(-$beta_gutter);
+//    }
+//
+//    @media all and (max-width: $beta_query) {
+//      margin-right: rem(-$alpha_gutter);
+//      margin-left: rem(-$alpha_gutter);
+//    }
+//
+//    @media all and (min-width: $echo_query) {
+//      margin-right: rem(-$echo_gutter);
+//      margin-left: rem(-$echo_gutter);
+//    }
+//  }
+//}

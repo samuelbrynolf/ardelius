@@ -15,7 +15,7 @@ var gulp = require('gulp'),
     fs = require('fs'),
     ftp = require('gulp-ftp'),
     watch = require('gulp-watch'),
-    //ftpkey = JSON.parse(fs.readFileSync('./.ftppass')),
+    ftpkey = JSON.parse(fs.readFileSync('./.ftppass')),
     dev = true,
 
     settings = {
@@ -41,7 +41,7 @@ var gulp = require('gulp'),
             bundleOutputMin: 'bundled.js'
         },
         ftp: {
-            enabled: false,
+            enabled: true,
             host: "ftp.1979design.se",
             key: "1979design",
             destination: '/wp-content/themes/ardelius',

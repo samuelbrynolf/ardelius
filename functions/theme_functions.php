@@ -124,7 +124,6 @@ if ( !function_exists( 'strip_archive_descriptions_p' )) {
 
 
 
-
 // REMOVE EDITOR FOR PAGES -------------------------------------------------------------------
 
 if ( !function_exists('remove_page_metaboxes')) {
@@ -135,6 +134,8 @@ if ( !function_exists('remove_page_metaboxes')) {
 
     add_action( 'init', 'remove_page_metaboxes' );
 }
+
+
 
 // MOVE YOAST SEO-MODULE TO POSTS BOTTOM -------------------------------------------------------------------
 // Using Yoast Seo plugin? You should: https://wordpress.org/plugins/wordpress-seo/

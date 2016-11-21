@@ -1,5 +1,5 @@
 @import "sass/__settings";
-@import "sass/skeleton/_mixins";
+//@import "sass/skeleton/_mixins";
 
 @import "sass/skeleton/_reset";
 @import "sass/skeleton/_base";
@@ -9,11 +9,11 @@
 @import "sass/components/_formelements";
 
 @import "sass/components/_global-header.scss";
-@import "sass/components/_global-footer.scss";
+@import "sass/components/_single.scss";
 @import "sass/components/_hero.scss";
 @import "sass/components/_section.scss";
 @import "sass/components/_hentry.scss";
-@import "sass/components/_single.scss";
+@import "sass/components/_global-footer.scss";
 
 @import "sass/vendors/_salvattore";
 @import "sass/vendors/_mis";

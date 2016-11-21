@@ -38,7 +38,7 @@ get_header();
 
 		if (have_posts()) {
 
-			echo '<div id="js-post_loader_target" class="js-salvattore '.$maxw_decr.'l-container js-layout-'.$col_count.'" data-columns>';
+			echo '<div id="js-post_loader_target" class="js-salvattore '.$maxw_decr.'l-container o-archive-gallery js-layout-'.$col_count.'" data-columns>';
 				while ( have_posts() ) {
 					the_post();
 
@@ -59,5 +59,4 @@ get_header();
 			next_posts_link('Visa fler');
 		echo '</p>';
 	echo '</article>';
-
 get_footer();

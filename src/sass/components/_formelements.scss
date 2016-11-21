@@ -1,39 +1,6 @@
 
 // ATOMS ---------------------------------------------------------------
 
-//.a-inputText,
-//.a-textarea{
-//  width: 100%;
-//  height: rem($inputheight);
-//  font-size: rem($inputfontsize);
-//  line-height: rem($inputheight);
-//  font-family: $bodyfont;
-//  background-color: $input-bgcolor;
-//
-//  &::-webkit-input-placeholder {
-//    color: $subtle-textcolor;
-//  }
-//
-//  &:-moz-placeholder {
-//    color: $subtle-textcolor;
-//    opacity: 1;
-//  }
-//
-//  &::-moz-placeholder {
-//    color: $subtle-textcolor;
-//    opacity: 1;
-//  }
-//
-//  &:-ms-input-placeholder {
-//    color: $subtle-textcolor;
-//  }
-//
-//  &.inline{
-//    display: inline-block;
-//    width: auto;
-//  }
-//}
-
 .a-btn{
   display: block;
   width: auto;
@@ -43,13 +10,12 @@
   line-height: rem($inputheight);
   text-align: center;
   text-decoration: none;
-  //color: rgba(white, 0.9);
   background-color: #6bd3cc;
 
   @media all and (min-width: $delta_query) {
     height: rem($inputheight*1.5);
     line-height: rem($inputheight*1.5);
-    //font-size: rem($btnfontsize*1.15);
+    transition: background-color $anim_speed linear;
   }
 }
 
@@ -64,12 +30,4 @@
     cursor: pointer;
     background-color: lighten($action-color, 3%);
   }
-}
-
-
-
-// ANIMATION ---------------------------------------------------------------
-
-.a-btn{
-  transition: background-color $anim_speed linear;
 }

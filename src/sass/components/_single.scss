@@ -184,8 +184,28 @@
 .has-thumb{
 
   .l-single-fullbleed{
-    @include fullbleed('dq');
+    //@include fullbleed('dq');
     display: block;
+
+    @media all and (max-width: $echo_query) {
+        margin-right: rem(-$delta_gutter);
+        margin-left: rem(-$delta_gutter);
+      }
+
+      @media all and (max-width: $delta_query) {
+        margin-right: rem(-$charlie_gutter);
+        margin-left: rem(-$charlie_gutter);
+      }
+
+      @media all and (max-width: $charlie_query) {
+        margin-right: rem(-$beta_gutter);
+        margin-left: rem(-$beta_gutter);
+      }
+
+      @media all and (max-width: $beta_query) {
+        margin-right: rem(-$alpha_gutter);
+        margin-left: rem(-$alpha_gutter);
+      }
   }
 
   .m-single__featured-img {

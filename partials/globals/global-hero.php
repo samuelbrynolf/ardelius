@@ -9,7 +9,7 @@ if(get_field('acf_hero_url')){
 	makeitSrcset(get_field( 'acf_hero_img'), 100, 100, 100, 100, 100, 'm-hero-img__container');
 
 	if(get_field('acf_hero_title')){
-		echo '<p class="a-overlay-title">'.get_field('acf_hero_title').'</p>';
+		echo '<h3 class="a-overlay-title">'.get_field('acf_hero_title').'</h3>';
 	}
 
 if(get_field('acf_hero_url')){

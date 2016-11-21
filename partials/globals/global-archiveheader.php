@@ -1,7 +1,7 @@
 <?php echo '<header class="l-gutter o-global-archive-header">';
 
     if(is_404()) { ?>
-        <h1 class="a-section-title a-title-M">404 &bullet; Computer Says No</h1>
+        <h1 class="a-section-title a-title-M">404 &bullet &bullet; Computer Says No</h1>
         <p class="a-global-archive-header__descr">Tyvärr har sidan upphört, eller så är länken felaktig.<br/><a href="<?php bloginfo('url'); ?>" title="Till startsidan">Gå till startsidan</a></p>
         <img class="a-global-archive-header__img" src="<?php echo get_stylesheet_directory_uri(); ?>/img/computersaysno.gif" alt=""/>
 

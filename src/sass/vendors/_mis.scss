@@ -34,20 +34,23 @@
 
 // Hover fade effect
 
-@media all and (min-width: $charlie_query) {
-
-  .o-gallery:hover .mis_img{
-    opacity: 0.82;
-  }
-
-  .o-gallery:hover .mis_img:hover{
-    opacity: 1.0;
-  }
-
-  .o-gallery .mis_img{
-    transition: opacity $anim_speed ease-out;
-  }
-}
+//@media all and (min-width: $charlie_query) {
+//
+//  .o-gallery:hover .mis_container,
+//  .o-archive-gallery:hover .mis_container{
+//    opacity: 0.9;
+//  }
+//
+//  .o-gallery:hover .mis_container:hover,
+//  .o-archive-gallery:hover .mis_container:hover{
+//    opacity: 1;
+//  }
+//
+//  .o-gallery .mis_container,
+//  .o-archive-gallery .mis_container{
+//    transition: opacity $anim_speed ease-out;
+//  }
+//}
 
 
 // Overlay style

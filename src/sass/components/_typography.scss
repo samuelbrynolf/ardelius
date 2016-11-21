@@ -9,6 +9,7 @@ strong,
 .a-bio-title{
   //font-family: $captionfont-1;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 
   a,
@@ -86,17 +87,17 @@ strong,
   }
 }
 
-//a[href^="http://"],
-//a[href^="https://"]{
-//  word-wrap: break-word;
-//}
-//
-//a[href^="http://www.aventyret.com"],
-//a[href^="http://aventyret.com"],
-//a[href^="https://www.aventyret.com"],
-//a[href^="https://aventyret.com"]{
-//  word-wrap: normal;
-//}
+a[href^="http://"],
+a[href^="https://"]{
+  word-wrap: break-word;
+}
+
+a[href^="http://www.ardelius.se"],
+a[href^="http://ardelius.se"],
+a[href^="https://www.ardelius.se"],
+a[href^="https://ardelius.se"]{
+  word-wrap: normal;
+}
 
 
 

@@ -2,20 +2,7 @@
 
 	function shell_setup() {
 
-		/*
-		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
-		 */
 		add_theme_support( 'title-tag' );
-
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		 */
-		//add_theme_support( 'post-thumbnails', array( 'reportage', 'portrait', 'singlar', 'post' ) );
 
 		// REGISTER MENU -------------------------------------------------------------------
 
@@ -28,15 +15,8 @@
 			add_action('init', 'register_my_menu');
 		}
 
-		/*
-		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
-		 */
-		add_theme_support( 'html5', array(
-			'search-form'
-		));
+		// CLEAN UP HEADER -------------------------------------------------------------------
 
-		// clean up header
 		remove_action('wp_head', 'rsd_link'); //removes EditURI/RSD (Really Simple Discovery) link.
 		remove_action('wp_head', 'wlwmanifest_link'); //removes wlwmanifest (Windows Live Writer)
 		remove_action('wp_head', 'print_emoji_detection_script', 7 );
@@ -61,10 +41,6 @@
 endif;
 add_action( 'after_setup_theme', 'shell_setup' );
 
-
-/**
- * Enqueue scripts and styles.
- */
 function shell_scripts() {
 
 	if(!function_exists('ccss_enqueue_full_css')) {
@@ -80,7 +56,9 @@ function shell_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'shell_scripts' );
 
-// Custom functions
+
+
+// CUSTOM FUNCTIONS -------------------------------------------------------------------
 
 require get_template_directory() . '/functions/theme_functions.php';
 require get_template_directory() . '/functions/template_tags.php';

@@ -62,7 +62,7 @@
     if($.fn.mis_popup) {
         var popup_src = $('.mis_popup');
         if(popup_src.length){
-            popup_src.mis_popup(); // TODO ACTIVATE AND MAKE CUSTOM ENQUEUE FOR PLUGIN
+            popup_src.mis_popup();
         }
     }
 }( jQuery, document ));

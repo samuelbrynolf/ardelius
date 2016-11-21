@@ -14,29 +14,29 @@
 		}
 
 		if($layout_cols == 4){
-			$vw_mq1 = 100;
-			$vw_mq2 = 100;
-			$vw_mq3 = 100;
-			$vw_mq4 = 100;
-			$vw_mq5 = 100;
+			$vw_mq1 = 88;
+			$vw_mq2 = 43;
+			$vw_mq3 = 29;
+			$vw_mq4 = 22;
+			$vw_mq5 = 21;
 		} elseif($layout_cols == 3){
-			$vw_mq1 = 100;
-			$vw_mq2 = 100;
-			$vw_mq3 = 100;
-			$vw_mq4 = 100;
-			$vw_mq5 = 100;
+			$vw_mq1 = 88;
+			$vw_mq2 = 43;
+			$vw_mq3 = 29;
+			$vw_mq4 = 30;
+			$vw_mq5 = 35;
 		} elseif($layout_cols == 2) {
-			$vw_mq1 = 100;
-			$vw_mq2 = 100;
-			$vw_mq3 = 100;
-			$vw_mq4 = 100;
-			$vw_mq5 = 100;
+			$vw_mq1 = 88;
+			$vw_mq2 = 43;
+			$vw_mq3 = 45;
+			$vw_mq4 = 46;
+			$vw_mq5 = 44;
 		} elseif($layout_cols == 1){
-			$vw_mq1 = 100;
-			$vw_mq2 = 100;
-			$vw_mq3 = 100;
-			$vw_mq4 = 100;
-			$vw_mq5 = 100;
+			$vw_mq1 = 88;
+			$vw_mq2 = 88;
+			$vw_mq3 = 93;
+			$vw_mq4 = 94;
+			$vw_mq5 = 91;
 		}
 
 		echo '<div class="m-hentryitem'.($meta_descr ? ' s-has_meta_descr' : ' s-has_no_meta_descr').'">';
@@ -45,7 +45,7 @@
 					makeitSrcset(get_post_thumbnail_id($postID), $vw_mq1, $vw_mq2, $vw_mq3, $vw_mq4, $vw_mq5, null, null, ($lightbox ? 'lightbox-true' : ''));
 				}
 
-				the_title('<h3 class="l-clear a-hentryitem-title">', '</h3>');
+				the_title('<h3 class="a-hentryitem-title">', '</h3>');
 
 				if($meta_descr == true){
 					echo '<p class="a-hentryitem-meta a-fineprint">';

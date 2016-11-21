@@ -43,8 +43,6 @@ if(!function_exists( 'postloader_loop' )){
 
 		$posts_per_page = get_option('posts_per_page');
 
-		// MAN KAN DELA POST TYPE ARGS ju, inte två loopar för post och post_type
-
 		if ( 'taxonomy' == $query_var_type ){
 
 			$args_custom = array(
@@ -111,7 +109,7 @@ if(!function_exists( 'postloader_loop' )){
 					$lightbox = true;
 				}
 
-				hentry_item( $post->ID, $meta_descr, $layout_cols, $lightbox); // TODO PASS COL PARAM VIA data- that is triggered from parent
+				hentry_item( $post->ID, $meta_descr, $layout_cols, $lightbox);
 			}
 		}
 		wp_reset_postdata();

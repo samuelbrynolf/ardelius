@@ -3,7 +3,7 @@
 		while (have_rows('acf_img-gallery')){
 			the_row();
 			if(get_sub_field('acf_img-gallery_img') && function_exists('makeitSrcset')){
-				makeitSrcset(get_sub_field('acf_img-gallery_img'), null, null, null, null, null, 'm-gallery__item', null, 'true');
+				makeitSrcset(get_sub_field('acf_img-gallery_img'), 88, 43, 29, 30, 35, 'm-gallery__item', null, 'true');
 			}
 		}
 	echo '</aside>';

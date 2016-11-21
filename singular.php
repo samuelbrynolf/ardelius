@@ -19,7 +19,7 @@
 				<div class="l-container o-single_main-content<?php echo ($featured_format_is_landscape ? '' : ' is-not-landscape'); ?>">
 
 					<?php if(function_exists('makeitSrcset') && has_post_thumbnail()) {
-						makeitSrcset(get_post_thumbnail_id($post->ID), null, null, null, null, null, $layoutSpans_featuredImg);
+						makeitSrcset(get_post_thumbnail_id($post->ID), 100 , 100, 64, 65, 60, $layoutSpans_featuredImg);
 					}
 
 					echo '<div id="js-textcontent" class="'.$layoutSpans_textContent.' m-single__text">';
@@ -32,12 +32,11 @@
 							the_title( '<h1 class="a-single__header-title a-title-L">', '</h1>' );
 
 
-
-//							if ( is_user_logged_in() ) {
-//								echo '<p class="a-fineprint edit-post">';
-//								edit_post_link( 'Redigera inl&auml;gg', ' &mdash; ', '' );
-//								echo '</p>';
-//							}
+							if ( is_user_logged_in() ) {
+								echo '<p class="a-fineprint edit-post">';
+								edit_post_link( 'Redigera inl&auml;gg', '', '' );
+								echo '</p>';
+							}
 
 							if($content = $post->post_content ) {
 								the_content();

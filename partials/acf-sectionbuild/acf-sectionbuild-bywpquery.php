@@ -34,17 +34,6 @@ if($hentry_type){
 		),
 	);
 
-// TODO remove?
-//	$sectional_loop_typ_tax = array(
-//		'tax_query' => array(
-//			array(
-//				'taxonomy' => 'typ',
-//				'field'    => 'id',
-//				'terms'    => $query_typ_taxterm
-//			),
-//		),
-//	);
-
 	$sectional_loop_bildtyp_tax = array(
 		'tax_query' => array(
 			array(

@@ -72,7 +72,7 @@
 
 .o-global-footer{
   padding-top: $leading*3;
-  padding-bottom: $leading*3;
+  padding-bottom: $leading*4;
   text-align: center;
   color: darken($subtle-textcolor, 9%);
   background-color: $subtle-bgcolor;
@@ -80,17 +80,17 @@
   @media all and (min-width: $beta_query) {
     text-align: left;
     padding-top: $leading_beta*3;
-    padding-bottom: $leading_beta*3;
+    padding-bottom: $leading_beta*4;
   }
 
   @media all and (min-width: $charlie_query) {
     padding-top: $leading_charlie*3;
-    padding-bottom: $leading_charlie*3;
+    padding-bottom: $leading_charlie*4;
   }
 
   @media all and (min-width: $delta_query) {
     padding-top: $leading_delta*4;
-    padding-bottom: $leading_delta*4;
+    padding-bottom: $leading_delta*6;
   }
 
   a{
