@@ -233,24 +233,26 @@
 
 // States -----------------------------------------------
 
-.m-global-nav.s-is-active{
-  display: block;
-  opacity: 1;
-  pointer-events: auto;
+@media all and (max-width: $beta_query) {
+  .m-global-nav.s-is-active{
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
 
-  li{
-    font-size: rem(30);
-    line-height: (42/30);
-    transform: translateY(0);
+    li{
+      font-size: rem(30);
+      line-height: (42/30);
+      transform: translateY(0);
 
-    & + li{
-      margin-top: $leading;
-      padding-top: $leading;
-      border-top: 1px solid $subtle-bordercolor;
+      & + li{
+        margin-top: $leading;
+        padding-top: $leading;
+        border-top: 1px solid $subtle-bordercolor;
 
-      @media all and (min-width: $beta_query) {
-        margin-top: $leading_beta*1.5;
-        padding-top: $leading_beta*1.5;
+        @media all and (min-width: $beta_query) {
+          margin-top: $leading_beta*1.5;
+          padding-top: $leading_beta*1.5;
+        }
       }
     }
   }
