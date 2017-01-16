@@ -4,7 +4,7 @@ $query_bildtyp_taxterm  = get_sub_field('acf_section_bild-taxterm');
 $query_tag              = get_sub_field('acf_section_tag');
 $section_title          = get_sub_field('acf_section_title');
 $sectional_loop_sectionlink = null;
-$section_link_text      = get_sub_field('acf_section_cta-text');
+t status$section_link_text      = get_sub_field('acf_section_cta-text');
 
 if($hentry_type){
 
